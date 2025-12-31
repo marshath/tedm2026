@@ -1,0 +1,91 @@
+/* Forms Styles */
+
+/* -------------------------- */
+/* Contact Form */
+/* -------------------------- */
+
+.contact-page {
+	width: 60%;
+	float: left;
+	display: inline-block;
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+	}
+}
+.message {
+	@include square-font;
+	font-size: 1.6em;
+	line-height: 1.1;
+}
+.contact {
+	margin-top: $base;
+}
+label {
+	display: none;
+}
+
+input.wpcf7-form-control, textarea.wpcf7-form-control, .mc-field-group input, .sidebar-search input[type='text'], .blog-content input[type='text'] { 
+	width: 100%;
+	background: lighten(black,96%);
+	padding: calc($base/2) $base;
+	display: block;
+	border: 1px solid #aaa;
+	outline:none;				// remove default browser outline
+	&:focus {
+		background: white;
+	}
+}
+
+textarea.wpcf7-form-control {
+	height: calc($base*5);
+}
+
+
+/* -------------------------- */
+/* Search Form */
+/* -------------------------- */
+.search-callout {
+	margin-bottom: calc($base*2);
+	.search-box {
+		border-top:1px solid #666;
+		position: relative;
+	}
+	input[type="text"] {
+		width: 100%;
+		background-color: $gray-light-alpha;
+		border: none;
+		border-bottom: 2px solid $text;
+		padding: calc($base*0.5) 1em;
+		transition: all 0.3s ease;
+		&:hover {
+			background-color: #efefef;
+		}
+		&:focus {
+			background-color: white;
+			border-bottom: 2px solid $orange;
+		}
+	}
+	input[type="submit"] {
+		background: $green;
+		color: white;
+		text-shadow: 0 2px 0 black;
+		display: block;
+		padding: calc($base*0.5) 1em;
+		border: 0;
+		width:intrinsic;
+		position: absolute;
+		top: calc($base*0.75);
+		right:0;
+		@include box-shadow(inset 0px 0px 0px black);
+		@include transition(all, 1s, ease-out);
+		&:hover {
+			background: lighten($green, 20%);
+			@include box-shadow(inset 0px 0px 40px darken($green,10%));
+			@include transition(all, 0s, linear);
+		}
+		&:active {
+			background: lighten($green, 20%);
+			@include box-shadow(inset 0px 0px 0px black);
+		}
+	}
+}

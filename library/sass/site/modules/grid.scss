@@ -1,0 +1,331 @@
+/* Grid Styles */
+
+
+
+/* -------------------------- */
+/* Declarations */
+/* -------------------------- */
+
+$base: 1.3125em; /* 21px baseline grid */
+
+$font8: 0.5em;  /* --------- Font Sizes in EMs --------- */
+$font10: 0.625em;
+$font11: 0.6875em;
+$font12: 0.75em;
+$font13: 0.8125em;
+$font14: 0.875em;
+$font16: 1em;
+$font18: 1.125em;
+$font20: 1.25em;
+
+$text: #222;  /* --------- Colors --------- */
+$green: #2d4207;
+$yellow: #fc0;
+$orange: #ed3c24;
+$orange-light: #f29029;
+$pink: #f12a6c;
+$tan: #c7c2b7;
+$contact-light: #eeedeb;
+$contact-dark: #d1d0cf;
+$gray-light: #ededed;
+$gray-light-alpha: #ede8dd;
+$gray-dark: #d1d0cf;
+$gray-dark-alpha: #e0dacc;
+$nav-text: #bdc0c3;
+
+$twitter-blue: #00aced;
+$codepen-yellow: #ffcc00;
+$github-black: #24292e;
+$pinterest-red: #cb2027;
+$linkedin-blue: #007bb6;
+
+$corner: 0.25em; /* Rounded Box Radius */
+$line : 4px solid $tan; /* horizonital ruler */
+
+
+$mobile-v: 320px; /* Media Query Break Points */
+$mobile-m: 455px;
+$mobile-h: 590px;
+$tablet-v: 591px;
+$tablet-h: 900px;
+$laptop: 901px;
+$computer-v: 1050px;
+$computer-h: 1199px;
+$television: 1200px;
+
+
+
+/* -------------------------- */
+/* Mixins */
+/* -------------------------- */
+
+@mixin square-font {
+	font-family: 'Bree Serif', serif;
+	font-style: normal;
+	font-weight: 400;
+}
+
+@mixin script-font {
+	font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+@mixin regular {
+	font-family: Verdana, Geneva, sans-serif;
+}
+
+@mixin rotate($rtte) {
+	transform:rotate($rtte);
+}
+
+@mixin radius($corn) {
+	border-radius:$corn;
+}
+
+@mixin scale($scle) {
+	transform:scale($scle);
+}
+
+@mixin box-shadow($bshad) {
+	box-shadow:($bshad);
+}
+
+@mixin font-smoothing($fsm) {
+	font-smoothing:($fsm);
+}	
+
+@mixin transition($tone, $ttwo, $tthree) {
+	transition:$tone $ttwo $tthree;
+}
+
+@mixin blur($blr) {
+	filter: blur($blr);
+}
+
+
+
+/* -------------------------- */
+/* 980 Grid System */
+/* -------------------------- */
+
+.w1, .w2, .w3, .w4, .w5, .w6, .w7, .w8, .w9, .w10, .w11, .w12 { margin: 0 0 0 5%; /* 20px */ }
+.w1 { width: 20%; /* 60px */ }
+.w2 { width: 45%; /* 140px */ }
+.w3 { width: 70%; /* 220px */ }
+.w4 { width: 95%; /* 300px */ }
+.w5 { width: 20%; /* 380px */ }
+.w6 { width: 45%; /* 460px */ }
+.w7 { width: 70%; /* 540px */ }
+.w8 { width: 95%; /* 620px */ }
+.w9 { width: 20%; /* 700px */ }
+.w10 { width: 45%; /* 780px */ }
+.w11 { width: 70%; /* 860px */ }
+.w12 { width: 95%; /* 940px */ }
+
+
+
+/* --------- Floats --------- */
+.fl { float: left; }
+.fr { float: right; }
+
+
+
+/* --------- Global Star Selectors --------- */
+* {
+	background-repeat: no-repeat;
+	box-sizing: border-box; 
+	/* -webkit-transition: all 1s ease; */
+}
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after, .clear { clear: both; }
+
+
+/* -------------------------- */
+/* Page Containers */
+/* -------------------------- */
+body {
+	color: $text;
+	@include regular;
+	line-height: $base;
+	background: #100202;
+}
+
+main {
+	background-color: #E3DDD0;
+	background-image: url(library/images/pattern-paper.jpg);
+	background-repeat: repeat;
+	min-height: 65vh;			// force a minimum page height for the paper texture
+}
+
+.site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap { /* --------- Background Wraps --------- */
+	width: 100%;
+	padding: 0;
+	display: block;
+	position: relative;
+}
+.services-wrap {
+	background: rgba(199,194,193,0.6);
+	padding-left: 8.33%;
+	padding-right: 8.33%;
+	margin-bottom: $base;
+}
+
+
+.header-wrap { /* --------- Background Wrap Images --------- */	
+	background: #100202; /* Old browsers */
+	background: linear-gradient(to bottom,  #100202 20%,#4f0909 100%); /* W3C */
+	padding-top: $base;
+}
+
+.article-wrap {
+	padding-top: calc($base*3);
+	padding-bottom: $base;	// force main content to the footer
+}
+
+.services-wrap, .quotes-wrap, .related-wrap {
+	background: rgba(199,194,183,0.3);
+	box-shadow: inset 0 1px 2px darken($tan,20%), inset 0 -1px 0px lighten($tan,40%);
+	margin-bottom: calc($base*2);
+	padding-top: $base;
+}
+
+.footer-wrap {
+	background: #100202; /* Old browsers */
+	background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
+	padding-top: $base;
+}
+
+
+.article-wrap:before { /* --------- Header & Footer Psuedo Dividers --------- */
+	content: '';
+	width: 100%;
+	height: 10px;
+	background: $orange; /* Old browsers */
+	background: linear-gradient(to right,  $orange 20%,$orange-light 80%); /* W3C */
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.footer-wrap:before {
+	content: '';
+	width: 100%;
+	height: 17px;
+	background: url(library/images/pattern-fray.png) repeat-x;
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+
+header.main { /* --------- Header --------- */
+	width: 100%;
+	margin-bottom: $base;
+}
+
+
+.content, .subcontent, .blog-content { /* --------- Body Articles --------- */
+	margin-bottom: calc($base*2);
+	display: block;
+	position: relative;
+	section { 
+		margin-bottom: $base;
+	}
+}
+
+.blog-content {
+	width: 60%;
+	float: left;
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+	}
+}
+.content section { 
+	width: 30%;
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 48%;
+	}
+}
+
+.subcontent section { 
+	width: 23%;
+	margin-left: 2%;
+	h3 {
+		color: $text;
+		margin-bottom: 0.5em;
+	}
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 31%;
+	}
+}
+
+
+aside.services { /* --------- Sidebar Services --------- */
+	width: 100%;
+	padding-top: $base;
+	display: block;
+	section { 
+		width: 33.33%;
+		display: inline-block;
+		float: left;
+		position: relative;
+	}
+	@media screen and (max-width: $mobile-h) {
+		padding: $base 0 0;
+		section {
+			width: 100%;
+		}
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		padding: 0;
+		section {
+			width: 100%;
+		}
+	}
+}
+
+.sidebar {
+	width: 35%;
+	float: right;
+	display: inline-block;
+	@media screen and (max-width: $tablet-h) {
+		width: 100%;
+	}
+}
+
+
+.site-footer { /* --------- Footer --------- */
+	width: 100%;
+	@include square-font;
+	color: $tan;
+	padding: calc($base*2) 0 $base;
+	display: block;
+	section {
+		display: block;
+		float: left;
+	    ul {
+	    	margin: 0;
+			padding: 0;
+		}
+	}
+}
+
+
+/* --------- Max Width --------- */
+.site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap {
+	padding-left: 0;
+	padding-right: 0;
+}	
+.site-header, article, aside.services, aside.client-quotes, aside.related-sites, .site-footer, .body-content {
+	width: 84%;
+	max-width: 1280px;
+	margin-left: auto;
+	margin-right: auto;
+}

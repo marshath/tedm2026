@@ -1,0 +1,202 @@
+/* Footer Styles */
+
+
+
+/* -------------------------- */
+/* Footer */
+/* -------------------------- */
+
+section.footer-company-info { /* --------- Contact Info Footer --------- */
+	width: 20%;
+	margin-right: 2%;
+	margin-bottom: $base;
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 48%;
+	}
+}
+
+
+
+.footer-company-info {
+	li {
+		width: 100%;
+		font-size: $font14;
+		display: block;
+		float: left;
+		list-style: none;
+	}
+	a {
+		color: $tan;
+	}
+	.name {
+		font-size: $font14;
+		text-transform: uppercase;
+		padding-bottom: 1%;
+		border-bottom: 1px solid darken($tan,40%);
+	}
+}
+
+.ftr-contact a {
+	text-decoration: none;
+	&:hover {
+		color: white;
+		.email-icon {
+			color: $yellow;
+		}
+	}
+}
+
+
+
+section.footer-navigation { /* --------- Navigation Footer --------- */
+	width: 53%;
+	margin-right: 2%;
+	@media screen and (max-width: $mobile-h) {
+		width: 100%;
+		margin-bottom: $base;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 48%;
+		margin-right: 0;
+		margin-bottom: $base;
+		float: right;
+	}
+}
+
+
+
+.footer-navigation {
+	li {
+		width: 23%;
+		text-align: center;
+		margin: 0 1%;
+		display: block;
+		float: left;
+		list-style: none;
+	}
+	a {
+		width: 100%;
+		height: calc($base*4);
+		background-color: rgba(0,0,0,0.2);
+		color: $tan;
+		text-decoration: none;
+		text-transform: uppercase;
+		text-shadow: 0 1px 1px black;
+		line-height: 1em;
+		margin: 0 0 calc($base/2) 0;
+		padding: 21px 0;
+		display: inline-block;
+		border: 1px solid darken($tan,40%);
+		@include radius($corner);
+		.nav-icon {
+			font-size: 1.4em;
+			display: block;
+		}
+		.nav-text {
+			font-size: $font14;
+		}
+		&:hover {
+			background-color: rgba(0,0,0,0.4);
+			@include transition(background, 0s, ease-out);
+			.nav-icon {
+				color: $yellow;
+			}
+			.nav-text {
+				color: white;
+			}
+		}
+	}
+	@media screen and (max-width: $tablet-h) {
+		li {
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			display: block;
+			float: left;
+			list-style: none;
+		}
+		a {
+			width: 100%;
+			height: calc($base*3);
+			padding: 21px 0;
+			display: inline-block;
+			border: 1px solid darken($tan,40%);
+			@include radius($corner);
+			.nav-icon {
+				display: inline-block;
+				margin-right: 4px;
+			}
+			.nav-text {
+				vertical-align: super;
+			}
+		}
+	}
+}
+
+
+section.footer-social-links { /* --------- Social Footer --------- */
+	width: 23%;					// set max width for desktop
+	margin-top: calc($base/2);		// push down to vertially center
+	text-align: center;
+	h4 {
+		font-size: $font14;
+		text-transform: uppercase;
+		padding-bottom: 1%;				// push line below down from text
+	}
+	@media screen and (max-width: $mobile-h) {
+		width: 70%;						// set max width 70%
+		margin-left: 15%;				// align center (30%/2=15)
+		//margin-bottom: $base;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		text-align: left;				// align icons & h4 text left on tablet
+		width: 48%;						// set max width 48% + 2% spacing
+		h4 {
+			border-bottom: 1px solid darken($tan,40%);
+		}
+	}
+}
+
+
+.footer-social-links {
+	ul {
+		display: flex;
+		flex-flow: row nowrap;
+		margin: auto;
+		width: 100%;
+	}
+	li {
+		flex-basis: 20%;
+		list-style: none;
+	}
+	.social-text {
+		display: none;
+	}
+	a {
+		opacity: 0.5;
+		color: $tan;
+		font-size: 2rem;
+		margin-bottom: 10px;
+		display: block;
+		&:hover {
+			opacity: 1;
+			color: $yellow;
+		}
+	}
+}
+
+
+/* -------------------------- */
+/* Footer Elements */
+/* -------------------------- */
+
+.copyright {
+	width: 100%;
+	font-size: $font12;
+	text-align: center;
+	padding-top: $base;
+	clear: both;
+}

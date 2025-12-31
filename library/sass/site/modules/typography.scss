@@ -1,0 +1,119 @@
+/* Typography Styles */
+
+/* -------------------------- */
+/* Icon Font */
+/* -------------------------- */
+
+@font-face {
+	font-family: 'ted-icons';
+	src:url('library/fonts/ted-icons.eot');
+	src:url('library/fonts/ted-icons.eot?#iefix') format('embedded-opentype'),
+		url('library/fonts/ted-icons.woff') format('woff'),
+		url('library/fonts/ted-icons.ttf') format('truetype'),
+		url('library/fonts/ted-icons.svg#ted-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	font-family: 'ted-icons';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+
+/* -------------------------- */
+/* Body Text */
+/* -------------------------- */
+h2, h3, h4, h5, h6 {
+	@include square-font;
+	line-height: 1em;
+	margin: 0 0 calc($base / 2) 0;
+}
+
+h2, h3 { text-shadow: 0 1px white; }
+h2 { font-size: 2em; }
+.h2-small { font-size: $font12; }
+h2.indent { padding-left: 1em; }
+h3 { font-size: $font20; }
+p { font-size: $font16; line-height: 1.8; }
+p.space { margin-bottom: calc($base * 2); }
+p.space-columns { margin-bottom: calc($base * 2); }
+.archive-title {
+	margin-bottom: $base;
+}
+
+hr {
+	border: none;
+	border-bottom: $line;
+}
+.uppercase { text-transform: uppercase; }
+
+.large {
+	font-size: 1.8em;
+	line-height: 1em;
+}
+
+::selection { background: $orange-light; }
+
+.screen-reader-text {
+	display: none;
+}
+	
+
+/* -------------------------- */
+/* Global Links */
+/* -------------------------- */
+
+a {
+	color: lighten($text,30%);
+	text-decoration: none;
+	&:hover {
+		color: $orange;
+	}
+}
+
+a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button { /* --------- Primary Button --------- */
+	width:100%;
+	background: $green;
+	color: white;
+	text-shadow: 0 2px 0 black;
+	padding: $base;
+	display: block;
+	border: 0;
+	@include box-shadow(inset 0px 0px 0px black);
+	@include transition(all, 1s, ease-out);
+	&:hover {
+		background: lighten($green, 20%);
+		@include box-shadow(inset 0px 0px 40px darken($green,10%));
+		@include transition(all, 0s, linear);
+	}
+	&:active {
+		background: lighten($green, 20%);
+		@include box-shadow(inset 0px 0px 0px black);
+	}
+}
+
+a.secondary-btn, .sidebar-mc-form .button2 { /* --------- Secondary Button --------- */
+	background-color: $gray-light-alpha;
+	background: linear-gradient( to bottom, $gray-light-alpha 0.05, $gray-dark-alpha 1 );
+	color: lighten($text, 20);
+	padding: calc($base/2) $base;
+	display: inline-block;
+	@include radius($corner);
+	border: 1px solid lighten($text, 45);
+	&:hover {
+		background-color: $gray-dark-alpha;
+		background: linear-gradient( to bottom, $gray-dark-alpha 0.05, $gray-light-alpha 1 );
+		color: $text;
+		//box-shadow: inset 0px -1px 2px white, 0px 1px 1px white;
+		color: white !important;
+		background: $orange-light;
+		background: linear-gradient(to right, $orange 0, $orange-light 100%);
+		border-color: white;
+	} 
+}

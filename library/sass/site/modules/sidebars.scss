@@ -1,0 +1,145 @@
+/* Sidebar Styles */
+
+
+
+/*---------------------------------- */
+/*----------     Aside    -----------*/
+/*---------------------------------- */
+
+div.quotes { /* --------- Customer Quotes --------- */
+	margin-left: -2%;
+}
+.testimonial {
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+	max-width: 800px;
+}
+
+.client-quotes, .related-sites {
+	h2 {
+		width: 100%;
+		font-size: 1.5em;
+		text-shadow: 0 1px white;
+		display: block;
+		vertical-align: middle;
+		margin-bottom: $base;
+		.us-icon, .testimonial-icon {
+			font-size: 1.4em;
+		}
+		.related-sites-icon {
+			font-size: 1.2em;
+		}
+	}
+}
+.client-quotes h2 {
+	text-align: center;
+}
+blockquote:before {
+	font-family: 'ted-icons';
+	speak: none;
+	font-style: normal;
+	font-size: 1.8em;
+	@include font-smoothing(antialiased);
+	content: '\e90b';
+	color: darken($tan,1%);
+	position: absolute;
+	z-index: -1;
+	top: -0.25em;
+	left: 0;
+}
+
+.client-quotes {
+	padding-bottom: calc($base *2);
+	p {
+		text-indent: 1.5em;
+		z-index: 2;
+	}
+	cite {
+		font-size: $font14;
+		font-weight: bold;
+		margin-left: 2.5em;
+		&:before {
+			content: '—'
+		}
+		a {
+			color: $orange;
+			font-weight: normal;
+			&:hover {
+				color: $text;
+			}
+		}
+	}
+}
+@keyframes heartbeat {	// used on the testimonial heart icon
+	from { font-size: 1em; }
+	25%  { font-size: 0.8em; }
+	50%  { font-size: 1em; }
+	75%  { font-size: 0.8em; }
+	to   { font-size: 1em; }
+}
+.client-heart {
+	width: 24px;
+	height: 16px;
+	display: inline-block;
+	text-align: center;
+	&-icon {
+		color: $orange;
+		animation: heartbeat 4s ease infinite;
+		transform-origin: center center;
+	}
+}
+.client-love {
+	@extend .screen-reader-text;
+}
+.related-sites li {
+	@media screen and (min-width: $laptop) and (max-width: $computer-h) {
+		&:nth-child(4) {		// remove widow project when 3-up
+			display: none;
+		}
+	}
+}
+
+
+/*---------------------------------- */
+/*----------    Sidebar   -----------*/
+/*---------------------------------- */
+
+.sidebar-social-links { /* --------- Social Links --------- */
+	width: 100%;
+	background: rgba(255,255,255,0.4);
+	padding: $base 0;
+	margin-bottom: calc($base*2);
+	border-radius: 0.25em;							// same as .project figure from modules.scss
+	border: 4px solid white;							// same as .project figure from modules.scss
+	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));	// same as .project figure:hover from modules.scss
+	h3 {
+		text-align: center;
+	}
+	ul {
+		border: none;
+		height: auto;
+	}
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width: 100%;
+		margin-top: $base;
+		margin-right:0;
+	}
+}
+.fb-like-box {
+	background: white;
+}
+.twitter-follow {
+	margin-top: $base;
+	margin-bottom: $base;
+}
+.twitter-timeline {
+	width: 286px;
+	margin-top: $base;
+	margin-bottom: calc($base*0.5);
+	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+		width:48%;
+		float: right;
+		margin-right: 2%;
+	}
+}
