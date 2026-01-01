@@ -6,7 +6,8 @@
 /* Header */
 /* -------------------------- */
 
-h1.logo { /* --------- Company Logo --------- */
+// COMPANY LOGO //
+h1.logo {
 	width: 151px;
 	height: 81px;
 	margin: calc($base*0.25) 0 calc($base*0.75) 0;
@@ -39,8 +40,8 @@ h1.logo { /* --------- Company Logo --------- */
 }
 
 
-
-.site-header nav { /* --------- Header Navigation --------- */
+// HEADER NAVIGATION //
+.site-header nav {
 	width: 36.5em;
 	line-height: 0.75;
 	text-align: center;
@@ -174,8 +175,8 @@ body.single-project .page-item-21 a, .current_page_ancestor.page-item-21 a, body
 }
 
 
-
-h3#menu-toggle { /* --------- Toggle Menu Button --------- */
+// TOGGLE MENU BUTTON //
+h3#menu-toggle {
 	color: $nav-text;
 	display: none;
 	@media screen and (max-width: $mobile-h) {

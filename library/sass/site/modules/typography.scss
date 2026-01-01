@@ -77,7 +77,8 @@ a {
 	}
 }
 
-a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button { /* --------- Primary Button --------- */
+// PRIMARY BUTTON //
+a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button {
 	width:100%;
 	background: $green;
 	color: white;
@@ -98,7 +99,8 @@ a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button { /* --------
 	}
 }
 
-a.secondary-btn, .sidebar-mc-form .button2 { /* --------- Secondary Button --------- */
+// SECONDARY BUTTON //
+a.secondary-btn, .sidebar-mc-form .button2 {
 	background-color: $gray-light-alpha;
 	background: linear-gradient( to bottom, $gray-light-alpha 0.05, $gray-dark-alpha 1 );
 	color: lighten($text, 20);

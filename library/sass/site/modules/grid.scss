@@ -8,7 +8,8 @@
 
 $base: 1.3125em; /* 21px baseline grid */
 
-$font8: 0.5em;  /* --------- Font Sizes in EMs --------- */
+// FONT SIZES IN EMS //
+$font8: 0.5em;
 $font10: 0.625em;
 $font11: 0.6875em;
 $font12: 0.75em;
@@ -18,7 +19,8 @@ $font16: 1em;
 $font18: 1.125em;
 $font20: 1.25em;
 
-$text: #222;  /* --------- Colors --------- */
+// COLORS //
+$text: #222;
 $green: #2d4207;
 $yellow: #fc0;
 $orange: #ed3c24;
@@ -42,8 +44,8 @@ $linkedin-blue: #007bb6;
 $corner: 0.25em; /* Rounded Box Radius */
 $line : 4px solid $tan; /* horizonital ruler */
 
-
-$mobile-v: 320px; /* Media Query Break Points */
+// MEDIA QUERY BREAK POINTS //
+$mobile-v: 320px;
 $mobile-m: 455px;
 $mobile-h: 590px;
 $tablet-v: 591px;
@@ -123,13 +125,13 @@ $television: 1200px;
 
 
 
-/* --------- Floats --------- */
+// FLOATS //
 .fl { float: left; }
 .fr { float: right; }
 
 
 
-/* --------- Global Star Selectors --------- */
+// GLOBAL STAR SELECTORS //
 * {
 	background-repeat: no-repeat;
 	box-sizing: border-box; 
@@ -170,7 +172,8 @@ main {
 }
 
 
-.header-wrap { /* --------- Background Wrap Images --------- */	
+// BACKGROUND WRAP IMAGES //
+.header-wrap { 
 	background: #100202; /* Old browsers */
 	background: linear-gradient(to bottom,  #100202 20%,#4f0909 100%); /* W3C */
 	padding-top: $base;
@@ -194,8 +197,8 @@ main {
 	padding-top: $base;
 }
 
-
-.article-wrap:before { /* --------- Header & Footer Psuedo Dividers --------- */
+// HEADER & FOOTER PSUDEO DIVIDERS //
+.article-wrap:before {
 	content: '';
 	width: 100%;
 	height: 10px;
@@ -219,13 +222,14 @@ main {
 }
 
 
-header.main { /* --------- Header --------- */
+// HEADER //
+header.main { 
 	width: 100%;
 	margin-bottom: $base;
 }
 
-
-.content, .subcontent, .blog-content { /* --------- Body Articles --------- */
+// BODY ARTICLES //
+.content, .subcontent, .blog-content {
 	margin-bottom: calc($base*2);
 	display: block;
 	position: relative;
@@ -266,8 +270,8 @@ header.main { /* --------- Header --------- */
 	}
 }
 
-
-aside.services { /* --------- Sidebar Services --------- */
+// SIDEBAR SERVICES //
+aside.services {
 	width: 100%;
 	padding-top: $base;
 	display: block;
@@ -300,8 +304,8 @@ aside.services { /* --------- Sidebar Services --------- */
 	}
 }
 
-
-.site-footer { /* --------- Footer --------- */
+// FOOTER //
+.site-footer {
 	width: 100%;
 	@include square-font;
 	color: $tan;
@@ -318,7 +322,7 @@ aside.services { /* --------- Sidebar Services --------- */
 }
 
 
-/* --------- Max Width --------- */
+// MAX WIDTH //
 .site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap {
 	padding-left: 0;
 	padding-right: 0;

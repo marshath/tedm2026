@@ -6,7 +6,8 @@
 /* Footer */
 /* -------------------------- */
 
-section.footer-company-info { /* --------- Contact Info Footer --------- */
+// CONTACT INFO FOOTER //
+section.footer-company-info {
 	width: 20%;
 	margin-right: 2%;
 	margin-bottom: $base;
@@ -50,8 +51,8 @@ section.footer-company-info { /* --------- Contact Info Footer --------- */
 }
 
 
-
-section.footer-navigation { /* --------- Navigation Footer --------- */
+// NAVIGATION FOOTER //
+section.footer-navigation { 
 	width: 53%;
 	margin-right: 2%;
 	@media screen and (max-width: $mobile-h) {
@@ -136,8 +137,8 @@ section.footer-navigation { /* --------- Navigation Footer --------- */
 	}
 }
 
-
-section.footer-social-links { /* --------- Social Footer --------- */
+// SOCIAL FOOTER //
+section.footer-social-links {
 	width: 23%;					// set max width for desktop
 	margin-top: calc($base/2);		// push down to vertially center
 	text-align: center;
