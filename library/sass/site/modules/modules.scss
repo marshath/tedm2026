@@ -242,7 +242,7 @@ h3.large {
 			z-index: -1;			// set behind li
 			border-radius: 1.25em;		// match border-radius to figure
 			transition: all 0.2s ease;
-			box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 1px 1px 2px rgba(0,0,0,0.1);	// inset white shadow, black shadow, glass reflection effect
+			box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
 		}
 		&:hover {
 			transform: scale(101.5%);
@@ -269,9 +269,11 @@ h3.large {
 				h3 {
 					//background: $orange-light;
 					color: #4B0007;
+					text-shadow: 0 0 5px white;
 				}
-				.h3-project-bg {
-					left:0%;
+				.h3-project-bg-top {
+					//left:0%;
+					//background: $orange-light;
 					opacity: 1;
 				}
 				p {
@@ -289,28 +291,36 @@ h3.large {
 		@include transition(all, 0.15s, ease-out);
 	}
 	.h3-project {
-		position: relative; 		//set parent positioning for h3 & .h3-project-bg
+		position: relative; 		//set parent positioning for .h3-project-bg-top & .h3-project-bg-bottom
 		overflow: hidden;			// hide .h3-project-bg
 		h3 {
-			z-index: 3;
-			position: relative;
-			height: auto;
-			background: rgba(0,0,0,0.1);
+			//z-index: 3;
+			//position: relative;
+			//height: 2em;
+			//background: rgba(200, 200, 200, 0.6);
+			border-top: 2px solid rgba(255,255,255,0.35);			// transparent white top embossing
+			border-bottom: 2px solid rgba(0,0,0,0.05);			// transparent black bottom embossing
 			padding: 0.5em 1em 0.75em 0.75em;
 			transition: all 0.2s ease;
-			z-index: 2;
+			z-index: 2;												// place above .h3-project-bg-top & .h3-project-bg-bottom
 		}
-		.h3-project-bg {
-			position: absolute;		// set child positioning to .h3-project
-			top: 0;
-			left: -100%;
-			width: 200%;
-			height: 80%;
-			background: linear-gradient( -50deg, white 0%, $orange-light 99%, $orange 100%);
-			z-index: -1;
-			opacity: 0.3;
-			transition: all 0.4s ease;
-		}
+	}
+	.h3-project-bg-top, .h3-project-bg-bottom {
+		position: absolute;		// set child positioning to .h3-project
+		top: 0%;
+		left: 0%;
+		width: 100%;			// set box width
+		height: 80%;			// set box height
+		transition: all 0.4s ease;
+	}
+	.h3-project-bg-top {
+		background: linear-gradient( -140deg, $orange-light 0%, $orange 100%);	//E0DBCE
+		z-index: -1;				// place behind h3
+		opacity: 0;					// hide box until hover
+	}
+	.h3-project-bg-bottom {
+		background: linear-gradient( -140deg, #d8d1be 0%, #c8c1ae 100%);	//E0DBCE
+		z-index: -2;				// place behind h3 & .h3-project-bg-top
 	}
 	@media screen and (min-width: $tablet-v) {
 		flex-flow: row wrap;
