@@ -134,16 +134,16 @@
 }
 
 // CONTACT //
-.contact { 
-	background: $contact-light; /* Old browsers */
-	background: linear-gradient(to bottom, $contact-light 0%, $contact-dark 100%); /* W3C */
+/* .contact { 
+	background: $contact-light; 
+	background: linear-gradient(to bottom, $contact-light 0%, $contact-dark 100%);
 	padding: $base;
 	border-radius: 0.25em;
 	box-shadow: inset 2px 2px 2px lighten($contact-light, 10%), inset -2px -2px 2px darken($contact-dark,10%), 0 3px 6px rgba(0,0,0,0.3);
-}
+} */
 
 
-// SOCIAL LINKS //
+// SIDEBAR SOCIAL LINKS //
 .page-id-239 ul.social, .sidebar-social-links { 
 	ul {
 		display: flex;

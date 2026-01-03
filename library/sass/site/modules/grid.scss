@@ -174,8 +174,9 @@ main {
 
 // BACKGROUND WRAP IMAGES //
 .header-wrap { 
-	background: #100202; /* Old browsers */
-	background: linear-gradient(to bottom,  #100202 20%,#4f0909 100%); /* W3C */
+	//background: #100202; // Old browsers //
+	//background: linear-gradient(to bottom,  #100202 20%,#4f0909 100%);
+	background: radial-gradient( ellipse at 41% 100%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);	// gradient behind hero graphic
 	padding-top: $base;
 }
 
@@ -192,8 +193,9 @@ main {
 }
 
 .footer-wrap {
-	background: #100202; /* Old browsers */
-	background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
+	background: #530f62; // Old browsers //
+//	background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
+	background: linear-gradient( to top,  #530f62 0%, #0f0049 85%, #09002c 100%);	// gradient behind hero graphic
 	padding-top: $base;
 }
 
