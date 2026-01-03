@@ -71,7 +71,7 @@ h1.logo {
 	li {
 		width: 23%;
 		//height: calc($base*4.5);		
-		list-style: none;
+		list-style: none;								// remove default li formatting
 		margin: calc($base/2) 1% 0 0;					// spacing top and between list items
 		display: inline-block;
 		//border: 1px solid blue;
@@ -158,7 +158,7 @@ h1.logo {
 		}
 		// mobile menu javascript style toggle - hide menu //
 		&#nav-menu {
-			display: none;
+			display: none;				// hide toggle
 		}
 	}
 	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
@@ -175,11 +175,15 @@ h1.logo {
 	}
 }
 
+// ACTIVE NAV HIGHLIGHT SUBPAGES //
+// Portfolio, Jam, Movie //
+// Located here to override media queries in all circumstances //
 body.single-project .page-item-21 a, .current_page_ancestor.page-item-21 a, body.single-post .page-item-1029 a {
-	border: 1px solid darken(#ed3c24,30);
-	color: white;
+	color: white;						// override gray
+	background: linear-gradient( 45deg, #88006D 0%, #390338 100%);			// purple gradient background
+	box-shadow: inset -2px 2px 3px $orange-light, inset 2px -2px 3px rgba(0,0,0,0.5);	// embossed effect
 	&:before {
-		color: $yellow;
+		color: white;		// icon white
 	}
 }
 
