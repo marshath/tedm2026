@@ -41,19 +41,19 @@ get_header(); ?>
 			<?php while ( $projloop->have_posts() ) : $projloop->the_post(); ?>
 			
 				<li>
-				
 					<a href="<?php the_permalink(); ?>">
 						<figure>
 							<?php the_post_thumbnail( 'project-thumb-300' ); ?>
-							<div class="figslider">View project &raquo;</div>
 						</figure>
-						<h3><?php the_title(); ?></h3>
+						<div class="h3-project">
+							<h3><?php the_title(); ?></h3>
+							<span class="h3-project-bg"></span>
+						</div>
 					</a>
 					<?php the_tags( '<p class="tags"><span class="tags-title screen-reader-text">' . __( 'Tags:', 'bonestheme' ) . '</span> ', '<span class="screen-reader-text">,</span> ', '</p>' ); ?>
 					<?php // the_excerpt() ?>
 					
 					<?php //edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-
 				</li>
 				
 			<?php endwhile; ?>
