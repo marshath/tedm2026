@@ -226,7 +226,7 @@ h3.large {
 	transition: all 0.2s ease;
 	li {
 		flex-basis: 100%;		// set full width
-		margin-bottom: calc($base*1.5);		// vertical space between li
+		margin-bottom: calc($base*2);		// vertical space between li
 		position: relative;			// set parent positioning for li::before
 		z-index: 2;					// set above for z-index positioning of li::before
 		border-radius: 1.25em;		// matches border-radius li figure
