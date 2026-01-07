@@ -74,15 +74,13 @@ h1.logo {
 		list-style: none;								// remove default li formatting
 		margin: calc($base/2) 1% 0 0;					// spacing top and between list items
 		display: inline-block;
-		//border: 1px solid blue;
 		&:last-child {
 			margin-right: 0;
 		}
 		&.current_page_item a {							// active page highlight
-			//border: 1px solid darken(#ed3c24,30);
 			color: white;						// override gray
-			background: linear-gradient( 45deg, #88006D 0%, #390338 100%);			// purple gradient background
-			box-shadow: inset -2px 2px 3px $orange-light, inset 2px -2px 3px rgba(0,0,0,0.5);	// embossed effect
+			//background: linear-gradient( 45deg, #88006D 0%, #390338 100%);			// purple gradient background
+			//box-shadow: inset -1px 1px 3px $orange-light, inset 2px -2px 3px rgba(0,0,0,0.5);	// embossed effect
 		}
 	}
 	a {
@@ -98,7 +96,6 @@ h1.logo {
 		display: block;
 		@include radius(4em);
 		@include transition(background, 1s, ease-out);
-		//border: 1px solid red;
 		&:hover {
 			background-color: rgba(255,255,255,0.1);
 			color: white;
@@ -107,7 +104,7 @@ h1.logo {
 	}
 	
 	// NAV ICONS //
-	.page-item-21 a:before, .page-item-1110 a:before, .page-item-1108 a:before, .page-item-19 a:before {
+.page-item-21 a:before, .page-item-1110 a:before, .page-item-1108 a:before, .page-item-19 a:before {
 		font-family: 'ted-icons';
 		speak: none;
 		color: $nav-text;				// gray
@@ -133,7 +130,7 @@ h1.logo {
 		content: '\e903';				// contact
 	} icon
 	.page-item-21 a:hover::before, .page-item-1110 a:hover::before, .page-item-1108 a:hover::before, .page-item-19 a:hover::before, .page-item-21.current_page_item a:before, .page-item-1110.current_page_item a:before, .page-item-1108.current_page_item a:before, .page-item-19.current_page_item a:before {
-		color: white;					// icon color on :hover and .current_page_item
+		color: $yellow;					// icon color on :hover and .current_page_item
 	}
 	@media screen and (max-width: $mobile-h) {
 		border-top: 1px solid rgba(200,200,200,0.4);				// top separator on mobile menu

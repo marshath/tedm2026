@@ -50,6 +50,8 @@ get_header(); ?>
 							<span class="h3-project-bg-top"></span>
 							<span class="h3-project-bg-bottom"></span>
 						</div>
+						<p>Amazing new content that will fill this space for future viewing.</p>
+						<hr>
 					</a>
 					<?php the_tags( '<p class="tags"><span class="tags-title screen-reader-text">' . __( 'Tags:', 'bonestheme' ) . '</span> ', '<span class="screen-reader-text">,</span> ', '</p>' ); ?>
 					<?php // the_excerpt() ?>

@@ -33,7 +33,7 @@
 			<ul id="nav-menu" class="menu" role="navigation">
 				<?php if (is_archive()) { // project archive navigation ?>
 					<li class="page_item page-item-21 current_page_item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/" aria-current="page">Portfolio</a></li>
-					<li class="page_item page-item-1110"><a href="<?php echo esc_url( home_url( '/about-me/' ) ); ?>">About Me</a></li>
+					<li class="page_item page-item-1110"><a href="<?php echo esc_url( home_url( '/about-me/' ) ); ?>">About</a></li>
 					<li class="page_item page-item-1108"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
 					<li class="page_item page-item-19"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a></li> <?php
 				} else { // all other navigation
