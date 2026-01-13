@@ -31,20 +31,42 @@
 		<nav id="site-navigation" class="main-navigation">
 			<h3 id="menu-toggle"><a href="#"><span class="menu-icon" aria-hidden="true" data-icon="&#xe908;"></span> <span class="menu-text">Menu</span></a></h3>
 			<ul id="nav-menu" class="menu" role="navigation">
-				<?php if (is_archive()) { // project archive navigation ?>
-					<li class="page_item page-item-21 current_page_item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>/" aria-current="page">Portfolio</a></li>
-					<li class="page_item page-item-1110"><a href="<?php echo esc_url( home_url( '/about-me/' ) ); ?>">About</a></li>
-					<li class="page_item page-item-1108"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a></li>
-					<li class="page_item page-item-19"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Contact</a></li> <?php
-				} else { // all other navigation
-					wp_list_pages( array (
-					'post_type' => 'page', //ensure only standard pages are listed
-					'title_li' => '',
-					'sort_column' => 'menu_order',
-					'depth' => 1,
-					'exclude' => 2, // exclude home page
-					));
-				} ?>
+				<li class="page_item page-item-21 <?php if (is_page('portfolio')) { echo 'current_page_item'; }; ?>">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/" aria-current="page">
+						<svg id="portfolio" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<polygon id="left" points="16 3.27 11.14 8.14 19 16 11.14 23.86 16 28.73 28.73 16 16 3.27"/>
+							<rect id="right" x="4.42" y="13.22" width="5.55" height="5.55" transform="translate(13.42 -.4) rotate(45)"/>
+						</svg>
+						Portfolio
+					</a>
+				</li>
+				<li class="page_item page-item-1110 <?php if (is_page('about-me')) { echo 'current_page_item'; }; ?>">
+					<a href="<?php echo esc_url( home_url( '/about-me/' ) ); ?>">
+						<svg id="about" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<circle id="top" cx="16" cy="9.5" r="6.5"/>
+							<polygon id="bottom" points="28.73 19 3.27 19 16 29 28.73 19"/>
+						</svg>
+						About
+					</a>
+				</li>
+				<li class="page_item page-item-1108 <?php if (is_page('blog')) { echo 'current_page_item'; }; ?>">
+					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">
+						<svg id="blog" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<polygon id="left" points="26 10.3 26 22.5 6.65 22.5 9.55 25.5 29 25.5 29 13.41 26 10.3"/>
+							<rect id="right" x="3" y="6.5" width="19" height="12"/>
+						</svg>
+						Blog
+					</a>
+				</li>
+				<li class="page_item page-item-19 <?php if (is_page('contact')) { echo 'current_page_item'; }; ?>">
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+						<svg id="contact" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<polygon id="top" points="29 7 3 7 16 16 29 7"/>
+							<polygon id="bottom" points="3 25 29 25 16 16 3 25"/>
+						</svg>
+						Contact
+					</a>
+				</li>
 			</ul>
 		</nav><?php // ------- #site-navigation ------- ?>
 	</header><?php // ------- #masthead ------- ?>

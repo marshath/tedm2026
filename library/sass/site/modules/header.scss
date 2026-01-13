@@ -81,6 +81,17 @@ h1.logo {
 			color: white;						// override gray
 			//background: linear-gradient( 45deg, #88006D 0%, #390338 100%);			// purple gradient background
 			//box-shadow: inset -1px 1px 3px $orange-light, inset 2px -2px 3px rgba(0,0,0,0.5);	// embossed effect
+			svg {
+				fill: $yellow;					// icon color on .current_page_item
+			}
+		}
+		// nav icon formatting //
+		svg {
+			height: 1.6rem;
+			display: block; 						// force text down
+			margin: 0 auto 0.25em auto; 			// center icon, push text down
+			fill: $nav-text;						// white
+			@include transition(background, 1s, ease-out);
 		}
 	}
 	a {
@@ -100,38 +111,45 @@ h1.logo {
 			background-color: rgba(255,255,255,0.1);
 			color: white;
 			@include transition(background, 0s, linear);
+			svg {
+				fill: $yellow;					// icon color on :hover
+				#bottom {
+					animation: bounce-btm 0.2s linear ;
+				}
+				#top {
+					animation: bounce-top 0.2s linear;
+				}
+				#left {
+					animation: bounce-left 0.2s linear ;
+				}
+				#right {
+					animation: bounce-right 0.2s linear ;
+				}
+			}
 		}
 	}
 	
-	// NAV ICONS //
-.page-item-21 a:before, .page-item-1110 a:before, .page-item-1108 a:before, .page-item-19 a:before {
-		font-family: 'ted-icons';
-		speak: none;
-		color: $nav-text;				// gray
-		font-style: normal;
-		font-size: 1.6rem;
-		font-weight: normal;
-		line-height: 1;
-		@include font-smoothing(antialiased);	// improves icon rendering
-		text-shadow: 0 2px 0 black;
-		display: block;
-		padding-bottom: 4px;			// spacing between icon and text 
+	@keyframes bounce-top {
+		from { transform: translateY(0px); }
+		50% { transform: translateY(-1.25px); }
+		to { transform: translateY(0px); }
 	}
-	.page-item-21 a:before {
-		content: '\e90f';				// portfolio icon
+	@keyframes bounce-btm {
+		from { transform: translateY(0px);  }
+		50% { transform: translateY(1.25px); }
+		to { transform: translateY(0px); }
 	}
-	.page-item-1110 a:before {
-		content: '\e900';				// about icon
+	@keyframes bounce-left {
+		from { transform: translateX(0px); }
+		50% { transform: translateX(1.25px);}
+		to { transform: translateX(0px); }
 	}
-	.page-item-1108 a:before {
-		content: '\e90d';				// blog icon
+	@keyframes bounce-right {
+		from { transform: translateX(0px); }
+		50% { transform: translateX(-1.25px); }
+		to { transform: translateX(0px); }
 	}
-	.page-item-19 a:before {
-		content: '\e903';				// contact
-	} icon
-	.page-item-21 a:hover::before, .page-item-1110 a:hover::before, .page-item-1108 a:hover::before, .page-item-19 a:hover::before, .page-item-21.current_page_item a:before, .page-item-1110.current_page_item a:before, .page-item-1108.current_page_item a:before, .page-item-19.current_page_item a:before {
-		color: $yellow;					// icon color on :hover and .current_page_item
-	}
+	
 	@media screen and (max-width: $mobile-h) {
 		border-top: 1px solid rgba(200,200,200,0.4);				// top separator on mobile menu
 		border-bottom: 1px solid rgba(200,200,200,0.4);			// bottom separator on mobile menu
@@ -165,10 +183,6 @@ h1.logo {
 			font-size: 0.75rem;					// reduce font size
 			//text-shadow: 0 2px 0 black;
 		}
-		.page-item-21 a:before, .page-item-1110 a:before, .page-item-1108 a:before, .page-item-19 a:before {			
-			font-size: 1.4rem;		// reduce icon size for tablet, override 1.6rem
-			display: block;			// display vertically, override inline
-		}
 	}
 }
 
@@ -177,10 +191,8 @@ h1.logo {
 // Located here to override media queries in all circumstances //
 body.single-project .page-item-21 a, .current_page_ancestor.page-item-21 a, body.single-post .page-item-1029 a {
 	color: white;						// override gray
-	background: linear-gradient( 45deg, #88006D 0%, #390338 100%);			// purple gradient background
-	box-shadow: inset -2px 2px 3px $orange-light, inset 2px -2px 3px rgba(0,0,0,0.5);	// embossed effect
-	&:before {
-		color: white;		// icon white
+	svg {
+		fill: $yellow;					// icon color on .current_page_item
 	}
 }
 

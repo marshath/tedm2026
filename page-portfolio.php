@@ -31,6 +31,28 @@ get_header(); ?>
 	<article class="content clearfix">
 		<?php wp_reset_query(); ?>
 		
+		<div class="filter-tag"><span class="filter-title">Filter:</span> 
+		<?php $tags = get_tags(array(
+			'hide_empty' => false // Set to true to only show tags used in posts
+		));
+		
+		if ($tags) {
+			echo '<ul>';
+			foreach ($tags as $tag) {
+				$tag_link = get_tag_link($tag->term_id);
+				if ($tag_link) {
+					printf(
+						'<li><a href="%s" title="%s">%s</a></li>',
+						esc_url($tag_link),
+						esc_attr($tag->name),
+						esc_html($tag->name)
+					);
+				}
+			}
+			echo '</ul>';
+		} ?>
+		</div> <?php // filter-tag ?>
+		
 		<ul class="project">
 			<?php $my3post = array( 
 				'post_type' => 'project',

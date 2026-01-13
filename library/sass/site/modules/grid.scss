@@ -158,7 +158,8 @@ main {
 	min-height: 65vh;			// force a minimum page height for the paper texture
 }
 
-.site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap { /* --------- Background Wraps --------- */
+// Background wraps //
+.site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap {
 	width: 100%;
 	padding: 0;
 	display: block;
