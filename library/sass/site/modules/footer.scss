@@ -1,49 +1,48 @@
 /* Footer Styles */
 
 
-
 /* -------------------------- */
 /* Footer */
 /* -------------------------- */
 
 // CONTACT INFO FOOTER //
 section.footer-company-info {
-	width: 20%;
-	margin-right: 2%;
-	margin-bottom: $base;
-	@media screen and (max-width: $mobile-h) {
-		width: 100%;
+	width: 100%;						// full width
+	margin-right: 2%;					// spacing nav right
+	margin-bottom: ($base*2);			// 1.3125em * 2 = 2.625em, spacing for nav
+	@media screen and (min-width: $tablet-v) {	// 591px screen size and up
+		width: 48%;						// override 100%, 48% company social 2%, 50% nav = 100%
+		margin-bottom: $base;			// 1.3125em, spacing for copyright
 	}
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
-		width: 48%;
+	@media screen and (min-width: $laptop) {	// 901px screen size and up
+		width: 20%;						// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
 	}
 }
-
 .footer-company-info {
 	li {
-		width: 100%;
-		font-size: $font14;
-		display: block;
-		float: left;
-		list-style: none;
+		width: 100%;					// full width
+		font-size: $font14;				// 0.875em
+		line-height: 1.5em;
+		display: block;					// column, force line break
+		float: left;					// position left
+		list-style: none;				// remove default list-style
 	}
 	a {
-		color: $tan;
+		color: $tan;					// #c7c2b7
 	}
 	.name {
-		font-size: $font14;
+		font-size: $font14;				// 0.875em
 		text-transform: uppercase;
-		padding-bottom: 1%;
-		border-bottom: 1px solid darken($tan,40%);
+		padding-bottom: 1%;				// space border-bottom from name
+		border-bottom: 1px solid rgba(255,255,255,0.4);	// align with section.footer-social-links h4 styling
 	}
 }
-
 .ftr-contact a {
-	text-decoration: none;
+	text-decoration: none;				// remove default list style
 	&:hover {
-		color: white;
+		color: white;					// white
 		.email-icon {
-			color: $yellow;
+			color: $yellow;				// #fc0
 		}
 	}
 }
@@ -51,85 +50,77 @@ section.footer-company-info {
 
 // FOOTER NAVIGATION //
 section.footer-navigation { 
-	width: 53%;
-	margin-right: 2%;
-	@media screen and (max-width: $mobile-h) {
-		width: 100%;
-		margin-bottom: $base;
+	width: 100%;						// full width
+	margin-bottom: $base;				// 1.3125em, spacing, move nav down
+	@media screen and (min-width: $tablet-v) {	// 591px screen size and up
+		width: 48%;						// override 100%, 48% company social 2%, 50% nav = 100%
+		float: right;					// position right
 	}
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
-		width: 48%;
-		margin-right: 0;
-		margin-bottom: $base;
-		float: right;
+	@media screen and (min-width: $laptop) {	// 901px screen size and up
+		width: 53%;						// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
+		margin-right: 2%;				// spacing for social links
+		float: left;					// override right, position center
 	}
 }
 
 .footer-navigation {
 	li {
-		width: 23%;
+		width: 100%;					// full width
 		text-align: center;				// align text center
-		margin: 0 1%;					// equal side spacing between menu items
-		display: block;
-		float: left;
+		margin: 0;						// no margin
+		display: block;					// force line break
+		float: left;					// position left ordering
 		list-style: none;				// remove default li formatting
 	}
 	a {
-		width: 100%;
-		height: calc($base*4);
+		width: 100%;						// full width
+		height: calc($base*3);				// 1.3125em * 3 = 3.9375em
 		background-color: rgba(255,255,255,0.07);			// transparent white background
-		color: $tan;
+		color: $tan;						// #c7c2b7
 		text-decoration: none;				// remove hyperlink underline
 		text-transform: uppercase;
 		text-shadow: 0 1px 1px black;
 		line-height: 1em;					// reduce vertical height between icon and text
-		margin: 0 0 $base 0;				// move copyright down
+		margin: 0 0 $base 0;				// 0 0 1.3125em 0, move social links down
 		padding: 21px 0;					// push icon & text to center
 		display: inline-block;				// required to maintain box model structure
 		// border: 1px solid darken($tan,40%);
-		@include radius(4em);				// round buttons
+		@include radius($corner);				// 0.25em round buttons
 		@include transition(background, 1s, ease-out);		// slow fade after :hover
 		//box-shadow: inset -1px 1px 2px rgba(255,255,255, 0.1), -1px 1px 2px rgba(0,0,0,0.5);	// embossed effect
 		.nav-icon {
 			font-size: 1.4em;				// enlarge icon
-			display: block;					// stack icon & text vertically
+			margin-right: 4px;				// spacing right from text
+			display: inline-block;			// icon & text inline
 		}
 		.nav-text {
-			font-size: $font14;
+			font-size: $font16;				// 1em
+			vertical-align: super;			// x-height positioning
 		}
 		&:hover {
-			background-color: rgba(255,255,255,0.12);				// white highlight
+			background-color: rgba(255,255,255,0.12);			// transparent white highlight
 			@include transition(background, 0s, ease-out);		// instant fade on :hover
 			.nav-icon {
-				color: $yellow;
+				color: $yellow;				// #fc0
 			}
 			.nav-text {
-				color: white;
+				color: white;				// white
 			}
 		}
 	}
-	@media screen and (max-width: $tablet-h) {
+	@media screen and (min-width: $laptop) {	// 901px screen size and up
 		li {
-			width: 100%;
-			text-align: center;
-			margin: 0;
-			display: block;
-			float: left;
-			list-style: none;
+			width: 23%;						// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
+			margin: 0 1%;					// equal side spacing between menu items
 		}
 		a {
-			width: 100%;
-			height: calc($base*3);
-			padding: 21px 0;
-			display: inline-block;
-			//border: 1px solid darken($tan,40%);
-			@include radius($corner);
+			height: calc($base*4);			// 1.3125em *4 = 5.25em
+			@include radius(4em);			// border-radius
 			.nav-icon {
-				display: inline-block;
-				margin-right: 4px;
+				display: block; 			// stack icon & text vertically
 			}
 			.nav-text {
-				vertical-align: super;
+				vertical-align: normal;		 // override super, x-height positioning
 			}
 		}
 	}
@@ -137,52 +128,55 @@ section.footer-navigation {
 
 // SOCIAL FOOTER //
 section.footer-social-links {
-	width: 23%;					// set max width for desktop
-	margin-top: calc($base/2);		// push down to vertially center
-	text-align: center;
+	width: 70%;								// set max width 70% + 15% + 15% = 100%
+	margin-top: calc($base/2);				// 1.3125em *2 = 2.625em, move down to vertically center
+	margin-left: 15%;						// align center (30%/2=15)
+	text-align: center;						// center text
 	h4 {
-		font-size: $font14;
+		font-size: $font14;					// 0.875em
 		text-transform: uppercase;
-		padding-bottom: 1%;				// push line below down from text
+		padding-bottom: 1%;					// spacing from border-bottom
 	}
-	@media screen and (max-width: $mobile-h) {
-		width: 70%;						// set max width 70%
-		margin-left: 15%;				// align center (30%/2=15)
-		//margin-bottom: $base;
-	}
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
-		text-align: left;				// align icons & h4 text left on tablet
-		width: 48%;						// set max width 48% + 2% spacing
+	@media screen and (min-width: $tablet-v) {	// 591px screen size and up
+		text-align: left;					// override center, align icons & h4 text left on tablet
+		width: 48%;							// override 70%, set max width 48% + 2% = 50% spacing
+		margin-left: 0;						// override 15%
 		h4 {
-			border-bottom: 1px solid darken($tan,40%);
+			border-bottom: 1px solid rgba(255,255,255,0.4);		// align with .footer-company-info .name styling
+		}
+	}
+	@media screen and (min-width: $laptop) {	// 901px screen size and up
+		width: 23%;							// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100
+		text-align: center;					// override left, center text
+		h4 {
+			border: none;					// remove border-bottom
 		}
 	}
 }
 
-
 .footer-social-links {
 	ul {
-		display: flex;
-		flex-flow: row nowrap;
-		margin: auto;
-		width: 100%;
+		display: flex;						// social link layout grid
+		flex-flow: row nowrap;				// horizontal grid layout
+		margin: auto;						// center grid
+		width: 100%;						// set full width
 	}
 	li {
-		flex-basis: 20%;
-		list-style: none;
+		flex-basis: 20%;					// 20% * 5 = 100%
+		list-style: none;					// remove default list style
 	}
 	.social-text {
-		display: none;
+		display: none;						// hide link text
 	}
 	a {
-		opacity: 0.5;
-		color: $tan;
+		opacity: 0.5;						// half opacity icons
+		color: $tan;						// #c7c2b7
 		font-size: 2rem;
-		margin-bottom: 10px;
-		display: block;
+		margin-bottom: calc($base/2);		// 1.3125em /2 = .65625em, move copyright down
+		display: block;						// force full width for clicking link
 		&:hover {
-			opacity: 1;
-			color: $yellow;
+			opacity: 1;						// override 0.5, full opacity
+			color: $yellow;					// #fc0
 		}
 	}
 }
@@ -193,9 +187,9 @@ section.footer-social-links {
 /* -------------------------- */
 
 .copyright {
-	width: 100%;
-	font-size: $font12;
-	text-align: center;
-	padding-top: $base;
-	clear: both;
+	width: 100%;							// full width
+	font-size: $font12;						// 0.75em
+	text-align: center;						// center text
+	padding-top: $base;						// 1.3125em
+	clear: both;							// force below contact info, nav, social links
 }

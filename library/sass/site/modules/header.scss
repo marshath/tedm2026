@@ -114,16 +114,16 @@ h1.logo {
 			svg {
 				fill: $yellow;					// icon color on :hover
 				#bottom {
-					animation: bounce-btm 0.2s linear ;
+					animation: bounce-btm 0.25s 0.1s ease-in-out; // animation duration delay transition
 				}
 				#top {
-					animation: bounce-top 0.2s linear;
+					animation: bounce-top 0.25s 0.1s ease-in-out; // animation duration delay transition
 				}
 				#left {
-					animation: bounce-left 0.2s linear ;
+					animation: bounce-left 0.25s 0.1s ease-in-out; // animation duration delay transition
 				}
 				#right {
-					animation: bounce-right 0.2s linear ;
+					animation: bounce-right 0.25s 0.1s ease-in-out; // animation duration delay transition
 				}
 			}
 		}

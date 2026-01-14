@@ -1741,46 +1741,6 @@
       "oAP" : "\/library\/images\/favicon.ico",
       "oF" : 0
     },
-    "\/library\/images\/icon-nav-about.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/library\/images\/icon-nav-about.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/library\/images\/icon-nav-blog.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/library\/images\/icon-nav-blog.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/library\/images\/icon-nav-email.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/library\/images\/icon-nav-email.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/library\/images\/icon-nav-work.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/library\/images\/icon-nav-work.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/library\/images\/img-homepage-325.png" : {
       "ft" : 32768,
       "iS" : 14754,
