@@ -8,7 +8,7 @@
 .hero-splash { 
 	width: 80%;
 	min-height: 200px;
-	margin: $base auto 0;
+	margin: $base auto 0 auto;
 	display: block;
 	position: relative;
 	figcaption {
@@ -218,27 +218,12 @@ h3.large {
 	border-bottom: $line;
 }
 
-.filter-tag {
-	background: purple;
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: inline;
-	}
-	li, .filter-title {
-		display: inline;
-		padding: 1em;
-		color: white;
-		margin: 0;
-	}
-}
-
 .project {
 	display: flex;
 	flex-flow: column;
 	padding-left: 0;		// remove default list padding
 	list-style: none;		// remove bulleted list
+	margin-top: $base;		// spacing from previous section
 	transition: all 0.2s ease;
 	li {
 		flex-basis: 100%;		// set full width
