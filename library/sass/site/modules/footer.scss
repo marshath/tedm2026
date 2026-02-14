@@ -94,7 +94,7 @@ section.footer-navigation {
 			display: inline-block;			// icon & text inline
 		}
 		.nav-text {
-			font-size: $font16;				// 1em
+			font-size: $font14;				// 1em * 0.875
 			vertical-align: super;			// x-height positioning
 		}
 		&:hover {
@@ -121,6 +121,7 @@ section.footer-navigation {
 			}
 			.nav-text {
 				vertical-align: normal;		 // override super, x-height positioning
+				font-size: 0.875em;			// override 1em, 0.8em * 16px = 12.8px
 			}
 		}
 	}

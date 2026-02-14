@@ -149,10 +149,15 @@ main {
 /* BACKGROUND WRAP IMAGES */
 /* -------------------------- */
 .header-wrap { 
-	//background: #100202; 						// Old browsers
-	//background: linear-gradient(to bottom,  #100202 20%,#4f0909 100%);
-	background: radial-gradient( ellipse at 41% 100%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);	// gradient behind hero graphic
+	background: #0f0049; 						// Old browsers
+	background: linear-gradient( to top, #420c56 0%,#0f0049 25%, #09002c 50%, #000000 90%);	// gradient behind hero graphic
 	padding-top: $base;							// 1.3125em
+}
+.home .header-wrap {
+	background: radial-gradient( circle at 46% 90%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
+	@media screen and (min-width: $tablet-v) {
+		background: radial-gradient( ellipse at 41% 100%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
+	}
 }
 
 .article-wrap {

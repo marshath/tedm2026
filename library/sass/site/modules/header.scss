@@ -64,55 +64,81 @@ h1.logo {
 	display: block;
 }
 
+
+// NAV ICON ANIMATIONS
+@keyframes bounce-top {
+	from { transform: translateY(0px); }
+	50% { transform: translateY(-1.25px); }
+	to { transform: translateY(0px); }
+}
+@keyframes bounce-btm {
+	from { transform: translateY(0px);  }
+	50% { transform: translateY(1.25px); }
+	to { transform: translateY(0px); }
+}
+@keyframes bounce-left {
+	from { transform: translateX(0px); }
+	50% { transform: translateX(1.25px);}
+	to { transform: translateX(0px); }
+}
+@keyframes bounce-right {
+	from { transform: translateX(0px); }
+	50% { transform: translateX(-1.25px); }
+	to { transform: translateX(0px); }
+}
+
 // NAV FORMATTING //
-.menu {
-	padding: 0;			// remove default ul padding
-	margin: 0;			// remove default ul margin
+.menu {															// ul formatting
+	border-top: 1px solid rgba(200,200,200,0.4);				// top separator on mobile menu
+	border-bottom: 1px solid rgba(200,200,200,0.4);			// bottom separator on mobile menu
+	padding: 0;													// remove default ul padding
+	margin: 0;													// remove default ul margin
 	li {
-		width: 23%;
-		//height: calc($base*4.5);		
-		list-style: none;								// remove default li formatting
-		margin: calc($base/2) 1% 0 0;					// spacing top and between list items
+		height: calc($base*2.5);								// 1.3125em * 2.5 = 3.28125em, reduce menu item height on mobile, match a:link
+		width: 100%;											// set full width
+		margin: 0.5% 0 0 0;										// vertical spacing for top & bottom border
 		display: inline-block;
-		&:last-child {
-			margin-right: 0;
+		&:first-child {
+			margin: 2% 0 0 0;									// first child vertical spacing from ul border-top
 		}
-		&.current_page_item a {							// active page highlight
-			color: white;						// override gray
-			//background: linear-gradient( 45deg, #88006D 0%, #390338 100%);			// purple gradient background
-			//box-shadow: inset -1px 1px 3px $orange-light, inset 2px -2px 3px rgba(0,0,0,0.5);	// embossed effect
+		&.current_page_item a {									// active page highlight
+			color: white;										// override gray
 			svg {
-				fill: $yellow;					// icon color on .current_page_item
+				fill: $yellow;									// icon color on .current_page_item
 			}
 		}
 		// nav icon formatting //
 		svg {
-			height: 1.6rem;
-			display: block; 						// force text down
-			margin: 0 auto 0.25em auto; 			// center icon, push text down
-			fill: $nav-text;						// white
+			font-size: 1.3em;									// 1.3em * 16px = 20.8px
+			height: 1.6rem;										// 1.6em *16px = 25.6px
+			display: inline; 									// svg inline with text
+			padding-right: 0.5em;								// horizontal spacing between icon and text
+			margin: 0 auto 0 auto; 								// center icon, push text down
+			fill: $nav-text;									// #bdc0c3, light gray
+			vertical-align: middle;								// center icon vertically with text on mobile
 			@include transition(background, 1s, ease-out);
 		}
 	}
 	a {
 		width: 100%;
-		height: calc($base*4.5);
-		font-size: 0.875rem;
+		height: calc($base*2.5);								// 1.3125em *2.5 = 3.28125em, reduce menu item height on mobile, match li
+		font-size: 0.875rem;									// 0.875 * 16px = 14px
 		text-shadow: 0 2px 0 black;
-		color: $nav-text;				// gray
-		@include square-font;
-		text-decoration: none;			// remove hyperlink underline
+		color: $nav-text;										// #bdc0c3, light gray
+		@include square-font;									// Bree Serif, serif
+		text-decoration: none;									// remove hyperlink underline
 		text-transform: uppercase;
-		padding: calc($base*1) 1% 0;
+		padding: calc($base*0.7) 1% 0;							// reduce top padding on mobile
 		display: block;
-		@include radius(4em);
+		//@include radius(4em);									// 4em * 16px = 64px
 		@include transition(background, 1s, ease-out);
 		&:hover {
-			background-color: rgba(255,255,255,0.1);
+			//background-color: rgba(255,255,255,0.1);
+			background: linear-gradient( to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 100%);
 			color: white;
 			@include transition(background, 0s, linear);
 			svg {
-				fill: $yellow;					// icon color on :hover
+				fill: $yellow;									// icon color on :hover
 				#bottom {
 					animation: bounce-btm 0.25s 0.1s ease-in-out; // animation duration delay transition
 				}
@@ -128,60 +154,36 @@ h1.logo {
 			}
 		}
 	}
-	
-	@keyframes bounce-top {
-		from { transform: translateY(0px); }
-		50% { transform: translateY(-1.25px); }
-		to { transform: translateY(0px); }
-	}
-	@keyframes bounce-btm {
-		from { transform: translateY(0px);  }
-		50% { transform: translateY(1.25px); }
-		to { transform: translateY(0px); }
-	}
-	@keyframes bounce-left {
-		from { transform: translateX(0px); }
-		50% { transform: translateX(1.25px);}
-		to { transform: translateX(0px); }
-	}
-	@keyframes bounce-right {
-		from { transform: translateX(0px); }
-		50% { transform: translateX(-1.25px); }
-		to { transform: translateX(0px); }
-	}
-	
 	@media screen and (max-width: $mobile-h) {
-		border-top: 1px solid rgba(200,200,200,0.4);				// top separator on mobile menu
-		border-bottom: 1px solid rgba(200,200,200,0.4);			// bottom separator on mobile menu
+		// mobile menu javascript style toggle - hide menu on page load //
+		&#nav-menu {
+			display: none;									// hide mobile menu on page load
+		}
+	}
+	@media screen and (min-width: $tablet-v) {
+		border: none; 											// override 1px border top & bottom
 		li {
-			height: calc($base*2.5);				// reduce menu item height on mobile, match a:link
-			width: 100%;							// set full width
-			margin: 0.5% 0 0 0;						// vertical spacing for top & bottom border
-			&:first-child {
-				margin-top: 2%;						// first child vertical spacing from ul border-top
+			width: 23%;											// override 100%
+			//height: calc($base*4.5);							// override calc($base*2.5)
+			list-style: none;									// remove default li formatting
+			margin: calc($base/2) 1% 0 0;						// override 0.5% 0 0 0, 1.3125em * 2 = 2.625em, spacing top and between list items
+			&:last-child {
+				margin: 0;										// override 2% 0 0 0
+			}
+			svg {
+				padding-right: 0;								// override 0.5em
+				margin: 0 auto 0.25em auto; 					// center icon, push text down
+				display: block; 								// override inline, force text down
 			}
 		}
 		a {
-			height: calc($base*2.5);				// reduce menu item height on mobile, match li
-			padding: calc($base*0.7) 1% 0;			// reduce top padding on mobile
-		}
-		.page-item-21 a:before, .page-item-1110 a:before, .page-item-1108 a:before, .page-item-19 a:before {
-			font-size: 1.3em;						// reduce icon size on mobile, override 1.6em
-			vertical-align: middle;					// center icon vertically with text on mobile
-			padding-right: 0.5em;					// horizontal spacing between icon and text
-			display: inline-block;
-		}
-		// mobile menu javascript style toggle - hide menu //
-		&#nav-menu {
-			display: none;				// hide toggle
-		}
-	}
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
-		a {
-			//height: calc($base*4.5);
-			padding-top: calc($base*0.9);		// reduce padding to move icon & text up
-			font-size: 0.75rem;					// reduce font size
-			//text-shadow: 0 2px 0 black;
+			height: calc($base*4);								// override calc($base*2.5), 1.3125em *4 = 5.25em, increase menu item height
+			padding: calc($base*0.4) 1% 0;						// override calc($base*0.7) 1% 0, 1.3125em *0.5 = 0.65625em, reduce top padding
+			margin-top: 1em;
+			&:hover {
+				background: none;								// override gradient for mobile
+				//background: radial-gradient(5em at center 20px, rgba(195, 121, 31, .4) 0%, rgba(195, 121, 31,0) 60%);
+			}
 		}
 	}
 }
@@ -190,9 +192,9 @@ h1.logo {
 // Portfolio, Jam, Movie //
 // Located here to override media queries in all circumstances //
 body.single-project .page-item-21 a, .current_page_ancestor.page-item-21 a, body.single-post .page-item-1029 a {
-	color: white;						// override gray
+	color: white;												// override gray
 	svg {
-		fill: $yellow;					// icon color on .current_page_item
+		fill: $yellow;											// icon color on .current_page_item
 	}
 }
 
@@ -200,38 +202,38 @@ body.single-project .page-item-21 a, .current_page_ancestor.page-item-21 a, body
 // TOGGLE MENU BUTTON //
 h3#menu-toggle {
 	color: $nav-text;
-	display: none;						// hide menu toggle 
+	display: none;												// hide menu toggle 
 	@media screen and (max-width: $mobile-h) {
-		width: 2.3em;					// set toggle width
-		display: inline-block;			// show menu toggle on mobile
-		text-align: center;				// center hamburger icon
-		position: absolute;				// set child position to .site-header
-		top: calc($base*0.75);			// top position
-		right: 10%;						// right position
-		text-shadow: none;				// remove white text shadow from menu item
+		width: 2.3em;											// set toggle width
+		display: inline-block;									// show menu toggle on mobile
+		text-align: center;										// center hamburger icon
+		position: absolute;										// set child position to .site-header
+		top: calc($base*0.75);									// top position
+		right: 10%;												// right position
+		text-shadow: none;										// remove white text shadow from menu item
 	    .menu-icon {
 			font-size: 3em;
-			margin-bottom: 2px;			// move Menu text down from hamburger icon
-			display: inline-block;		// need for margin-bottom
+			margin-bottom: 2px;									// move Menu text down from hamburger icon
+			display: inline-block;								// need for margin-bottom
 	    }
 	    .menu-text {
-	    	@include square-font;
+	    	@include square-font;								// Bree Serif, serif
 		    //display: inline-block;
 	    }
 	    a:hover {
 	    	.menu-icon {
-				color: white;			// on hover make the hamburger icon white
+				color: white;									// on hover make the hamburger icon white
 	    	}
 	    	.menu-text {
-				color: $yellow;			// on hover make Menu yellow
+				color: $yellow;									// on hover make Menu yellow
 	    	}
 	    }
 		a {
-			width: 100%;				// set menu toggle to full width
-			height: 100%;				// set menu toggle to full height
-			color: $nav-text;
-			font-size: $font12;
-			display: block;				// reduces toggle height, reduces spacing for Menu text
+			width: 100%;										// set menu toggle to full width
+			height: 100%;										// set menu toggle to full height
+			color: $nav-text;									// #bdc0c3, light gray
+			font-size: $font12;									// 0.75em * 16px = 12px
+			display: block;										// reduces toggle height, reduces spacing for Menu text
 		}
 	}
 }

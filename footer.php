@@ -18,6 +18,45 @@
 				<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><span class="nav-icon" aria-hidden="true" data-icon="&#xe90d;"></span> <span class="nav-text">Blog</span></a></li>
 				<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="nav-icon" aria-hidden="true" data-icon="&#xe903;"></span> <span class="nav-text">Contact</span></a></li>
 			</ul>
+			
+			<?php /* <ul>
+				<li>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/">
+						<svg id="portfolio" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<polygon id="left" points="16 3.27 11.14 8.14 19 16 11.14 23.86 16 28.73 28.73 16 16 3.27"/>
+							<rect id="right" x="4.42" y="13.22" width="5.55" height="5.55" transform="translate(13.42 -.4) rotate(45)"/>
+						</svg>
+						Portfolio
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo esc_url( home_url( '/about-me/' ) ); ?>">
+						<svg id="about" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<circle id="top" cx="16" cy="9.5" r="6.5"/>
+							<polygon id="bottom" points="28.73 19 3.27 19 16 29 28.73 19"/>
+						</svg>
+						About
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">
+						<svg id="blog" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<polygon id="left" points="26 10.3 26 22.5 6.65 22.5 9.55 25.5 29 25.5 29 13.41 26 10.3"/>
+							<rect id="right" x="3" y="6.5" width="19" height="12"/>
+						</svg>
+						Blog
+					</a>
+				</li>
+				<li>
+					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
+						<svg id="contact" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+							<polygon id="top" points="29 7 3 7 16 16 29 7"/>
+							<polygon id="bottom" points="3 25 29 25 16 16 3 25"/>
+						</svg>
+						Contact
+					</a>
+				</li>
+			</ul> */ ?>
 		</section><!-- .nav-ftr -->
 		
 		<section class="footer-social-links">
