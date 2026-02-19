@@ -370,26 +370,26 @@ h3.large {
 /* Project Page */
 /* -------------------------- */
 h2.project-title {
-	text-align: center;
-	margin-top: calc($base * 1.5);
+	text-align: center;							// override left
+	margin-top: calc($base * 1.5); 				// 1.3125em *1.5 = 1.96875em
 }
 .project-desc {
-	p {
-		text-indent: 2em;				// indent paragraphs
-	}
 	p:first-child {
-		text-indent: 0;
 		&::first-line {
-			@include square-font;
-			font-size: 1.4rem;
-			line-height: 1.5;
+			@include square-font;				// Bree Serif, serif
+			font-size: 1.4rem; 					// 1.4em *16px = 22.4px
+			line-height: 1.5; 					// reduce line height
 		}
 	}
+	li {
+		margin-bottom: calc($base/2);			// 1.3125em *2 = 2.625em, list item vertical spacing
+	}
 	@media screen and (min-width: $laptop) {
-		margin-bottom: calc($base * 2);
-		p {
-			max-width: 56em;
-			margin: auto;
+		margin-bottom: calc($base * 2);			// 1.3125em *2 = 2.625em
+		p, ul {
+			max-width: 60em;					// 56em *16px = 
+			margin-left: auto;					// center on the page
+			margin-right: auto;					// center on the page
 		}
 	}
 }
