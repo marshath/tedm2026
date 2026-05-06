@@ -12,16 +12,9 @@
 		</section><!-- .contact-ftr -->
 		
 		<section class="footer-navigation">
-			<ul>
-				<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="nav-icon" aria-hidden="true" data-icon="&#xe90f;"></span> <span class="nav-text">Portfolio</span></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><span class="nav-icon" aria-hidden="true" data-icon="&#xe900;"></span> <span class="nav-text">About</span></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>"><span class="nav-icon" aria-hidden="true" data-icon="&#xe90d;"></span> <span class="nav-text">Blog</span></a></li>
-				<li><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>"><span class="nav-icon" aria-hidden="true" data-icon="&#xe903;"></span> <span class="nav-text">Contact</span></a></li>
-			</ul>
-			
-			<?php /* <ul>
-				<li>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/">
+			<ul class="menu">
+				<li class="page_item page-item-21 <?php if (is_page('portfolio')) { echo 'current_page_item'; }; ?>">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/" aria-current="page">
 						<svg id="portfolio" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
 							<polygon id="left" points="16 3.27 11.14 8.14 19 16 11.14 23.86 16 28.73 28.73 16 16 3.27"/>
 							<rect id="right" x="4.42" y="13.22" width="5.55" height="5.55" transform="translate(13.42 -.4) rotate(45)"/>
@@ -29,7 +22,7 @@
 						Portfolio
 					</a>
 				</li>
-				<li>
+				<li class="page_item page-item-1110 <?php if (is_page('about-me')) { echo 'current_page_item'; }; ?>">
 					<a href="<?php echo esc_url( home_url( '/about-me/' ) ); ?>">
 						<svg id="about" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
 							<circle id="top" cx="16" cy="9.5" r="6.5"/>
@@ -38,7 +31,7 @@
 						About
 					</a>
 				</li>
-				<li>
+				<li class="page_item page-item-1108 <?php if (is_page('blog')) { echo 'current_page_item'; }; ?>">
 					<a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">
 						<svg id="blog" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
 							<polygon id="left" points="26 10.3 26 22.5 6.65 22.5 9.55 25.5 29 25.5 29 13.41 26 10.3"/>
@@ -47,7 +40,7 @@
 						Blog
 					</a>
 				</li>
-				<li>
+				<li class="page_item page-item-19 <?php if (is_page('contact')) { echo 'current_page_item'; }; ?>">
 					<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
 						<svg id="contact" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
 							<polygon id="top" points="29 7 3 7 16 16 29 7"/>
@@ -56,7 +49,7 @@
 						Contact
 					</a>
 				</li>
-			</ul> */ ?>
+			</ul>
 		</section><!-- .nav-ftr -->
 		
 		<section class="footer-social-links">

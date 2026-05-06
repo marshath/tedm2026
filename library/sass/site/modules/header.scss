@@ -89,15 +89,17 @@ h1.logo {
 
 // NAV FORMATTING //
 .menu {															// ul formatting
-	border-top: 1px solid rgba(200,200,200,0.4);				// top separator on mobile menu
-	border-bottom: 1px solid rgba(200,200,200,0.4);			// bottom separator on mobile menu
+	//border-top: 1px solid rgba(200,200,200,0.4);				// top separator on mobile menu
+	//border-bottom: 1px solid rgba(200,200,200,0.4);			// bottom separator on mobile menu
 	padding: 0;													// remove default ul padding
 	margin: 0;													// remove default ul margin
 	li {
 		height: calc($base*2.5);								// 1.3125em * 2.5 = 3.28125em, reduce menu item height on mobile, match a:link
 		width: 100%;											// set full width
 		margin: 0.5% 0 0 0;										// vertical spacing for top & bottom border
-		display: inline-block;
+		display: inline-block;									// display items horizontally on large screens
+		//background: rgba(0,0,0,0.15);
+		list-style: none;										// remove default list-style
 		&:first-child {
 			margin: 2% 0 0 0;									// first child vertical spacing from ul border-top
 		}
@@ -121,17 +123,20 @@ h1.logo {
 	}
 	a {
 		width: 100%;
-		height: calc($base*2.5);								// 1.3125em *2.5 = 3.28125em, reduce menu item height on mobile, match li
+		height: calc($base*2.75);								// 1.3125em *2.5 = 3.28125em, reduce menu item height on mobile, match li
 		font-size: 0.875rem;									// 0.875 * 16px = 14px
 		text-shadow: 0 2px 0 black;
 		color: $nav-text;										// #bdc0c3, light gray
 		@include square-font;									// Bree Serif, serif
 		text-decoration: none;									// remove hyperlink underline
 		text-transform: uppercase;
-		padding: calc($base*0.7) 1% 0;							// reduce top padding on mobile
-		display: block;
+		padding: calc($base*0.7) 1% $base;							// reduce top padding on mobile
+		display: block;												// force full width & height
 		//@include radius(4em);									// 4em * 16px = 64px
 		@include transition(background, 1s, ease-out);
+		border-top: 1px solid rgba(255,255,255,0.1);
+		border-bottom: 1px solid black;
+		box-shadow: 0px 2px 1px rgba(0,0,0,0.15);
 		&:hover {
 			//background-color: rgba(255,255,255,0.1);
 			background: linear-gradient( to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 100%);
@@ -179,7 +184,9 @@ h1.logo {
 		a {
 			height: calc($base*4);								// override calc($base*2.5), 1.3125em *4 = 5.25em, increase menu item height
 			padding: calc($base*0.4) 1% 0;						// override calc($base*0.7) 1% 0, 1.3125em *0.5 = 0.65625em, reduce top padding
-			margin-top: 1em;
+			margin-top: 1em;									// separate links from top of page
+			border: none;										// override 1px border top and bottom
+			box-shadow: none;									// override, remove box-shadow
 			&:hover {
 				background: none;								// override gradient for mobile
 				//background: radial-gradient(5em at center 20px, rgba(195, 121, 31, .4) 0%, rgba(195, 121, 31,0) 60%);
