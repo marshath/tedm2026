@@ -30,21 +30,21 @@
 /* Body Text */
 /* -------------------------- */
 h2, h3, h4, h5, h6 {
-	@include square-font;
-	line-height: 1em;
-	margin: 0 0 calc($base / 2) 0;
+	@include square-font;								// Bree Serif, serif
+	line-height: 1em;									// 1em = 16px
+	margin: 0 0 calc($base / 2) 0;						// 1.3125em /2 = 0.65625em, bottom spacing
 }
 
 h2, h3 { text-shadow: 0 1px white; }
-h2 { font-size: 2em; }
-.h2-small { font-size: $font12; }
-h2.indent { padding-left: 1em; }
-h3 { font-size: $font20; }
-p { font-size: $font16; line-height: 1.8; }
-p.space { margin-bottom: calc($base * 2); }
-p.space-columns { margin-bottom: calc($base * 2); }
+h2 { font-size: 2em; }									// 2em *16px = 32px
+.h2-small { font-size: $font12; }						// 0.75em *16px = 12px
+h2.indent { padding-left: 1em; }						// 1em = 16px
+h3 { font-size: $font20; }								// 1.25em *16px = 20px
+p { font-size: $font16; line-height: 1.8; }				// 1em = 16px, increase line height
+p.space { margin-bottom: calc($base * 2); }				// 1.3125em *2 = 2.625em, increase bottom spacing
+p.space-columns { margin-bottom: calc($base * 2); }		// 1.3125em *2 = 2.625em, increase bottom spacing
 .archive-title {
-	margin-bottom: $base;
+	margin-bottom: $base;								// 1.3125em, bottom spacing
 }
 
 /* hr {
@@ -54,14 +54,14 @@ p.space-columns { margin-bottom: calc($base * 2); }
 .uppercase { text-transform: uppercase; }
 
 .large {
-	font-size: 1.8em;
-	line-height: 1em;
+	font-size: 1.8em;									// 1.8em *16px = 28.8px
+	line-height: 1em;									// 1em = 16px
 }
 
-::selection { background: $orange-light; }
+::selection { background: $orange-light; }				// #f29029, orange
 
 .screen-reader-text {
-	display: none;
+	display: none;										// hide content
 }
 	
 
@@ -70,52 +70,52 @@ p.space-columns { margin-bottom: calc($base * 2); }
 /* -------------------------- */
 
 a {
-	color: lighten($text,30%);
-	text-decoration: none;
+	color: lighten($text,30%);							// #222 @30% = #959595 gray
+	text-decoration: none;								// override default, remove underline on links
 	&:hover {
-		color: $orange;
+		color: $orange;									// #ed3c24, orange
 	}
 }
 
 // PRIMARY BUTTON //
+// Green button with inner glow on hover //
+// Contact form, search field //
 a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button {
-	width:100%;
-	background: $green;
-	color: white;
+	//width:100%;										// set full width
+	background: $green;									// #2d4207, green
+	color: white;										// #fff, white
 	text-shadow: 0 2px 0 black;
-	padding: $base;
-	display: block;
-	border: 0;
-	@include box-shadow(inset 0px 0px 0px black);
-	@include transition(all, 1s, ease-out);
+	padding: $base;										// 1.3125em *16 = 21px
+	//display: block;									// force full width
+	//border: 0;										// remove border
+	@include box-shadow(inset 0px 0px 0px black);		// inset shadow for hover
+	@include transition(all, 1s, ease-out);				// transition for hover
 	&:hover {
-		background: lighten($green, 20%);
-		@include box-shadow(inset 0px 0px 40px darken($green,10%));
-		@include transition(all, 0s, linear);
+		background: lighten($green, 20%);				// #2d4207 @20% = #6c9e11 lime green
+		@include box-shadow(inset 0px 0px 40px darken($green,10%));	// #2d4207 @20% = #0e1402, dark green
+		@include transition(all, 0s, linear);			// transition for active
 	}
 	&:active {
-		background: lighten($green, 20%);
-		@include box-shadow(inset 0px 0px 0px black);
+		background: lighten($green, 20%);				// #6c9e11;, lime green
+		@include box-shadow(inset 0px 0px 0px black);	// remove shadow from hover
 	}
 }
 
 // SECONDARY BUTTON //
+// White button that turns orange on hover //
+// About Me page, Blog page //
 a.secondary-btn, .sidebar-mc-form .button2 {
-	background-color: $gray-light-alpha;
-	background: linear-gradient( to bottom, $gray-light-alpha 0.05, $gray-dark-alpha 1 );
-	color: lighten($text, 20);
-	padding: calc($base/2) $base;
-	display: inline-block;
-	@include radius($corner);
-	border: 1px solid lighten($text, 45);
+	background-color: $gray-light-alpha;				// #ede8dd, off-white
+	background: linear-gradient( to bottom, $gray-light-alpha 0.05, $gray-dark-alpha 1 );										// 1.3125em *16 = 21px
+	color: lighten($text, 20);							// #222 @20% = #555 gray
+	padding: calc($base/2) $base;						// 1.3125em *2 = 2.625em, 1.3125em
+	display: inline-block;								// force line break, top spacing
+	@include radius($corner);							// .25em *16px = 4px radius
+	border: 1px solid lighten($text, 45);				// #222 @45% = #959595 gray
 	&:hover {
-		background-color: $gray-dark-alpha;
-		background: linear-gradient( to bottom, $gray-dark-alpha 0.05, $gray-light-alpha 1 );
-		color: $text;
-		//box-shadow: inset 0px -1px 2px white, 0px 1px 1px white;
-		color: white !important;
-		background: $orange-light;
-		background: linear-gradient(to right, $orange 0, $orange-light 100%);
-		border-color: white;
+		color: white !important;						// #fff, white
+		background: $orange-light;						// #f29029, orange
+		background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 0, #f29029 100%
+		border-color: white;							// #fff, white
 	} 
 }
