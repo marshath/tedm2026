@@ -1720,6 +1720,26 @@
       "q" : 90,
       "rq" : 75
     },
+    "\/library\/images\/bg_direction_nav_next.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/library\/images\/bg_direction_nav_next.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/library\/images\/bg_direction_nav_prev.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/library\/images\/bg_direction_nav_prev.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/library\/images\/bg_direction_nav.png" : {
       "ft" : 32768,
       "iS" : 1569,
@@ -1732,6 +1752,16 @@
       "ou" : "lpckwebp-none",
       "q" : 90,
       "rq" : 75
+    },
+    "\/library\/images\/bg_direction_nav.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/library\/images\/bg_direction_nav.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
     },
     "\/library\/images\/favicon.ico" : {
       "cB" : 0,

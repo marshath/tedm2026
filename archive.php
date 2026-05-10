@@ -11,7 +11,7 @@ get_header(); ?>
     <article class="">
 
 		<header class="page-header">
-			<h1 class="archive-title">
+			<h2 class="archive-title">
 				<?php if ( is_day() ) :
 						printf( __( 'Daily Archives: %s' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
@@ -44,12 +44,12 @@ get_header(); ?>
 						_e( 'Archives' );
 					endif;
 				?>
-			</h1>
+			</h2>
 		</header>
 			
 		<?php if (have_posts()) : ?>
     
-        <section class="">
+        <section class="content">
 
 			<ul class="project">
     

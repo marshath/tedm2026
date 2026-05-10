@@ -1,366 +1,356 @@
-/* Module Styles */
-
-/* -------------------------- */
-/* Homepage Elements */
-/* -------------------------- */
-
-// FLEXSLIDER BACKGROUND //
-.hero-splash { 
-	width: 80%;
-	min-height: 200px;
-	margin: $base auto 0 auto;
-	display: block;
-	position: relative;
-	figcaption {
-		width: 38%;
-		color: white;
-		text-shadow: 0 1px 3px #000;
-		margin: $base 2% 0 0;
-		position: relative;
-		float: right;
-		z-index: 20;
-	}
-	h1 {
-		@include script-font;
-		font-size: 3.1em;
-		line-height: 1.125em;
-		margin: 0 0 calc($base/4) 0;
-	}
-	h2 {
-		@include regular;
-		color: white;
-		font-size: $font20;
-		line-height: 1.25em;
-		text-shadow: 0 1px 3px #000;
-		margin-bottom: $base;
-	}
-	@media screen and (max-width: $mobile-h) {
-		width: 100%;
-		figcaption {
-			width: 100%;
-			padding: 0 7%;
-			text-align: center;
-		}
-		h1 {
-			font-size: 2.6em;
-		}
-		h2 {
-			font-size: 1.3em;
-			text-shadow: 0 1px 3px #000;
-		}
-	}
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
-		width: 100%;
-		figcaption {
-			width: 100%;
-		}
-		h1 {
-			text-align: center;
-			font-size: 2.6em;
-		}
-		h2 {
-			width:40%;
-			float: right;
-			padding-right: 1em;
-		}
-	}
-	@media screen and (min-width: $tablet-h) and (max-width: $computer-h) {
+	/* Module Styles */
+	
+	/* -------------------------- */
+	/* Homepage Elements */
+	/* -------------------------- */
+	
+	// FLEXSLIDER BACKGROUND //
+	.hero-splash { 
 		width: 80%;
+		min-height: 200px;
+		margin: $base auto 0 auto;
+		display: block;
+		position: relative;
 		figcaption {
-			width: 100%;
-		}
-		h1 {
-			text-align: center;
-			font-size: 2.6em;
-		}
-		h2 {
-			width:40%;
-			float: right;
-		}
-	}
-	@media screen and (min-width: $television) {
-		max-width: 1080px;
-		figcaption {
-			width: 40%;
-			float: right;
-			margin-right: 1%;
+			width: 38%;
+			color: white;
+			text-shadow: 0 1px 3px #000;
+			margin: $base 2% 0 0;
 			position: relative;
+			float: right;
 			z-index: 20;
 		}
-	}
-}
-
-.hero-computers {
-	width: 60%;
-	position: absolute;
-	left:0;
-	bottom: -11%;
-	z-index: 10;
-	img {
-		width: 100%;
-	}
-	@media screen and (max-width: $mobile-h) {
-		width: 100%;
-		left: 3%;
-		position: relative;
-		img {
-			width: 94%;
-			margin-bottom: -8%;
+		h1 {
+			@include script-font;
+			font-size: 3.1em;
+			line-height: 1.125em;
+			margin: 0 0 calc($base/4) 0;
 		}
-	}
-}
-
-// HOMEPAGE TEXT //
-.home-text {
-	width: 100%;
-	margin-bottom: $base;
-	&:first-line {
-		@include square-font;
-		font-size: 1.4rem;
-		line-height: 1.5;
-	}
-	p:nth-child(2) {
-		margin-bottom: $base;
-	}
-	h2 {
-		margin-bottom: 0;
-	}
-	@media screen and (max-width: $mobile-h) {
-		margin-bottom: $base;
-	}
-	@media screen and (max-width: $tablet-h) {
-		width: 100%;
-	}
-}
-
-// CONTACT //
-/* .contact { 
-	background: $contact-light; 
-	background: linear-gradient(to bottom, $contact-light 0%, $contact-dark 100%);
-	padding: $base;
-	border-radius: 0.25em;
-	box-shadow: inset 2px 2px 2px lighten($contact-light, 10%), inset -2px -2px 2px darken($contact-dark,10%), 0 3px 6px rgba(0,0,0,0.3);
-} */
-
-
-// SIDEBAR SOCIAL LINKS //
-.page-id-239 ul.social, .sidebar-social-links { 
-	ul {
-		display: flex;
-		flex-flow: row nowrap;
-		padding-left:0;		// remove default list padding
-		list-style: none;
-		width: 96%;
-		max-width: 400px;
-		margin: auto;
-	}
-	li {
-		flex-basis: 20%;
-	}
-	.twitter-icon, .codepen-icon, .github-icon, .rss-icon, .pinterest-icon, .linkedin-icon {
-		font-size: 2.5em;
-		display: block;
-	}
-	.social-text {
-		font-size: $font10;
-		display: block;
-	}
-	a {
-		text-align: center;
-		&:hover {
-			color: $text;
+		h2 {
+			@include regular;
+			color: white;
+			font-size: $font20;
+			line-height: 1.25em;
+			text-shadow: 0 1px 3px #000;
+			margin-bottom: $base;
 		}
-		&:hover .twitter-icon {
-			color: $twitter-blue;
-		}
-		&:hover .github-icon {
-			color: $github-black;
-		}
-		&:hover .codepen-icon {
-			color: $codepen-yellow;
-		}
-		&:hover .pinterest-icon {
-			color: $pinterest-red;
-		}
-		&:hover .linkedin-icon {
-			color: $linkedin-blue;
-		}
-	}
-}
-.center {
-	text-align: center;
-	margin-bottom: calc($base*2);
-	.icon {
-		font-size: 1.4rem;
-	}
-	/* hr {
-		margin-bottom: $base;
-	} */
-	ul.social {
-		width: 100%;
-		padding-left: 0;
-		padding-bottom: calc($base*3);
-		margin-left: auto;
-		margin-right: auto;
-	}
-}
-
-
-/* -------------------------- */
-/* Portfolio Page */
-/* -------------------------- */
-
-h3.large {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: $base;
-	border-top: $line;
-	border-bottom: $line;
-}
-
-.project {
-	display: flex;
-	flex-flow: column;
-	padding-left: 0;		// remove default list padding
-	list-style: none;		// remove bulleted list
-	margin-top: $base;		// spacing from previous section
-	transition: all 0.2s ease;
-	li {
-		flex-basis: 100%;		// set full width
-		margin-bottom: calc($base*2);		// vertical space between li
-		position: relative;			// set parent positioning for li::before
-		z-index: 2;					// set above for z-index positioning of li::before
-		border-radius: 1.25em;		// matches border-radius li figure
-		transition: all 0.2s ease;
-		&::before {
-			content:'';
-			position: absolute;		// child positioning to li
-			top: 0;
-			left: 0;
-			background: rgba(255,255,255,0.2);	// transparent white
-			width: 100%;			// set full width
-			height: 100%;			// set full height
-			z-index: -1;			// set behind li
-			border-radius: 1.25em;		// match border-radius to figure
-			transition: all 0.2s ease;
-			box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
-		}
-		&:hover {
-			transform: scale(101.5%);
-			&::before {
-				width: calc(100% + 1em);	// expand width by 1em on hover
-				height: calc(100% + 1em);	// expand height by 1em on hover
-				top: -0.5em;				// offset 1em height by half on :hover
-				left: -0.5em;				// offset 1em width by half on :hover
-				border-radius: 1.75em;		// increase radius to match figure radius arch
-				background: rgba(255,255,255,0.4);	// transparent white
-				box-shadow: inset 1px 1px 2px white, 1px 2px 2px rgba(0,0,0,0.1);	// inset white shadow, black shadow, glass reflection effect
+		@media screen and (max-width: $mobile-h) {
+			width: 100%;
+			figcaption {
+				width: 100%;
+				padding: 0 7%;
+				text-align: center;
+			}
+			h1 {
+				font-size: 2.6em;
+			}
+			h2 {
+				font-size: 1.3em;
+				text-shadow: 0 1px 3px #000;
 			}
 		}
-		img {
-			width: 100%;			// set figure img to full width
-			height: 100%;			// set figure img to full height
-			object-fit: cover;		// scale full size image
-			//transition: all 0.2s ease;
+		@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
+			width: 100%;
+			figcaption {
+				width: 100%;
+			}
+			h1 {
+				text-align: center;
+				font-size: 2.6em;
+			}
+			h2 {
+				width:40%;
+				float: right;
+				padding-right: 1em;
+			}
 		}
-		p {
-			margin: 0 1em 1em 1em;			// side & bottom spacing
-			color: $text;			// override $orange on :hover
+		@media screen and (min-width: $tablet-h) and (max-width: $computer-h) {
+			width: 80%;
+			figcaption {
+				width: 100%;
+			}
+			h1 {
+				text-align: center;
+				font-size: 2.6em;
+			}
+			h2 {
+				width:40%;
+				float: right;
+			}
+		}
+		@media screen and (min-width: $monitor) {
+			max-width: 1080px;
+			figcaption {
+				width: 40%;
+				float: right;
+				margin-right: 1%;
+				position: relative;
+				z-index: 20;
+			}
+		}
+	}
+	
+	.hero-computers {
+		width: 60%;
+		position: absolute;
+		left:0;
+		bottom: -11%;
+		z-index: 10;
+		img {
+			width: 100%;
+		}
+		@media screen and (max-width: $mobile-h) {
+			width: 100%;
+			left: 3%;
+			position: relative;
+			img {
+				width: 94%;
+				margin-bottom: -8%;
+			}
+		}
+	}
+	
+	// HOMEPAGE TEXT //
+	.home-text {
+		width: 100%;
+		margin-bottom: $base;
+		&:first-line {
+			@include square-font;
+			font-size: 1.4rem;
+			line-height: 1.5;
+		}
+		p:nth-child(2) {
+			margin-bottom: $base;
+		}
+		h2 {
+			margin-bottom: 0;
+		}
+		@media screen and (max-width: $mobile-h) {
+			margin-bottom: $base;
+		}
+		@media screen and (max-width: $tablet-h) {
+			width: 100%;
+		}
+	}
+	
+	// CONTACT //
+	/* .contact { 
+		background: $contact-light; 
+		background: linear-gradient(to bottom, $contact-light 0%, $contact-dark 100%);
+		padding: $base;
+		border-radius: 0.25em;
+		box-shadow: inset 2px 2px 2px lighten($contact-light, 10%), inset -2px -2px 2px darken($contact-dark,10%), 0 3px 6px rgba(0,0,0,0.3);
+	} */
+	
+	
+	// SIDEBAR SOCIAL LINKS //
+	.page-id-239 ul.social, .sidebar-social-links { 
+		ul {
+			display: flex;
+			flex-flow: row nowrap;
+			padding-left:0;		// remove default list padding
+			list-style: none;
+			width: 96%;
+			max-width: 400px;
+			margin: auto;
+		}
+		li {
+			flex-basis: 20%;
+		}
+		.twitter-icon, .codepen-icon, .github-icon, .rss-icon, .pinterest-icon, .linkedin-icon {
+			font-size: 2.5em;
+			display: block;
+		}
+		.social-text {
+			font-size: $font10;
+			display: block;
 		}
 		a {
-			color: $text;
+			text-align: center;
 			&:hover {
-				color: $orange;
+				color: $text;
+			}
+			&:hover .twitter-icon {
+				color: $twitter-blue;
+			}
+			&:hover .github-icon {
+				color: $github-black;
+			}
+			&:hover .codepen-icon {
+				color: $codepen-yellow;
+			}
+			&:hover .pinterest-icon {
+				color: $pinterest-red;
+			}
+			&:hover .linkedin-icon {
+				color: $linkedin-blue;
+			}
+		}
+	}
+	.center {
+		text-align: center;
+		margin-bottom: calc($base*2);
+		.icon {
+			font-size: 1.4rem;
+		}
+		/* hr {
+			margin-bottom: $base;
+		} */
+		ul.social {
+			width: 100%;
+			padding-left: 0;
+			padding-bottom: calc($base*3);
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	
+	
+	/* -------------------------- */
+	/* Portfolio Page */
+	/* -------------------------- */
+	
+	h3.large {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-bottom: $base;								// 1.3125em *16px = 21px
+		border-top: $line;									// 4px solid $tan
+		border-bottom: $line;								// 4px solid $tan
+	}
+	
+	.project {
+		display: flex;
+		flex-flow: column;									// force vertical orientation
+		gap: 4%;											// spacing between li
+		padding-left: 0;									// remove default list padding
+		list-style: none;									// override default, remove bulleted list
+		margin-bottom: 0;									// remove default margin from ul
+		transition: all 0.2s ease;
+		li {								/* Project Card */
+			flex-basis: 100%;								// set full width
+			margin-bottom: calc($base*2);					// 1.3125em *2 = 2.625em, vertical space between li
+			position: relative;								// set parent positioning for li::before
+			z-index: 2;										// set above for z-index positioning of li::before
+			border-radius: 1.25em;							// 1.25em * 16px = 20px, matches border-radius li figure
+			transition: all 0.2s ease;						// project card transition
+			&::before {						/* card background */
+				content:'';
+				position: absolute;							// child positioning to li
+				top: 0;										// position at the top
+				left: 0;									// position on the left
+				background: rgba(255,255,255,0.2);			// transparent white
+				width: 100%;								// set full width
+				height: 100%;								// set full height
+				z-index: -1;								// set behind li
+				border-radius: 1.25em;						// match border-radius to figure
+				transition: all 0.2s ease;
+				box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
+			}
+			&:hover {										// expand on :hover
+				transform: scale(101.5%);
+				&::before {
+					width: calc(100% + 1em);				// expand width by 1em on hover
+					height: calc(100% + 1em);				// expand height by 1em on hover
+					top: -0.5em;							// offset 1em height by half on :hover
+					left: -0.5em;							// offset 1em width by half on :hover
+					border-radius: 1.75em;					// increase radius to match figure radius arch
+					background: rgba(255,255,255,0.4);		// transparent white
+					box-shadow: inset 1px 1px 2px white, 1px 2px 2px rgba(0,0,0,0.1);	// inset white shadow, black shadow, glass reflection effect
+				}
+			}
+		img {								/* card image */
+			width: 100%;									// set figure img to full width
+			height: 100%;									// set figure img to full height
+			object-fit: cover;								// scale full size image
+		}
+		p {
+			margin: 0 1em 1em 1em;							// side & bottom spacing
+			color: $text;									// #222 dark gray, override $orange on :hover
+		}
+		a {
+			color: $text;									// #222 dark gray
+			&:hover {
+				color: $orange;								// #ed3c24 orange
 				h3 {
-					//background: $orange-light;
-					color: #4B0007;
-					text-shadow: 0 0 5px white;
+					color: #4B0007;						// dark red
+					text-shadow: 0 0 5px white;				// blur white text shadow for contrast against background
 				}
 				.h3-project-bg-top {
-					//left:0%;
-					//background: $orange-light;
-					opacity: 1;
-				}
-				p {
+					opacity: 1;								// show orange gradient behind h3
 				}
 			}
 		}
 	}
 	figure {
-		//width: 100%;
-		height: calc($base*10);			// set mobile image height
-		border-top-right-radius: 1.25em;		// round top right corner matching li::before
-		border-top-left-radius: 1.25em;			// round top right corner matching li::before
-		overflow: hidden;						// image crop
+		height: calc($base*10);								// set mobile image height
+		border-top-right-radius: 1.25em;					// round top right corner matching li::before
+		border-top-left-radius: 1.25em;						// round top right corner matching li::before
+		overflow: hidden;									// image crop
 		@include transition(all, 0.15s, ease-out);
 	}
 	.h3-project {
-		position: relative; 		//set parent positioning for .h3-project-bg-top & .h3-project-bg-bottom
-		overflow: hidden;			// hide .h3-project-bg
+		position: relative; 								//set parent positioning for .h3-project-bg-top & .h3-project-bg-bottom
+		overflow: hidden;									// hide .h3-project-bg
 		h3 {
-			//z-index: 3;
-			//position: relative;
-			//height: 2em;
-			//background: rgba(200, 200, 200, 0.6);
-			border-top: 2px solid rgba(255,255,255,0.35);			// transparent white top embossing
-			border-bottom: 2px solid rgba(0,0,0,0.05);			// transparent black bottom embossing
-			padding: 0.5em 1em 0.75em 0.75em;
-			transition: all 0.2s ease;
-			z-index: 2;												// place above .h3-project-bg-top & .h3-project-bg-bottom
+			border-top: 2px solid rgba(255,255,255,0.35);	// transparent white top embossing
+			border-bottom: 2px solid rgba(0,0,0,0.05);	// transparent black bottom embossing
+			padding: 0.5em 1em 0.75em 0.75em;				// 0.5em *16px = 8px, 1em *16px = 16px, 0.75em *16px = 12px, 0.75em *16px = 12px
+			transition: all 0.2s ease;						// card header transition on :hover
+			z-index: 2;										// place above .h3-project-bg-top & .h3-project-bg-bottom
+			@include square-font;							// Bree Serif, serif
+			text-shadow: 0 1px white;
 		}
 	}
 	.h3-project-bg-top, .h3-project-bg-bottom {
-		position: absolute;		// set child positioning to .h3-project
-		top: 0%;
-		left: 0%;
-		width: 100%;			// set box width
-		height: 80%;			// set box height
+		position: absolute;									// set child positioning to .h3-project
+		top: 0%;											// position at the top
+		left: 0%;											// position on the left
+		width: 100%;										// set box width
+		height: 80%;										// set box height
 		transition: all 0.4s ease;
 	}
 	.h3-project-bg-top {
 		background: linear-gradient( -140deg, $orange-light 0%, $orange 100%);	//E0DBCE
-		z-index: -1;				// place behind h3
-		opacity: 0;					// hide box until hover
+		z-index: -1;										// place behind h3
+		opacity: 0;											// hide box until hover
 	}
 	.h3-project-bg-bottom {
 		background: linear-gradient( -140deg, #d8d1be 0%, #c8c1ae 100%);	//E0DBCE
-		z-index: -2;				// place behind h3 & .h3-project-bg-top
+		z-index: -2;										// place behind h3 & .h3-project-bg-top
 	}
 	@media screen and (min-width: $tablet-v) {
-		flex-flow: row wrap;
+		flex-flow: row wrap;								// override column wrap
 		li { 
-			flex-basis: 46%;		// set half width for tablet
-			margin-left: 2%;		// gap between items, override 0% .project li
-			margin-right: 2%;		// gap between items, override 0% .project li
+			flex-basis: 48%;								// set half width for tablet, 48% *2 = 96%, 4% *1 = 4% gap
 		}		
 	}
 	@media screen and (min-width: $laptop) {
+		gap: 3%;											// override 4%, spacing between li
 		li { 
-			flex-basis: 29.3%;		// set half width for tablet
+			flex-basis: 31.3%;								// set third width for laptop, 31% *3 = 93%, 3% *2 = 6% gap
 		}
 	}
 	@media screen and (min-width: $television) {
+		gap: 2%;											// override 3%, spacing between li
 		li { 
-			flex-basis: 23%; 		// set half width for tablet
-			margin-left: 1%;		// gap between items, override 2% tablet-v
-			margin-right: 1%;		// gap between items, override 2% tablet-v
+			flex-basis: 23.5%; 								// set quarter width for television, 23.5% *4 = 94%, 2% *3 = 6% gap
 		}
 	}
 }
 
 .tags {
-	margin: 0.25em 0 1em 0.75em;		// set spacing between name and tags
-	padding: 0;
+	margin: 0.25em 0 1em 0.75em;							// 0.25em *16px = 4px, 1em *16px = 16px, 0.75em *16px = 12px, set spacing between name and tags
+	padding: 0;												// override p padding.
 	a {
-		background: $gray-light-alpha;
-		color: lighten($text,45) !important;
-		padding: 0.125em 0.5em 0.25em 0.5em;	// extra padding around the tag link
-		font-size: $font14;
-		border-radius: 1em;				// rounded boxes
+		background: $gray-light-alpha;						// #ede8dd off white
+		color: lighten($text,45) !important;				// #959595 gray
+		padding: 0.125em 0.5em 0.25em 0.5em;				// extra padding around the tag link
+		font-size: $font14;									// 0.875em *16px = 14px
+		border-radius: 1em;									// rounded boxes
 		&:hover, &:active {
 			color: white !important;
-			background: $orange-light;
-			background: linear-gradient(to right, $orange 0, $orange-light 100%);
+			background: $orange-light;						// #f29029 light orange, fallback for gradient
+			background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 orange to #f29029 light orange
 		}
 	}
 }
@@ -370,26 +360,33 @@ h3.large {
 /* Project Page */
 /* -------------------------- */
 h2.project-title {
-	text-align: center;							// override left
-	margin-top: calc($base * 1.5); 				// 1.3125em *1.5 = 1.96875em
+	text-align: center;										// override left
+	margin-top: calc($base * 1); 							// 1.3125em *1.5 = 1.96875em
+	font-size: 3.2em;										// override 2em from typography.scss, 3.2em *16px = 51.2px
+	padding:0 0.25em;										// 0.25em *16px = 4px, side padding so text doesn't appear against browser border
+	@media screen and (min-width: $tablet-v) {				// For screens above
+		padding:0 0.5em;									// override 0.25em, 0.5em *16px = 8px, side padding so text doesn't appear against browser border
+	}
 }
 .project-desc {
-	p:first-child {
-		&::first-line {
-			@include square-font;				// Bree Serif, serif
-			font-size: 1.4rem; 					// 1.4em *16px = 22.4px
-			line-height: 1.5; 					// reduce line height
-		}
+	h3 {
+		font-weight: bold;									// override regular from typography.scss
+		margin-top: 1em;									// 1em *16px = 16px, top spacing from Flexslider
+	}
+	ul {
+		padding-left: 1.6em;								// override default, 1.6em *16px = 25.6px, bullet indent
+		margin-bottom: 0;
 	}
 	li {
-		margin-bottom: calc($base/2);			// 1.3125em *2 = 2.625em, list item vertical spacing
+		margin-bottom: calc($base/1.5);						// 1.3125em *2 = 2.625em, list item vertical spacing
+		line-height: 1.6;									// override default, align with p from typography.scss
 	}
 	@media screen and (min-width: $laptop) {
-		margin-bottom: calc($base * 2);			// 1.3125em *2 = 2.625em
-		p, ul {
-			max-width: 60em;					// 56em *16px = 
-			margin-left: auto;					// center on the page
-			margin-right: auto;					// center on the page
+		margin-bottom: calc($base * 2);						// 1.3125em *2 = 2.625em
+		h3, p, ul {
+			max-width: 60rem;								// 60em *16px = 960px, use root for consistency across h3 & p
+			margin-left: auto;								// center on the page
+			margin-right: auto;								// center on the page
 		}
 	}
 }

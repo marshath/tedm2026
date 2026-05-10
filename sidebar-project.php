@@ -18,7 +18,7 @@
 							<span class="h3-project-bg-top"></span>
 							<span class="h3-project-bg-bottom"></span>
 						</div>
-						<p><?php the_excerpt() ?></p>
+						<?php the_excerpt() ?>
 						<hr>
 					</a>
 					<?php the_tags( '<p class="tags"><span class="tags-title screen-reader-text">' . __( 'Tags:', 'bonestheme' ) . '</span> ', '<span class="screen-reader-text">,</span> ', '</p>' ); ?>

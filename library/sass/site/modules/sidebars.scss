@@ -20,11 +20,12 @@ div.quotes {
 .client-quotes, .related-sites {
 	h2 {
 		width: 100%;
-		font-size: 1.5em;
+		font-size: 1.6em;
 		text-shadow: 0 1px white;
 		display: block;
 		vertical-align: middle;
 		margin-bottom: $base;
+		margin-top: .2em; // 0.2em *16px = 3.2px
 		.us-icon, .testimonial-icon {
 			font-size: 1.4em;
 		}
@@ -93,10 +94,13 @@ blockquote:before {
 .client-love {
 	@extend .screen-reader-text;
 }
-.related-sites li {
-	@media screen and (min-width: $laptop) and (max-width: $computer-h) {
-		&:nth-child(4) {		// remove widow project when 3-up
-			display: none;
+.related-sites {
+	padding-bottom: $base;		// 1.3125em *16px = 21px, push down bottom border
+	li {
+		@media screen and (min-width: $laptop) and (max-width: $television) {
+			&:nth-child(4) {		// remove widow project when 3-up
+				display: none;
+			}
 		}
 	}
 }
@@ -108,15 +112,15 @@ blockquote:before {
 
 // SOCIAL LINKS //
 .sidebar-social-links {
-	width: 100%;
-	background: rgba(255,255,255,0.4);
-	padding: $base 0;
-	margin-bottom: calc($base*2);
-	border-radius: 0.25em;							// same as .project figure from modules.scss
+	width: 100%;										// set width 100% of container
+	background: rgba(255,255,255,0.4);					// transparent white
+	padding: $base 0;									// 1.3125em *16px = 21px, top & bottom spacing
+	margin-bottom: calc($base*2);						// 1.3125em *16px = 21px, space from footer
+	border-radius: 0.25em;								// same as .project figure from modules.scss
 	border: 4px solid white;							// same as .project figure from modules.scss
 	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));	// same as .project figure:hover from modules.scss
 	h3 {
-		text-align: center;
+		text-align: center;								// center header
 	}
 	ul {
 		border: none;
@@ -124,8 +128,8 @@ blockquote:before {
 	}
 	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
 		width: 100%;
-		margin-top: $base;
-		margin-right:0;
+		margin-top: $base;								// 1.3125em *16px = 21px
+		margin-right:0;	
 	}
 }
 .fb-like-box {

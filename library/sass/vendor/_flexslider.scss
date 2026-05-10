@@ -1,15 +1,25 @@
 /* Browser Resets */
 
 .flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
-	outline: none;
+	outline: none;		// remove the browser outline on :active, :focus
 }
 
 .flex-project-container { // Project images
 	width: 100%;
-	border: 4px solid white;		// same as .project figure from modules.scss
-	margin-bottom: calc($base*2);
-	@include box-shadow(0px 2px 4px rgba(0,0,0,0.4));
-	border-radius: 0.25em;			// same as .project figure from modules.scss
+	//border-top: 4px solid white;							// same as .project figure from modules.scss
+	border-bottom: 2px solid rgba(255,255,255,0.2);		// same as .project figure from modules.scss
+	margin-bottom: calc($base*2);							// (1.3125em * 2) *16px = 2.625em, 42px, same as .project figure from modules.scss
+	@include box-shadow(0px 2px 1.25em rgba(0,0,0,0.35)); // 1.25em *16px = 20px, black transparent
+	border-radius: 0.25em;									// same as .project figure from modules.scss
+}
+@media screen and (min-width: 1400px) {
+	.flex-project-container {
+		max-width:103em;									// 103em *16px = 1648px
+		border: 3px solid rgba(255,255,255,0.2);			// same as .project figure from modules.scss
+		border-top: none;									// remove the top border, flexslider flush against orange line
+		margin-left: auto;									// center flexslider
+		margin-right: auto									// center flexslider
+	}
 }
 
 .flex-testimonial-container { /* Testimonial quotes */
@@ -97,47 +107,49 @@ html[xmlns] .slides {
 }
 
 .flex-project-container {
-	.flex-direction-nav a {		// project navigation 
-		width: 30px; 
-		height: 20%; 
-		margin: -30% 0 0;
-		display: block; 
-		background: url(library/images/bg_direction_nav.png) no-repeat 0 0 rgba(255,255,255,0.9);
-		position: absolute; 
-		z-index: 10;
+	.flex-direction-nav a {							// project navigation 
+		width: 60px; 								// width of buttons
+		height: 20%;								// height of buttons
+		margin: -30% 0 0;							// move up to center button in flexslider
+		display: block; 							// force display block
+		position: absolute; 						// position inside flexslider
+		z-index: 10;								// position above images
 		cursor: pointer; 
-		text-indent: -9999px; 
-		opacity: 0; 
-		border-radius: 4px;
-		@include transition(all, .3s, ease);
+		text-indent: -9999px; 						// move text off screen
+		opacity: 0; 								// hide buttons until :hover
+		border-radius: 4px;							// round corners
+		box-shadow: 0 0 $base rgba(0,0,0,0.3);	// 1.3125em *16px = 21px, black transparent
+		@include transition(all, .3s, ease);		// fade in transition time
 	}
 
 	.flex-direction-nav .flex-next {
-		background-position: 100% 50%;
-		right: -36px; 
+		background: url(library/images/bg_direction_nav_next.svg) no-repeat center center rgba(255,255,255,0.6);	// arrow graphic for nav buttons
+		background-position: 100% 50%;				// position right & center vertically
+		right: -36px; 								// slide in on :hover 
 	}
 
 	.flex-direction-nav .flex-prev {
-		background-position: 0% 50%;
-		left: -36px;
+		background: url(library/images/bg_direction_nav_prev.svg) no-repeat 0 0 rgba(255,255,255,0.6);	// arrow graphic for nav buttons
+		background-position: 0% 50%;				// position left & center vertically
+		left: -36px;								// slide in on :hover
 	}
 	
 	.flexslider:hover .flex-next {
-		opacity: 0.8; 
-		right: 5px;
+		opacity: 1;									 // show buttons on :hover
+		right: 5px;									// position when buttons slide into view
 	}
 	
 	.flexslider:hover .flex-prev {
-		opacity: 0.8; 
-		left: 5px;
+		opacity: 1;									 // show buttons on :hover
+		left: 5px; 									// position when buttons slide into view
 	}
 	
 	.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
-		opacity: 1;
+		background-color: rgba(255,255,255,1);	// solid white background on :hover
 	}
 	
 	.flex-direction-nav .flex-disabled {
-		opacity: .3!important; 
+		opacity: .3!important;
 		filter:alpha(opacity=30); 
 		cursor: default;
 	}
@@ -156,25 +168,28 @@ html[xmlns] .slides {
 	}
 	
 	.flex-control-paging li a {
-		width: 50px; 
-		height: 6px; 
-		display: block; 
-		background: white; 
+		width: 25px; 								// width half of :hover 50px
+		height: 8px; 								// set height
+		display: block; 							// force block
+		background: white; 							// #FFF
 		cursor: pointer;
-		text-indent: -9999px;
-		//@include box-shadow(0 1px 1px rgba(0,0,0,0.5));
-		border-radius: 4px;
+		text-indent: -9999px;						// position text off screen
+		@include box-shadow(0 1px 3px rgba(0,0,0,0.05));	// faint drop shadow to help the buttons stand out against the tan background
+		border-radius: 4px;							// round corners
+		transition: ease 0.2s all;					// on :hover & :active grow shrink transition
 	}
 	
 	.flex-control-paging li a:hover { 
-		background: #333; 
-		background: linear-gradient( to right, $orange 0%, $orange-light 100%);
+		width: 50px; 								// width double a:link 25px
+		background: $yellow;						// yellow on :hover
+		@include box-shadow(0 1px 1px rgba(0,0,0,0.2));	// override, black transparent drop shadow tights up on :hover
+		transition: ease 0.2s all;					// on release a:link grow shrink transition
 	}
 	
 	.flex-control-paging li a.flex-active { 
-		background: #000; 
-		background: $orange-light; 
+		background: $orange-light; 					// #f29029
 		cursor: default; 
+		width: 50px; 								 // width double a:link 25px
 	}
 	
 	.flex-control-thumbs {

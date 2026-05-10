@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 110 100">
+  <defs>
+    <style>
+      .st0 { filter: url(#drop-shadow-1); }
+      .st1 { fill: url(#linear-gradient); }
+    </style>
+    <filter id="drop-shadow-1" x="25.14" y="1.01" width="52.86" height="99.01" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="1"/>
+      <feGaussianBlur result="blur" stdDeviation="0"/>
+      <feFlood flood-color="#000" flood-opacity="1"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="51.57" y1="99.01" x2="51.57" y2="1.01" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ed3c24"/>
+      <stop offset="1" stop-color="#f29029"/>
+    </linearGradient>
+  </defs>
+  <g class="st0">
+    <path class="st1" d="M70.73,97.73L26.38,53.04c-1.66-1.68-1.66-4.4,0-6.07L70.73,2.27c2.68-2.7,7.27-.79,7.27,3.04v89.4c0,3.83-4.59,5.74-7.27,3.04v-.02Z"/>
+  </g>
+</svg>
