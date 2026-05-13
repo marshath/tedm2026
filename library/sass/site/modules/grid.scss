@@ -42,7 +42,7 @@ $gray-dark-alpha: #e0dacc;
 $nav-text: #bdc0c3;
 
 // SOCIAL MEDIA COLORS //
-$twitter-blue: #00aced;
+//$twitter-blue: #00aced;
 $codepen-yellow: #ffcc00;
 $github-black: #24292e;
 $pinterest-red: #cb2027;
@@ -120,40 +120,40 @@ $line : 4px solid $tan; /* horizonital ruler */
 /* Page Containers */
 /* -------------------------- */
 body {
-	color: $text;								// #222
-	@include regular;							// Verdana, Geneva, sans-serif
-	line-height: $base;							// 1.3125em
-	background: #100202;						// off-black
+	color: $text;										// #222
+	@include regular;									// Verdana, Geneva, sans-serif
+	line-height: $base;									// 1.3125em
+	background: #100202;								// off-black
 }
 
 main {
-	background-color: #E3DDD0;				// off-white
-	background-image: url(library/images/pattern-paper.jpg);		// paper texture
-	background-repeat: repeat;					// tile across background
-	min-height: 65vh;							// force minimum page height for paper texture
+	background-color: #E3DDD0;						// off-white
+	background-image: url(library/images/pattern-paper.jpg); // paper texture
+	background-repeat: repeat;							// tile across background
+	min-height: 65vh;									// force minimum page height for paper texture
 }
 
 // Background wraps //
 .site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap {
-	width: 100%;								// set headers full width
-	padding: 0;									// remove section padding
-	display: block;								// force items down
-	position: relative;							// set parent positioning for children
+	width: 100%;										// set headers full width
+	padding: 0;											// remove section padding
+	display: block;										// force items down
+	position: relative;									// set parent positioning for children
 }
 .services-wrap {
-	background: rgba(199,194,193,0.6);			// transparent off-white
-	padding-left: 8.33%;						// side padding
-	padding-right: 8.33%;						// side padding
-	margin-bottom: $base;						// 1.3125em
+	background: rgba(199,194,193,0.6);					// transparent off-white
+	padding-left: 8.33%;								// side padding
+	padding-right: 8.33%;								// side padding
+	margin-bottom: $base;								// 1.3125em *16px = 21px
 }
 
 /* -------------------------- */
 /* BACKGROUND WRAP IMAGES */
 /* -------------------------- */
 .header-wrap { 
-	background: #0f0049; 						// Old browsers
+	background: #0f0049; 								// Old browsers
 	background: linear-gradient( to top, #420c56 0%,#0f0049 25%, #09002c 50%, #000000 90%);	// gradient behind hero graphic
-	padding-top: $base;							// 1.3125em
+	padding-top: $base;									// 1.3125em *16px = 21px
 }
 .home .header-wrap {
 	background: radial-gradient( circle at 46% 90%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
@@ -163,146 +163,146 @@ main {
 }
 
 .article-wrap {
-	padding-top: calc($base*2.8);				// 1.3125em *2.8 = 3.675em * 16px = 58.8px, push content down from ::before orange line
-	padding-bottom: $base;						// 1.3125em, force main content to the footer
+	padding-top: calc($base*2.8);						// (1.3125em *2.8) *16px = 3.675em, 58.8px, push content down from ::before orange line
+	padding-bottom: $base;								// 1.3125em *16px = 21px, force main content to the footer
 	//@media screen and (min-width: $television) {
-		//padding-top: calc($base*3);			// 1.3125em *3 = 3.9375em, spacing from header
+		//padding-top: calc($base*3);					// (1.3125em *3) *16px = 3.9375em, 63px, spacing from header
 	//}
 }
 
 .services-wrap, .quotes-wrap, .related-wrap {
-	background: rgba(199,194,183,0.3);			// transparent white
+	background: rgba(199,194,183,0.3);					// transparent white
 	box-shadow: inset 0 1px 2px darken($tan,20%), inset 0 -1px 0px lighten($tan,40%);
-	margin-bottom: calc($base*2);				// 1.3125em *2 = 2.625em, spacing from header
-	padding-top: $base;							// 1.3125em
+	margin-bottom: calc($base*2);						// (1.3125em *2) *16px = 2.625em, 42px, spacing from header
+	padding-top: $base;									// 1.3125em *16px = 21px
 }
 
 .footer-wrap {
-	background: #530f62;					 // Old browsers //
+	background: #530f62;							 // Old browsers //
 //	background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
 	background: linear-gradient( to top,  #530f62 0%, #0f0049 85%, #09002c 100%);	// gradient behind hero graphic
-	padding-top: $base;							// 1.3125em
+	padding-top: $base;									// 1.3125em *16px = 21px
 }
 
 
 // ORANGE DIVIDER - HEADER PSUEDO ELEMENT //
 .article-wrap:before {				
 	content: '';
-	width: 100%;								// set width
-	height: 10px;								// set height
-	background: $orange; 						// #ed3c24, orange
+	width: 100%;										// set width
+	height: 10px;										// set height
+	background: $orange; 								// #ed3c24, orange
 	background: linear-gradient(to right,  $orange 20%,$orange-light 80%); 	// #ed3c24, #f29029, dark to light orange
-	display: block;								// set full width
-	position: absolute;							// set child position for parent
-	top: 0;
-	left: 0;
+	display: block;										// set full width
+	position: absolute;									// set child position for parent
+	top: 0;												// position at the top 
+	left: 0;											// position on the left
 }
 
 // FOOTER PAPER FRAY - FOOTER PSUEDO ELEMENT //
 .footer-wrap:before {
 	content: '';
-	width: 100%;								// set width
-	height: 17px;								// set height
+	width: 100%;										// set width
+	height: 17px;										// set height
 	background: url(library/images/pattern-fray.png) repeat-x;	// paper fray pattern
-	display: block;								// set full width
-	position: absolute;							// set child position for parent
-	top:0;
-	left: 0;
+	display: block;										// set full width
+	position: absolute;									// set child position for parent
+	top:0;												// position at the top 
+	left: 0;											// position on the left
 }
 
 
 // HEADER //
 header.main { 
-	width: 100%;								// full width
-	margin-bottom: $base;						// 1.3125em
+	width: 100%;										// full width
+	margin-bottom: $base;								// 1.3125em *16px = 21px
 }
 
 // BODY ARTICLES //
 .content, .subcontent, .blog-content {
-	margin-bottom: calc($base*2);				// 1.3125em *2 = 2.625em, push related projects down 
-	display: block;								// set full width
-	position: relative;							// set child position
+	margin-bottom: calc($base*2);						// 1.3125em *2 = 2.625em, push related projects down 
+	display: block;										// set full width
+	position: relative;									// set child position
 	section { 
-		margin-bottom: $base;					// 1.3125em
+		margin-bottom: $base;							// 1.3125em *16px = 21px
 	}
 }
 
 .blog-content {
-	width: 100%;								// set full width
-	float: left;								// push left
-	@media screen and (min-width: $laptop) {
-		width: 60%;								// override 100%, 60% + 30% = 90%
+	width: 100%;										// set full width
+	float: left;										// push left
+	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
+		width: 60%;										// override 100%, 60% + 30% = 90%
 	}
 }
 .content section { 
-	width: 100%;								// set full width
-	@media screen and (min-width: $tablet-v) {
-		width: 48%;								// override 100%
+	width: 100%;										// set full width
+	@media screen and (min-width: $tablet-v) { /** 591px tablet vertical screen size and larger **/
+		width: 48%;										// override 100%
 	}
-	@media screen and (min-width: $laptop) {
-		width: 30%;								// override 48%, 30% + 60% = 90%
+	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
+		width: 30%;										// override 48%, 30% + 60% = 90%
 	}
 }
 
 .subcontent section { 
 	width: 100%;
 	h3 {
-		color: $text;							// #222
-		margin-bottom: 0.5em;					// spacing bottom
+		color: $text;									// #222, dark gray
+		margin-bottom: 0.5em;							// 0.5em *16px = 8px, spacing bottom
 	}
-	@media screen and (min-width: $tablet-v) {
-		width: 31%;								// override 100%
+	@media screen and (min-width: $tablet-v) { /** 591px tablet vertical screen size and larger **/
+		width: 31%;										// override 100%
 	}
-	@media screen and (min-width: $laptop) {
-		width: 23%;								// override 31%, 23% + 2% = 25%
-		margin-left: 2%;						// 23% + 2% = 25%
+	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
+		width: 23%;										// override 31%, 23% + 2% = 25%
+		margin-left: 2%;								// 23% + 2% = 25%
 	}
 }
 
 // SIDEBAR SERVICES //
 aside.services {
-	width: 100%;								// set full width
-	padding: $base 0 0 0;						// 1.3125em, space on top
-	display: block;								// force items down
+	width: 100%;										// set full width
+	padding: $base 0 0 0;								// 1.3125em *16px = 21px, space on top
+	display: block;										// force items down
 	section { 
-		width: 100%;							// set full width
+		width: 100%;									// set full width
 		display: inline-block;
-		float: left;							// align left
-		position: relative;						// set child position for float
+		float: left;									// align left
+		position: relative;								// set child position for float
 	}
-	@media screen and (min-width: $tablet-v) {
-		padding: 0;								// override $base, remove top padding
+	@media screen and (min-width: $tablet-v) { /** 591px tablet vertical screen size and larger **/
+		padding: 0;										// override $base, remove top padding
 	}
-	@media screen and (min-width: $laptop) {
-		padding-top: $base;						// override 0, 1.3125em, add top padding
+	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
+		padding-top: $base;								// override 0, 1.3125em *16px = 21px, add top padding
 		section {
-			width: 33.33%;						// override 100%
+			width: 33.33%;								// override 100%
 		}
 	}
 }
 
 .sidebar {
-	width: 100%;								// set full width
-	float: right;								// align right
+	width: 100%;										// set full width
+	float: right;										// align right
 	display: inline-block;
-	@media screen and (min-width: $laptop) {
-		width: 35%;								// override 100%
+	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
+		width: 35%;										// override 100%
 	}
 }
 
 // FOOTER //
 .site-footer {
-	width: 100%;								// set full width
-	@include square-font;						// 'Bree Serif', serif
-	color: $tan;								// #c7c2b7
-	padding: calc($base*2) 0 $base 0;			// 1.3125 * 2 = 2.625em top, 1.3125em bottom
-	display: block;								// push items down
+	width: 100%;										// set full width
+	@include square-font;								// 'Bree Serif', serif
+	color: $tan;										// #c7c2b7
+	padding: calc($base*2) 0 $base 0;					// 1.3125em * 2 = 2.625em top, 1.3125em bottom
+	display: block;										// push items down
 	section {
-		display: block;							// push items down
-		float: left;							// align left
+		display: block;									// push items down
+		float: left;									// align left
 	    ul {
-	    	margin: 0;							// remove default list margin
-			padding: 0;							// remove default list padding
+	    	margin: 0;									// remove default list margin
+			padding: 0;									// remove default list padding
 		}
 	}
 }
@@ -310,21 +310,21 @@ aside.services {
 
 // MAX WIDTH //
 .site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap {
-	padding-left: 0;
-	padding-right: 0;
+	padding-left: 0;									// remove any inherited padding
+	padding-right: 0;									// remove any inherited padding
 }	
 .site-header, article, aside.services, aside.client-quotes, aside.related-sites, .site-footer, .body-content, .project-desc {
-	width: 84%;									// side spacing for small screens
-	max-width: 1800px;							// max width for wide screens
-	margin-left: auto;							// center content
-	margin-right: auto;							// center content
+	width: 84%;											// side spacing for small screens
+	max-width: 1800px;									// max width for wide screens
+	margin-left: auto;									// center content
+	margin-right: auto;									// center content
 }
-.single-project {								// Project detail page 
-	article {									// Projects full width for Flexslider images on mobile 
-		width: 100%;							// set full width for images to the edge on mobile
+.single-project {										// Project detail page 
+	article {											// Projects full width for Flexslider images on mobile 
+		width: 100%;									// set full width for images to the edge on mobile
 	}
 	.article-wrap {
-		padding-top: 10px; // override calc($base*2.8), match height from ::before orange line
+		padding-top: 10px; 								// override calc($base*2.8), match height from ::before orange line
 	}
 }
 /*@media screen and (min-width: $mobile-v) {
@@ -337,29 +337,28 @@ aside.services {
 		border: 1px solid red;
 	}
 } */
-@media screen and (min-width: $tablet-v) {
-	.site-header, aside.services, aside.client-quotes, aside.related-sites, .site-footer, .body-content, .project-desc {
-		width: 90%;	
+@media screen and (min-width: $tablet-v) { 		/** 591px tablet vertical screen size and larger **/
+	aside.services, aside.client-quotes, aside.related-sites, .body-content, .project-desc {
+		width: 90%;
 	}
-	article {
+	.site-header {
+		width: 95%;										// override 100%, main menu replaces hamburger and needs less side margin to visually center h1.logo and nav
+		margin-left: 5%;								// override none, push logo away from browser left side
+	}
+	article, .site-footer {
 		width: 94%;	
 	}
-	/*.single-project article {
-		border: 1px solid green;
-	} */
 }
-/*@media screen and (min-width: $laptop) {
-	.single-project article {
-		border: 1px solid blue;
+@media screen and (min-width: $monitor) {		/** 1200px monitor screen size and larger **/
+	.site-header {
+		width: 93%;										// override 95%, reduce width to visually center h1.logo and nav
+		margin-right: 2%;								// override none, push nav away from browser right side
 	}
 }
-@media screen and (min-width: $computer-v) {
-	.single-project article {
-		border: 1px solid red;
+@media screen and (min-width: $television) {	/** 1600px television screen size and larger **/
+	.site-header {
+		width: 95%;										// override 93%, expand width for large screen
+		margin-left: auto;								// override 5%, center h1.logo and nav
+		margin-right: auto;								// override 2%, center h1.logo and nav
 	}
 }
-@media screen and (min-width: $television) {
-	.single-project article {
-		border: 1px solid green;
-	}
-}*/

@@ -27,7 +27,7 @@
 <body <?php body_class(); ?>>
 <div class="header-wrap">
 	<header id="masthead" class="site-header clearfix" role="banner">
-		<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Ted Marshall - Graphic Designer" rel="home">Ted Marshall Graphic Designer</a></h1>
+		<h1 class="logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Ted Marshall, UX Designer" rel="home">Ted Marshall, UX Design, Web Design, Graphic Design, Portland, Oregon, Vancouver, Washington</a></h1>
 		<nav id="site-navigation" class="main-navigation">
 			<h3 id="menu-toggle"><a href="#"><span class="menu-icon" aria-hidden="true" data-icon="&#xe908;"></span> <span class="menu-text">Menu</span></a></h3>
 			<ul id="nav-menu" class="menu" role="navigation">

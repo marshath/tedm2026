@@ -171,7 +171,7 @@ html[xmlns] .slides {
 		width: 25px; 								// width half of :hover 50px
 		height: 8px; 								// set height
 		display: block; 							// force block
-		background: white; 							// #FFF
+		background: linear-gradient(190deg, white 40%, $gray-dark-alpha 96%); // #FFF
 		cursor: pointer;
 		text-indent: -9999px;						// position text off screen
 		@include box-shadow(0 1px 3px rgba(0,0,0,0.05));	// faint drop shadow to help the buttons stand out against the tan background
@@ -182,12 +182,14 @@ html[xmlns] .slides {
 	.flex-control-paging li a:hover { 
 		width: 50px; 								// width double a:link 25px
 		background: $yellow;						// yellow on :hover
-		@include box-shadow(0 1px 1px rgba(0,0,0,0.2));	// override, black transparent drop shadow tights up on :hover
+		background: linear-gradient(190deg, $yellow 40%, $orange-light 96%); // #FFF
+		@include box-shadow(0 1px 1px rgba(0,0,0,0.1));	// override, black transparent drop shadow tights up on :hover
 		transition: ease 0.2s all;					// on release a:link grow shrink transition
 	}
 	
 	.flex-control-paging li a.flex-active { 
 		background: $orange-light; 					// #f29029
+		background: linear-gradient(190deg, $orange-light 30%, $orange 100%); // #FFF
 		cursor: default; 
 		width: 50px; 								 // width double a:link 25px
 	}

@@ -7,42 +7,43 @@
 
 // CONTACT INFO FOOTER //
 section.footer-company-info {
-	width: 100%;						// full width
-	margin-right: 2%;					// spacing nav right
-	margin-bottom: ($base*2);			// 1.3125em * 2 = 2.625em, spacing for nav
-	@media screen and (min-width: $tablet-v) {	// 591px screen size and up
-		width: 48%;						// override 100%, 48% company social 2%, 50% nav = 100%
-		margin-bottom: $base;			// 1.3125em, spacing for copyright
+	width: 100%;										// full width
+	margin-right: 2%;									// spacing nav right
+	margin-bottom: ($base*2);							// 1.3125em * 2 = 2.625em, spacing for nav
+	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
+		width: 36%;										// override 100%, 36% company social 2%, 62% nav = 100%
+		margin-bottom: $base;							// 1.3125em, spacing for copyright
 	}
-	@media screen and (min-width: $laptop) {	// 901px screen size and up
-		width: 20%;						// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
+	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
+		width: 20%;										// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
 	}
 }
 .footer-company-info {
 	li {
-		width: 100%;					// full width
-		font-size: $font14;				// 0.875em
+		width: 100%;									// full width
+		font-size: $font14;								// 0.875em *16px = 14px
 		line-height: 1.5em;
-		display: block;					// column, force line break
-		float: left;					// position left
-		list-style: none;				// remove default list-style
+		display: block;									// column, force line break
+		float: left;									// position left
+		list-style: none;								// remove default list-style
 	}
 	h4, a {
-		color: $nav-text;				// #bdc0c3
+		color: $nav-text;								// #bdc0c3, dark gray
+		margin-bottom: calc($base/4);					// override default margin-bottom, (1.3125em /4) *16px = 0.328125em, 5.25px
 	}
 	.name {
-		font-size: $font14;				// 0.875em
-		text-transform: uppercase;
-		padding-bottom: 1%;				// space border-bottom from name
+		font-size: $font14;								// 0.875em *16px = 14px
+		text-transform: uppercase;						// transform all text to uppercase
+		padding-bottom: 1%;								// space border-bottom from name
 		border-bottom: 1px dotted rgba(255,255,255,0.4);	// align with section.footer-social-links h4 styling
 	}
 }
 .ftr-contact a {
-	text-decoration: none;					// remove default list style
+	text-decoration: none;								// remove default list style
 	&:hover {
-		color: white;						// white
+		color: white;									// #fff white
 		.email-icon {
-			color: $yellow;					// #fc0
+			color: $yellow;								// #fc0 yellow
 		}
 	}
 }
@@ -50,98 +51,99 @@ section.footer-company-info {
 
 // FOOTER NAVIGATION //
 section.footer-navigation { 
-	width: 100%;							// full width
-	margin-bottom: $base;					// 1.3125em, spacing, move nav down
-	@media screen and (min-width: $tablet-v) {	// 591px screen size and up
-		width: 48%;							// override 100%, 48% company social 2%, 50% nav = 100%
-		float: right;						// position right
+	width: 100%;										// set full width
+	margin-bottom: $base;								// 1.3125em *16px = 21px, spacing, move nav down
+	border: 1px sold red;
+	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
+		width: 62%;										// override 100%, 36% company social 2%, 62% nav = 100%
+		float: right;									// position right
 	}
-	@media screen and (min-width: $laptop) {	// 901px screen size and up
-		width: 53%;							// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
-		margin-right: 2%;					// spacing for social links
-		float: left;						// override right, position center
+	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
+		width: 53%;										// override 58%, 20% company 2%, 53% nav 2%, 23% social = 100%
+		margin-right: 2%;								// spacing for social links
+		float: left;									// override right, position center
 	}
 }
 
 .footer-navigation {
 	li {
-		text-align: center;					// align text center
+		text-align: center;								// align text center
 		&:first-child {
-			margin-top: calc($base*0.25); 	// override 2% from header .menu, 1.3125em * 0.25 = 0.328125em
+			margin-top: calc($base*0.25); 				// override 2% from header .menu, 1.3125em * 0.25 = 0.328125em
 		}
 	}
 	a {
-		line-height: 1em;					// reduce vertical height between icon and text
-		margin: 0 0 $base 0;				// 0 0 1.3125em 0, move social links down
+		line-height: 1em;								// reduce vertical height between icon and text
+		margin: 0 0 $base 0;							// 0 0 1.3125em 0, move social links down
 	}
-	@media screen and (min-width: $tablet-v) {	// 901px screen size and up
+	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
 		li, li:first-child {
-			margin: 0; 						// override header .menu padding
-			width: 23%;						// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
-			margin: 0 0.5%;					// equal side spacing between menu items
-			height: calc($base*3);				// 1.3125em * 3 = 3.9375em
+			margin: 0; 									// override header .menu padding
+			width: 23%;									// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
+			margin: 0 0.5%;								// equal side spacing between menu items
+			height: calc($base*3);						// 1.3125em * 3 = 3.9375em
 		}
 	}
-	@media screen and (min-width: $television) {	// 1200px screen size and up
+	@media screen and (min-width: $television) { /** 1600px television screen size and larger **/
 		li, li:first-child {
-			margin: 0 1%;					// equal side spacing between menu items
+			margin: 0 1%;								// equal side spacing between menu items
 		}
 	}
 }
 
 // SOCIAL FOOTER //
 section.footer-social-links {
-	width: 70%;								// set max width 70% + 15% + 15% = 100%
-	margin-top: $base;						// 1.3125em, move down to vertically from .footer-navigation on mobile
-	margin-left: 15%;						// align center (30%/2=15)
-	text-align: center;						// center text
-	color: $nav-text;						// #bdc0c3, override $tan
+	width: 80%;											// set max width 70% + 15% + 15% = 100%
+	margin-top: $base;									// 1.3125em *16px = 21px, move down to vertically from .footer-navigation on mobile
+	margin-left: 10%;									// align center (30%/2=15)
+	text-align: center;									// center text
+	color: $nav-text;									// #bdc0c3, override $tan
 	h4 {
-		font-size: $font14;					// 0.875em
-		text-transform: uppercase;
-		padding-bottom: 1%;					// spacing from border-bottom
+		font-size: $font14;								// 0.875em *16px = 14px
+		text-transform: uppercase;						// transform all text to uppercase
+		padding-bottom: 1%;								// spacing from border-bottom
+		margin-bottom: calc($base/2);					// (1.3125em /2) *16px = 0.65625e, 10.5px, bottom spacing
 	}
-	@media screen and (min-width: $tablet-v) {	// 591px screen size and up
-		text-align: left;					// override center, align icons & h4 text left on tablet
-		width: 48%;							// override 70%, set max width 48% + 2% = 50% spacing
-		margin-top: 0;						// override $base, 1.3125em, remove vertical spacing to align with .footer-navigation on larger screens
-		margin-left: 0;						// override 15%
-		h4 {
-			border-bottom: 1px solid rgba(255,255,255,0.4);		// align with .footer-company-info .name styling
-		}
+	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
+		text-align: left;								// override center, align icons & h4 text left on tablet
+		width: 36%;										// override 70%, 36% company social 2%, 62% nav = 100% spacing
+		margin-top: 0;									// override $base, 1.3125em, remove vertical spacing to align with .footer-navigation on larger screens
+		margin-left: 0;									// override 15%
+		clear: left;									// clear objects to position left
 	}
-	@media screen and (min-width: $laptop) {	// 901px screen size and up
-		width: 23%;							// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100
-		text-align: center;					// override left, center text
+	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
+		width: 23%;										// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100
+		text-align: center;								// override left, center text
+		clear: none;									// override left, position at end of footer on the right
 		h4 {
-			border: none;					// remove border-bottom
+			border-bottom: 1px dotted rgba(255,255,255,0.4);	// override none, align with .footer-company-info .name styling
 		}
 	}
 }
 
 .footer-social-links {
 	ul {
-		display: flex;						// social link layout grid
-		flex-flow: row nowrap;				// horizontal grid layout
-		margin: auto;						// center grid
-		width: 100%;						// set full width
+		display: flex;									// social link layout grid
+		flex-flow: row nowrap;							// horizontal grid layout, no wrap
+		margin: auto;									// center grid
+		width: 100%;									// set full width
 	}
 	li {
-		flex-basis: 20%;					// 20% * 5 = 100%
-		list-style: none;					// remove default list style
+		flex-basis: 25%;								// 25% * 4 = 100%
+		list-style: none;								// remove default list style
 	}
 	.social-text {
-		display: none;						// hide link text
+		display: none;									// hide link text
 	}
 	a {
-		opacity: 0.5;						// half opacity icons
-		color: $tan;						// #c7c2b7
+		opacity: 0.5;									// half opacity icons
+		color: $tan;									// #c7c2b7 tan
 		font-size: 2rem;
-		margin-bottom: calc($base/2);		// 1.3125em /2 = .65625em, move copyright down
-		display: block;						// force full width for clicking link
+		margin-bottom: calc($base/2);					// (1.3125em /2) *16px = .65625em, 10.5px, move copyright down
+		display: block;									// force full width for clicking link
 		&:hover {
-			opacity: 1;						// override 0.5, full opacity
-			color: $yellow;					// #fc0
+			opacity: 1;									// override 0.5, full opacity
+			color: $yellow;								// #fc0 yellow
 		}
 	}
 }
@@ -152,9 +154,9 @@ section.footer-social-links {
 /* -------------------------- */
 
 .copyright {
-	width: 100%;							// full width
-	font-size: $font12;						// 0.75em
-	text-align: center;						// center text
-	padding-top: ($base*2);					// 1.3125em *2 = 2.625em // top spacing from .footer-social-links
-	clear: both;							// force below contact info, nav, social links
+	width: 100%;										// set full width
+	font-size: $font12;									// 0.75em *16px = 12px
+	text-align: center;									// center text
+	padding-top: ($base*2);								// (1.3125em *2) *16px = 2.625em, 42px // top spacing from .footer-social-links
+	clear: both;										// force below contact info, nav, social links
 }
