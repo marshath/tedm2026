@@ -15,38 +15,38 @@
 /* -------------------------- */
 
 // FONT SIZES IN EMS //
-$font8: 0.5em;
-$font10: 0.625em;
-$font11: 0.6875em;
-$font12: 0.75em;
-$font13: 0.8125em;
-$font14: 0.875em;
-$font16: 1em;
-$font18: 1.125em;
-$font20: 1.25em;
+$font8: 0.5em;						// 0.5em *16px = 8px
+$font10: 0.625em;					// 0.625em *16px = 10px
+$font11: 0.6875em;					// 0.6875em *16px = 11px
+$font12: 0.75em;					// 0.75em *16px = 12px
+$font13: 0.8125em;					// 0.8125em *16px = 13px
+$font14: 0.875em;					// 0.875em *16px = 14px
+$font16: 1em;						// 1em *16px = 16px
+$font18: 1.125em;					// 1.125em *16px = 18px
+$font20: 1.25em;					// 1.25em *16px = 20px
 
 // COLORS //
-$text: #222;
-$green: #2d4207;
-$yellow: #fc0;
-$orange: #ed3c24;
-$orange-light: #f29029;
-$pink: #f12a6c;
-$tan: #c7c2b7;
-$contact-light: #eeedeb;
-$contact-dark: #d1d0cf;
-$gray-light: #ededed;
-$gray-light-alpha: #ede8dd;
-$gray-dark: #d1d0cf;
-$gray-dark-alpha: #e0dacc;
-$nav-text: #bdc0c3;
+$text: #222;						// dark gray
+$green: #2d4207;					// green
+$yellow: #fc0;						// yellow
+$orange: #ed3c24;					// orange
+$orange-light: #f29029;			// light orange
+$pink: #f12a6c;					// pink
+$tan: #c7c2b7;					// tan
+$contact-light: #eeedeb;			// off white
+$contact-dark: #d1d0cf;			// light gray
+$gray-light: #ededed;			// light gray
+$gray-light-alpha: #ede8dd;		// light gray
+$gray-dark: #d1d0cf;				// light gray
+$gray-dark-alpha: #e0dacc;		// light gray
+$nav-text: #bdc0c3;				// light gray
 
 // SOCIAL MEDIA COLORS //
 //$twitter-blue: #00aced;
-$codepen-yellow: #ffcc00;
-$github-black: #24292e;
-$pinterest-red: #cb2027;
-$linkedin-blue: #007bb6;
+$codepen-yellow: #ffcc00;			// yellow
+$github-black: #24292e;			// black
+$pinterest-red: #cb2027;			// red
+$linkedin-blue: #007bb6;			// blue
 
 // MEDIA QUERY BREAK POINTS //
 $mobile-v: 320px;
@@ -120,9 +120,9 @@ $line : 4px solid $tan; /* horizonital ruler */
 /* Page Containers */
 /* -------------------------- */
 body {
-	color: $text;										// #222
+	color: $text;										// #222 dark gray
 	@include regular;									// Verdana, Geneva, sans-serif
-	line-height: $base;									// 1.3125em
+	line-height: $base;									// 1.3125em *16px = 21px
 	background: #100202;								// off-black
 }
 
@@ -131,6 +131,10 @@ main {
 	background-image: url(library/images/pattern-paper.jpg); // paper texture
 	background-repeat: repeat;							// tile across background
 	min-height: 65vh;									// force minimum page height for paper texture
+	@media screen and (min-resolution: 192dpi) { /** display on high resolution screens **/
+		background: url(library/images/pattern-paper@2x.jpg); // high resolution paper texture
+		background-size: 128px 128px; 					// set paper graphic width height to @1x image
+	}
 }
 
 // Background wraps //
@@ -208,6 +212,10 @@ main {
 	position: absolute;									// set child position for parent
 	top:0;												// position at the top 
 	left: 0;											// position on the left
+	@media screen and (min-resolution: 192dpi) { /** display on high resolution screens **/
+		background: url(library/images/pattern-fray@2x.png); // high resolution paper fray pattern
+		background-size: 133px 17px; 					// set paper fray graphic width height to @1x image
+	}
 }
 
 
@@ -327,16 +335,6 @@ aside.services {
 		padding-top: 10px; 								// override calc($base*2.8), match height from ::before orange line
 	}
 }
-/*@media screen and (min-width: $mobile-v) {
-	.single-project article {
-		border: 1px solid blue;
-	}
-}
-@media screen and (min-width: $mobile-m) {
-	.single-project article {
-		border: 1px solid red;
-	}
-} */
 @media screen and (min-width: $tablet-v) { 		/** 591px tablet vertical screen size and larger **/
 	aside.services, aside.client-quotes, aside.related-sites, .body-content, .project-desc {
 		width: 90%;
@@ -345,8 +343,18 @@ aside.services {
 		width: 95%;										// override 100%, main menu replaces hamburger and needs less side margin to visually center h1.logo and nav
 		margin-left: 5%;								// override none, push logo away from browser left side
 	}
-	article, .site-footer {
-		width: 94%;	
+	article {
+		width: 94%;										// override 84%
+	}
+	.site-footer {
+		width: 97%;										// override 84%, provide more space on right for nav
+		margin-left: 3%;								// override auto, push nav away from company info, social links
+	}
+}
+@media screen and (min-width: $laptop) {		/** 901px laptop screen size and larger **/
+	.site-footer {
+		width: 94%;										// override 97%, center footer content
+		margin-left: auto;								// override 3%, center footer content
 	}
 }
 @media screen and (min-width: $monitor) {		/** 1200px monitor screen size and larger **/

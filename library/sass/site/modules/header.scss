@@ -22,8 +22,8 @@ h1.logo {
 		&:hover {
 			@include scale(0.95); 									// shrink logo on :hover
 		}
-		@media screen and (min-device-pixel-ratio: 1.5) { /** display on high resolution screens **/
-			background: url(images/logo@2x.png) no-repeat; 			// high resolution logo graphic
+		@media screen and (min-resolution: 192dpi) {	 /** display on high resolution screens **/
+			background: url(library/images/logo@2x.png) no-repeat; 			// high resolution logo graphic
 			background-size: 151px 81px; 							// set logo graphic width height to match h1.logo
 		}
 	}
