@@ -9,7 +9,7 @@ get_header(); ?>
 </div><?php // ------- .header-wrap ------- ?>
 <main id="site-content" role="main" class="article-wrap">
 
-	<article class="content clearfix">
+	<article class="body-content clearfix">
 		<h2><span class="services-icon" aria-hidden="true" data-icon="&#xe900;"></span> About Me</h2>
 		<figure><img src="<?php echo get_template_directory_uri(); ?>/library/images_project/chart-aboutUs.jpg" class="image-wrap"></figure>
 		<?php the_content(); ?>

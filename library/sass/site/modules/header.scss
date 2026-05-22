@@ -182,7 +182,7 @@ h1.logo {
 		a {
 			height: calc($base*4);								// override calc($base*2.5), 1.3125em *4 = 5.25em, increase menu item height
 			padding: calc($base*0.4) 1% 0;						// override calc($base*0.7) 1% 0, 1.3125em *0.5 = 0.65625em, reduce top padding
-			margin-top: 1em;									// separate links from top of page
+			margin-top: 1em;									// 16px, separate links from top of page
 			border: none;										// override 1px border top and bottom
 			box-shadow: none;									// override, remove box-shadow
 			&:hover {

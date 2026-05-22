@@ -105,20 +105,24 @@ a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button {
 }
 
 // SECONDARY BUTTON //
-// White button that turns orange on hover //
+// Tan button that turns orange on hover //
 // About Me page, Blog page //
 a.secondary-btn, .sidebar-mc-form .button2 {
-	background-color: $gray-light-alpha;				// #ede8dd, off-white
-	background: linear-gradient( to bottom, $gray-light-alpha 0.05, $gray-dark-alpha 1 );										// 1.3125em *16 = 21px
-	color: lighten($text, 20);							// #222 @20% = #555 gray
-	padding: calc($base/2) $base;						// 1.3125em *2 = 2.625em, 1.3125em
+	background: linear-gradient( -140deg, #dcd6c8 0%, #dcd6c8 100%);	// tan
+	color: $text;										// #222 dark gray
+	@include square-font(); 							// Bree Serif, serif
+	padding: $base 2em calc($base*1.15);				// (1.3125em *2) *16px = 2.625em, 42px, (1.3125em *1.15) *16px = 1.44375em, 23.1px
 	display: inline-block;								// force line break, top spacing
-	@include radius($corner);							// .25em *16px = 4px radius
-	border: 1px solid lighten($text, 45);				// #222 @45% = #959595 gray
+	border: 2px solid rgba(255,255,255,0.35);			// transparent white top embossing
+	border-right: 1px solid rgba(0,0,0,0.05);			// override 2px white, transparent black bottom embossing
+	border-bottom: 1px solid rgba(0,0,0,0.05);			// override 2px white, transparent black bottom embossing
+	font-size: 1.4em;									// 1.4em *16px = 22.4px
+	border-radius: 1.25rem;								// 1.25em * 16px = 20px, use root due to increased font size, matches border-radius .blogroll li from _modules.scss
+	@include box-shadow(0px 1px 2px rgba(0,0,0,0.1));	// #2d4207 @20% = #0e1402, dark green
+	text-shadow: 0 1px white;
 	&:hover {
-		color: white !important;						// #fff, white
+		color: rgba(75,0,5) !important;					// #fff, white
 		background: $orange-light;						// #f29029, orange
 		background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 0, #f29029 100%
-		border-color: white;							// #fff, white
 	} 
 }

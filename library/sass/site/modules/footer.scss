@@ -53,7 +53,6 @@ section.footer-company-info {
 section.footer-navigation { 
 	width: 100%;										// set full width
 	margin-bottom: $base;								// 1.3125em *16px = 21px, spacing, move nav down
-	border: 1px sold red;
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
 		width: 62%;										// override 100%, 36% company social 2%, 62% nav = 100%
 		float: right;									// position right
@@ -73,7 +72,7 @@ section.footer-navigation {
 		}
 	}
 	a {
-		line-height: 1em;								// reduce vertical height between icon and text
+		line-height: 1em;								// 16px, reduce vertical height between icon and text
 		margin: 0 0 $base 0;							// 0 0 1.3125em 0, move social links down
 	}
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
@@ -81,7 +80,7 @@ section.footer-navigation {
 			margin: 0; 									// override header .menu padding
 			width: 23%;									// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
 			margin: 0 0.5%;								// equal side spacing between menu items
-			height: calc($base*3);						// 1.3125em * 3 = 3.9375em
+			height: calc($base*3);						// (1.3125em * 3) *16px = 3.9375em, 63px
 		}
 	}
 	@media screen and (min-width: $television) { /** 1600px television screen size and larger **/

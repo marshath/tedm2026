@@ -239,7 +239,7 @@ header.main {
 	width: 100%;										// set full width
 	float: left;										// push left
 	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
-		width: 60%;										// override 100%, 60% + 30% = 90%
+		max-width: 70%;									// override 100%, 60% .blog-content + 5% gap + 35% .sidebar = 100%
 	}
 }
 .content section { 
@@ -292,9 +292,10 @@ aside.services {
 .sidebar {
 	width: 100%;										// set full width
 	float: right;										// align right
-	display: inline-block;
+	display: inline-block;								// inline with content for tablet and larger displays
 	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
-		width: 35%;										// override 100%
+		width: 25%;										// override 100%, 25% .sidebar + 5% gap + 70% .blog-content = 100%
+		max-width: 26em;								// override 100%, 35% .sidebar + 5% gap + 60% .blog-content = 100%
 	}
 }
 
@@ -326,6 +327,9 @@ aside.services {
 	max-width: 1800px;									// max width for wide screens
 	margin-left: auto;									// center content
 	margin-right: auto;									// center content
+}
+.body-content {
+	max-width: 103em;									// max width on Contact, Blog pages 
 }
 .single-project {										// Project detail page 
 	article {											// Projects full width for Flexslider images on mobile 

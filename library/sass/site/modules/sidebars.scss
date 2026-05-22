@@ -98,7 +98,7 @@ blockquote:before {
 	padding-bottom: $base;										// 1.3125em *16px = 21px, push down bottom border
 	li {
 		@media screen and (min-width: $laptop) and (max-width: $television) {	/** 901px laptop to 1600px television screen size **/
-			&:nth-child(4) {		// remove widow project when 3-up
+			&:nth-child(4) {									// remove widow project when 3-up
 				display: none;
 			}
 		}
@@ -113,39 +113,14 @@ blockquote:before {
 // SOCIAL LINKS //
 .sidebar-social-links {
 	width: 100%;												// set width 100% of container
-	background: rgba(255,255,255,0.4);							// transparent white
 	padding: $base 0;											// 1.3125em *16px = 21px, top & bottom spacing
-	margin-bottom: calc($base*2);								// 1.3125em *16px = 21px, space from footer
-	border-radius: 0.25em;										// same as .project figure from modules.scss
-	border: 4px solid white;									// same as .project figure from modules.scss
-	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));			// same as .project figure:hover from modules.scss
+	margin-bottom: calc($base*2);								// (1.3125em *2) *16px = 2.625em, 42px, space from footer on mobile
 	h3 {
 		text-align: center;										// center header
 	}
-	ul {
-		border: none;
-		height: auto;
-	}
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) { /** 591px tablet vertical to 900px tablet horizontal screen size **/
-		width: 100%;
-		margin-top: $base;										// 1.3125em *16px = 21px
-		margin-right:0;	
+	@media screen and (min-width: $laptop) { 		/** 901px laptop screen size and larger **/
+		margin-bottom: 0;										// override 2.625em, remove spacing for blog posts to move up on tablet and larger
 	}
 }
-/*.fb-like-box {
-	background: white;
-}
-.twitter-follow {
-	margin-top: $base;
-	margin-bottom: $base;
-}
-.twitter-timeline {
-	width: 286px;
-	margin-top: $base;
-	margin-bottom: calc($base*0.5);
-	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) {
-		width:48%;
-		float: right;
-		margin-right: 2%;
-	}
-} */
+
+

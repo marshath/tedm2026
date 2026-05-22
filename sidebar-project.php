@@ -9,10 +9,9 @@
 			
 	        	<li>
 	                <a href="<?php the_permalink(); ?>">
-		        		<figure>
+						<div class="project-img">
 		                	<?php the_post_thumbnail(); ?>
-		                    <div class="figslider">View project &raquo;</div>
-		                </figure>
+		                </div>
 						<div class="h3-project">
 							<h3><?php the_title(); ?></h3>
 							<span class="h3-project-bg-top"></span>
