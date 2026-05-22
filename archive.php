@@ -56,25 +56,22 @@ get_header(); ?>
             <?php while (have_posts()) : the_post(); ?>
 						
 						<li>
-						
 							<a href="<?php the_permalink(); ?>">
-								<figure>
-									<?php the_post_thumbnail(); ?>
-									<div class="figslider">View details &raquo;</div>
-								</figure>
+								<div class="project-img">
+									<?php the_post_thumbnail( 'project-thumb-300' ); ?>
+								</div> <?php // end .project-img ?>
 								<div class="h3-project">
 									<h3><?php the_title(); ?></h3>
 									<span class="h3-project-bg-top"></span>
 									<span class="h3-project-bg-bottom"></span>
 								</div>
-								<p>Amazing new content that will fill this space for future viewing.</p>
+								<?php the_excerpt() ?>
 								<hr>
 							</a>
 							<?php the_tags( '<p class="tags"><span class="tags-title">' . __( '', 'bonestheme' ) . '</span> ', '<span class="screen-reader-text">,</span> ', '</p>' ); ?>
 							<?php // the_excerpt() ?>
 							
 							<?php //edit_post_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
-		
 						</li>
                 
             <?php endwhile; ?>
