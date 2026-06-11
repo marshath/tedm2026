@@ -11,11 +11,11 @@ get_header(); ?>
 
 	<div class="body-content clearfix">
 	
-		<div class="contact-page">
+		<div class="contact-content">
 			<h2><span class="services-icon" aria-hidden="true" data-icon="&#xe903;"></span> Contact</h2>
 			<?php the_content(); ?>
 		</div>
-
+		
 		<?php get_sidebar('blog'); ?>
 		
 	</div>

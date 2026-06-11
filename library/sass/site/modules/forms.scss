@@ -1,48 +1,122 @@
 /* Forms Styles */
 
 /* -------------------------- */
-/* Contact Form */
+/* Global Links */
 /* -------------------------- */
-.page-template-page-blog {
-	//margin: 0;
-	//border: 1px solid red;
-}
-.contact-page {
-	width: 100%;
-	//max-width: 60em;
-	float: left;
-	display: inline-block;
-	@media screen and (min-width: $laptop) {
-		width: 60%;
-		//margin-left: 5%;
+
+a {
+	color: lighten($text,30%);							// #222 @30% = #959595 gray
+	text-decoration: none;								// override default, remove underline on links
+	&:hover {
+		color: $orange;									// #ed3c24, orange
 	}
 }
+
+// PRIMARY BUTTON //
+// Green button with inner glow on hover //
+// Contact form, search field //
+
+a.primary-btn, .wpcf7-form .wpcf7-submit, .sidebar-mc-form .button {
+	@include square-font;								// Bree Serif, serif
+	background: $orange-light;							// #f29029, light orange
+	font-size: $font20;									// 1.25em * 16px = 20px
+	color: $text;										// #222, dark gray
+	text-shadow: 0 1px 0 white;						// white shadow for contrast
+	padding: 0.75em;									// 1.3125em *16 = 21px
+	border-radius: 1.25rem;								// 1.25em * 16px = 20px, use root due to increased font size, matches 
+	box-shadow: (0px 1px 1px rgba(0,0,0,0.5), inset 0px 0px 500px $tan);		// inset shadow for hover
+	transition: 0.13s all ease;							// form field transition
+	&:hover {
+		box-shadow: (0px 1px 1px rgba(0,0,0,0.5), inset 0px 0px 0px $tan);	// inset shadow for hover
+	}
+}
+
+// SECONDARY BUTTON //
+// Tan button that turns orange on hover //
+// About Me page, Blog page //
+a.secondary-btn, .sidebar-mc-form .button2 {
+	background: linear-gradient( -140deg, #dcd6c8 0%, #dcd6c8 100%);	// tan
+	color: $text;										// #222 dark gray
+	@include square-font(); 							// Bree Serif, serif
+	padding: $base 2em calc($base*1.15);				// (1.3125em *2) *16px = 2.625em, 42px, (1.3125em *1.15) *16px = 1.44375em, 23.1px
+	display: inline-block;								// force line break, top spacing
+	border: 2px solid rgba(255,255,255,0.35);			// transparent white top embossing
+	border-right: 1px solid rgba(0,0,0,0.05);			// override 2px white, transparent black bottom embossing
+	border-bottom: 1px solid rgba(0,0,0,0.05);			// override 2px white, transparent black bottom embossing
+	font-size: 1.4em;									// 1.4em *16px = 22.4px
+	border-radius: 1.25rem;								// 1.25em * 16px = 20px, use root due to increased font size, matches border-radius .blogroll li from _modules.scss
+	@include box-shadow(0px 1px 2px rgba(0,0,0,0.1));	// #2d4207 @20% = #0e1402, dark green
+	text-shadow: 0 1px white;
+	&:hover {
+		color: rgba(75,0,5) !important;					// #fff, white
+		background: $orange-light;						// #f29029, orange
+		background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 0, #f29029 100%
+	} 
+}
+
+
+/* -------------------------- */
+/* Contact Form */
+/* -------------------------- */
+
 .message {
-	@include square-font;
-	font-size: 1.6em;
-	line-height: 1.1;
+	@include square-font;										// Bree Serif, serif
+	font-size: 1.6em;											// 1.6em * 16px = 25.6px
+	line-height: 1.1;											// increase line height to accommodate square-font
 }
 .contact {
-	margin-top: $base;
+	margin-top: $base; 											// 1.3125em *16px = 21px
+	::placeholder {												// Placeholder text
+		color: $tan;											// #c7c2b7 tan
+	}
+	input:focus::placeholder, textarea:focus::placeholder,  {	// when text field is active 
+		color: $text;											// #222 dark gray
+	}
+	&-field-half, &-field-whole {								// text fields, half and whole width
+		width: 100%;											// set full width for mobile
+		display: inline-block;									// force next field down or right
+		margin-bottom: $base;									// 1.3125em *16px = 21px
+	}
+	h4 {
+		margin-top: $base;										// 1.3125em *16px = 21px
+		color: darken($tan,5);									// #bcb6a9 tan
+		font-weight: normal;									// override default h4 bold
+		text-transform: uppercase;								// stylistic form section separator
+		font-size: $font14;										// 0.875em *16px = 14px
+		@include square-font;									// Bree Serif, serif
+		margin-bottom: 0;										// override h4 default
+		border-bottom: 1px dotted ( darken($tan,5) );			// match footer h4 bottom border style
+	}
+	@media screen and (min-width: $tablet-v) {	/** 901px laptop screen size and larger **/
+		&-field-half {											// text field half screen
+			width: 49%;											// set half width, 49% *2 = 98% + 2% margin-right(odd) = 1000%
+			&:nth-child(odd) {									// every odd child, 1, 3, 5...
+				margin-right: 2%;								// force next text field right
+			}
+		}
+	}
 }
 label {
-	display: none;
+	display: none;												// hide text field labels
 }
 
 input.wpcf7-form-control, textarea.wpcf7-form-control, .mc-field-group input, .sidebar-search input[type='text'], .blog-content input[type='text'] { 
-	width: 100%;
-	background: lighten(black,96%);
-	padding: calc($base/2) $base;
-	display: block;
-	border: 1px solid #aaa;
-	outline:none;				// remove default browser outline
+	width: 100%;												// set input to full width
+	background: rgba(255,255,255,0.25);							// #f5f5f5 off white
+	padding: 0.9em $base 1em;									// 1.3125em *16px = 21px, 1em *16px = 16px
+	border: none;												// override default text field border
+	outline:none;												// remove default browser outline
+	border-radius: 1.5em;										// 1.5em *16px = 24px
+	box-shadow: 0px 0px 0.125em ( darken($tan,5) );				// #c7c2b7 tan, 0.125em *16px = 2px
+	transition: 0.2s all ease;									// form field transition
 	&:focus {
-		background: white;
+		background: rgba(255,255,255,0.4);						// #f5f5f5 off white
+		box-shadow: 0px 0.2em 0.8em ( darken($tan,5) );			// #c7c2b7 tan, expand shadow outward
+		transform: scale(1.01);									// enlarge text field when active
 	}
 }
-
-textarea.wpcf7-form-control {
-	height: calc($base*5);
+textarea.wpcf7-form-control {									// large text area for inputing message
+	height: calc($base*10);										// (1.3125em * 10) *16px = 13.125em, 210px
 }
 
 

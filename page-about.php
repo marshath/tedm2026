@@ -13,7 +13,7 @@ get_header(); ?>
 		<h2><span class="services-icon" aria-hidden="true" data-icon="&#xe900;"></span> About Me</h2>
 		<figure><img src="<?php echo get_template_directory_uri(); ?>/library/images_project/chart-aboutUs.jpg" class="image-wrap"></figure>
 		<?php the_content(); ?>
-		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="secondary-btn">Contact Me <span class="arrow_btn" aria-hidden="true" data-icon="&#xe901;"></span></a>
+		<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="primary-btn">Contact Me <span class="arrow_btn" aria-hidden="true" data-icon="&#xe901;"></span></a>
 	</article>
 	
 	<div class="quotes-wrap">

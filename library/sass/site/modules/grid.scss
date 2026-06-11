@@ -44,6 +44,7 @@ $nav-text: #bdc0c3;				// light gray
 // SOCIAL MEDIA COLORS //
 //$twitter-blue: #00aced;
 $codepen-yellow: #ffcc00;			// yellow
+$codepen-green: #4ecd77;			// green
 $github-black: #24292e;			// black
 $pinterest-red: #cb2027;			// red
 $linkedin-blue: #007bb6;			// blue
@@ -226,7 +227,7 @@ header.main {
 }
 
 // BODY ARTICLES //
-.content, .subcontent, .blog-content {
+.content, .subcontent, .blog-content, .contact-content {
 	margin-bottom: calc($base*2);						// 1.3125em *2 = 2.625em, push related projects down 
 	display: block;										// set full width
 	position: relative;									// set child position
@@ -235,7 +236,7 @@ header.main {
 	}
 }
 
-.blog-content {
+.blog-content, .contact-content {
 	width: 100%;										// set full width
 	float: left;										// push left
 	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/

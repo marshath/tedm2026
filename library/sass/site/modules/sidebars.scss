@@ -123,4 +123,63 @@ blockquote:before {
 	}
 }
 
+.page-id-239 ul.social, .sidebar-social-links { 
+	ul {
+		display: flex;
+		flex-flow: row nowrap;								// force row no wrap
+		padding-left:0;										// remove default left padding
+		list-style: none;									// remove default list bullet style
+		width: 96%;											// set list width
+		max-width: 400px;									// set max list width
+		margin: auto;										// center list row
+	}
+	li {
+		flex-basis: 25%;									// 25% * 4 = 100%, social icon link width
+	}
+	.twitter-icon, .codepen-icon, .github-icon, .rss-icon, .pinterest-icon, .linkedin-icon {
+		font-size: 2.5em;									// 2.5em *16px = 40px social icon size
+		display: block;										// fill width
+	}
+	.social-text {
+		font-size: $font10;									// 0.625em *16px = 10px
+		display: block;										// fill width
+	}
+	a {
+		text-align: center;									// center text
+		color: darken($tan, 10);							// #b1aa9a tan
+		&:hover {
+			color: $text;									// #222 dark gray
+		}
+		&:hover .github-icon {
+			color: $github-black;							// #24292e black
+		}
+		&:hover .codepen-icon {
+			color: $codepen-green;							// #4ecd77 green
+		}
+		&:hover .pinterest-icon {
+			color: $pinterest-red;							// #cb2027 red
+		}
+		&:hover .linkedin-icon {
+			color: $linkedin-blue;							// #007bb6 blue
+		}
+	}
+}
+.center {
+	text-align: center;										// center text
+	margin-bottom: calc($base*2);							// (1.3125em *2) *16px = 2.625em, 42px, force next content down
+	.icon {
+		font-size: 1.4rem;									// 1.4em *16px = 22.4px
+	}
+	/* hr {
+		margin-bottom: $base;
+	} */
+	ul.social {
+		width: 100%;										// make list full width
+		padding-left: 0;									// override default list padding
+		padding-bottom: calc($base*3);						// (1.3125em *3) *16px = 3.9375em, 63px, override default list padding
+		margin-left: auto;									// center list
+		margin-right: auto;									// center list
+	}
+}
+
 
