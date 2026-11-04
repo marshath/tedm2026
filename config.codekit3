@@ -1748,6 +1748,32 @@
       "oAP" : "\/library\/images\/favicon.ico",
       "oF" : 0
     },
+    "\/library\/images\/home-text.png" : {
+      "ft" : 32768,
+      "iS" : 236761,
+      "oA" : 0,
+      "oAP" : "\/library\/images\/home-text.png",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
+    "\/library\/images\/home-video.png" : {
+      "ft" : 32768,
+      "iS" : 539484,
+      "oA" : 0,
+      "oAP" : "\/library\/images\/home-video.png",
+      "oF" : 0,
+      "oIPL" : 1,
+      "opt" : 1,
+      "oT" : 1,
+      "ou" : "lpckwebp-none",
+      "q" : 90,
+      "rq" : 75
+    },
     "\/library\/images\/img-homepage-325.png" : {
       "ft" : 32768,
       "iS" : 14754,

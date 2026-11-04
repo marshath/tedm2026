@@ -61,7 +61,7 @@ p { font-size: $font16; line-height: 1.6; }				// 1em = 16px, increase line heig
 	line-height: 1em;									// 1em = 16px
 }
 
-::selection { background: $orange-light; }				// #f29029, orange
+::selection { background: white; }				// #ffffff, white
 
 .screen-reader-text {
 	display: none;										// hide content

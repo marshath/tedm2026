@@ -162,8 +162,15 @@ main {
 }
 .home .header-wrap {
 	background: radial-gradient( circle at 46% 90%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
-	@media screen and (min-width: $tablet-v) {
+	background-image: url(library/images/home-video.png); // VIDEO PLACEHOLDER
+	background-size: cover;
+	/* @media screen and (min-width: $tablet-v) {
 		background: radial-gradient( ellipse at 41% 100%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
+	} */
+	@media screen and (min-width: $tablet-v) {
+		background: radial-gradient( ellipse at 50% 55%, #ff953f 5%, #530f62 40%, #0f0049 60%, #09002c 75%, #000000 90%);		// override background gradient behind hero graphic
+		background-image: url(library/images/home-video.png);
+		background-size: cover;
 	}
 }
 
@@ -184,14 +191,19 @@ main {
 
 .footer-wrap {
 	background: #530f62;							 // Old browsers //
-//	background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
-	background: linear-gradient( to top,  #530f62 0%, #0f0049 85%, #09002c 100%);	// gradient behind hero graphic
+	//background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
+	//background: linear-gradient( to top,  #530f62 0%, #0f0049 85%, #09002c 100%);	// gradient behind hero graphic
+	background: linear-gradient( to bottom, #530f62 0%, #0f0049 20%, #09002c 85%);	// gradient behind hero graphic
+	//background: linear-gradient( to top, #7f7a70 0%, #615b4f 20%, #343027 85%);	// gradient behind hero graphic
 	padding-top: $base;									// 1.3125em *16px = 21px
+	//background-color: #E3DDD0;						// off-white
+	//background-image: url(library/images/pattern-paper.jpg); // paper texture
+	//background-repeat: repeat;							// tile across background
 }
 
 
 // ORANGE DIVIDER - HEADER PSUEDO ELEMENT //
-.article-wrap:before {				
+/* .article-wrap:before {				
 	content: '';
 	width: 100%;										// set width
 	height: 10px;										// set height
@@ -201,7 +213,7 @@ main {
 	position: absolute;									// set child position for parent
 	top: 0;												// position at the top 
 	left: 0;											// position on the left
-}
+} */
 
 // FOOTER PAPER FRAY - FOOTER PSUEDO ELEMENT //
 .footer-wrap:before {

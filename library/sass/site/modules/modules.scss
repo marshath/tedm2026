@@ -1,191 +1,158 @@
-	/* Module Styles */
-	
-	/* -------------------------- */
-	/* Homepage Elements */
-	/* -------------------------- */
-	
-	// FLEXSLIDER BACKGROUND //
-	.hero-splash { 
-		width: 80%;
-		min-height: 200px;
-		margin: $base auto 0 auto;
-		display: block;
-		position: relative;
-		figcaption {
-			width: 38%;
-			color: white;
-			text-shadow: 0 1px 3px #000;
-			margin: $base 2% 0 0;
-			position: relative;
-			float: right;
-			z-index: 20;
-		}
-		h1 {
-			@include script-font;
-			font-size: 3.1em;
-			line-height: 1.125em;
-			margin: 0 0 calc($base/4) 0;
-		}
-		h2 {
-			@include regular;
-			color: white;
-			font-size: $font20;
-			line-height: 1.25em;
-			text-shadow: 0 1px 3px #000;
-			margin-bottom: $base;
-		}
-		@media screen and (max-width: $mobile-h) {	/** 590px mobile horizontal max screen size **/
-			width: 100%;
-			figcaption {
-				width: 100%;
-				padding: 0 7%;
-				text-align: center;
-			}
-			h1 {
-				font-size: 2.6em;
-			}
-			h2 {
-				font-size: 1.3em;
-				text-shadow: 0 1px 3px #000;
-			}
-		}
-		@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) { /** 591px tablet vertical to 900px tablet horizontal screen size **/
-			width: 100%;
-			figcaption {
-				width: 100%;
-			}
-			h1 {
-				text-align: center;
-				font-size: 2.6em;
-			}
-			h2 {
-				width:40%;
-				float: right;
-				padding-right: 1em;
-			}
-		}
-		@media screen and (min-width: $tablet-h) and (max-width: $computer-h) { /** 900px tablet horizontal to 1199px computer screen **/
-			width: 80%;
-			figcaption {
-				width: 100%;
-			}
-			h1 {
-				text-align: center;
-				font-size: 2.6em;
-			}
-			h2 {
-				width:40%;
-				float: right;
-			}
-		}
-		@media screen and (min-width: $monitor) { 	/** 1200px monitor screen size and larger **/
-			max-width: 1080px;
-			figcaption {
-				width: 40%;
-				float: right;
-				margin-right: 1%;
-				position: relative;
-				z-index: 20;
-			}
-		}
+/* Module Styles */
+
+/* -------------------------- */
+/* Homepage Elements */
+/* -------------------------- */
+
+// FLEXSLIDER BACKGROUND //
+.hero-splash { 
+	width: 100%;
+	min-height: 380px; 										// minimum height for mobile
+	height: clamp(380px, 45vw, 60vh); 						// flexible height for the splash content
+	margin: 0 auto 0 auto; 									// center container
+	display: block; 										// force full width and minimum height
+	position: relative; 									// set parent positioning
+	@media screen and (min-width: $tablet-v) { /** 591px tablet vertical screen size and larger **/
+		width: 90vw; 										// override 95%, reduce width of transparent black background
+		//border: 1px solid red;
 	}
-	
-	.hero-computers {
-		width: 60%;
-		position: absolute;
-		left:0;
-		bottom: -11%;
-		z-index: 10;
-		img {
-			width: 100%;
-		}
-		@media screen and (max-width: $mobile-h) { 	/** 590px mobile horizontal screen size max **/
-			width: 100%;
-			left: 3%;
-			position: relative;
-			img {
-				width: 94%;
-				margin-bottom: -8%;
-			}
-		}
+	@media screen and (min-width: $tablet-h) { /** 900px tablet horizontal computer screen and larger **/
+		width: 90%; 										// override 90%, reduce width of transparent black background
+		//border: 1px solid blue;
 	}
-	
-	// HOMEPAGE TEXT //
-	.home-text {
+	@media screen and (min-width: $monitor) { 	/** 1200px monitor screen size and larger **/
+		width: 80%; 										// override 85%, reduce width of transparent black background
+		//border: 1px solid green;
+	}
+	@media screen and (min-width: $laptop) { 	/** 1200px monitor screen size and larger **/
+		width: 80%; 										// override 85%, reduce width of transparent black background
+	}
+	@media screen and (min-width: $television) { 	/** 1600px monitor screen size and larger **/
+		width: 80%; 										// override 85%, reduce width of transparent black background
+		max-width: 1500px;
+	}
+}
+
+.hero-text-group1, .hero-text-group2, .hero-text-row1, .hero-text-row2, .hero-text-row3, .hero-text-row4 {
+	display: block;
+}
+.hero-text {
+	&-container {
+		font-weight: bold;
 		width: 100%;
-		margin-bottom: $base;
-		//&:first-line {
-		//	@include square-font;
-		//	font-size: 1.4rem;
-		//	line-height: 1.5;
-		//}
-		p:nth-child(2) {
-			margin-bottom: $base;
-		}
-		h2 {
-			margin-bottom: 0;
-		}
-		@media screen and (max-width: $mobile-h) {	/** 590px mobile horizontal screen size and max **/
-			margin-bottom: $base;
-		}
-		@media screen and (max-width: $tablet-h) {	/** 900px tablet horizontal screen size max **/
-			width: 100%;
-		}
-	}	
-	
-	
-	/* -------------------------- */
-	/* Portfolio Page */
-	/* -------------------------- */
-	
-	h3.large {
-		padding-top: 5px;
-		padding-bottom: 5px;
-		margin-bottom: $base;								// 1.3125em *16px = 21px
-		border-top: $line;									// 4px solid $tan
-		border-bottom: $line;								// 4px solid $tan
+		position: absolute; 								// position within .hero-splash
+		top: clamp(0em, 2vw, 3em);
+		left: 0;
+		//z-index: 2;
+		//border: 1px solid red;
+		background: rgba(0,0,0,0.5);						// transparent black background for text contrast
 	}
+	&-group1 {
+		text-align: left;
+		padding-left: clamp(5%, 6vw, 10%); 					// variable left padding
+		padding-top: clamp(3em, 6vw, 6em);					// variable top padding
+	}
+	&-group2 {
+		text-align: right;
+		padding-top: ($base*1.5);							// 1.3125em *16px = 21px *1.5=  31.5px
+		padding-right: clamp(5%, 6vw, 10%); 				// variable right padding
+		padding-bottom: clamp(3em, 6vw, 6em);
+	}
+	&-row1 {
+		height: clamp(3.5em, 7vw, 7.5em); 					// 3.5em *16px = 56px, 7.5em * 16px= 120px, variable height
+	}
+	&-row2 {
+	}
+	&-row3 {
+		height: clamp(2.8em, 5.1vw, 5.5em); 				// 2.7em *16px = 43.2px, 5em * 16px= 80px, variable height
+		padding-right: clamp(3.3em, 9vw, 10em); 			// 3.3em *16px = 52.8px, 10em * 16px= 100px, variable height
+	}
+	&-row4 {
+	}
+	@media screen and (min-width: $tablet-h) { 	/** 590px mobile horizontal screen size max **/
+		&-group1 {
+		}
+	}
+}
+.text-white, .text-orange {
+	filter: drop-shadow(2px 4px 6px black); 				// text shadow for gradient text
+}
+.text-white {
+	color: white; 											// fallback for gradient text
+	color: transparent; 									// transparent text for gradient
+	background: linear-gradient(to Bottom, #fff 30%, #aaa 85%); // gray gradient
+	background-clip: text; 									// clip gradient to the text
+	text-transform: uppercase;
+	font-size: 8vw; 										// fallback variable font size
+	font-size: clamp(3.3em, 8vw, 9em); 						// 4em *16px = 64px, 8em * 16px= 128px, variable font size
+	&-small {
+		font-size: 4vw; 									// fallback variable font size
+		font-size: clamp(2.5em, 4vw, 4.5em); 				// 2.5em *16px = 40px, 4.5em * 16px= 72px, variable font size
+	}
+}
+.text-orange {
+	color: $orange; 										// fallback for gradient text
+	color: transparent; 									// transparent text for gradient
+	background: linear-gradient(to Bottom, $orange-light 30%, $orange 85%); // gray gradient
+	background-clip: text; 									// clip gradient to the text
+	font-size: 4em; 										// fallback variable font size
+	font-size: clamp(2em, 4vw, 4.5em); 						// 2em *16px = 32px, 4em * 16px= 64px, variable font size
+	@include square-font;
+}
 	
-	.project, .blogroll {					/* Project & Blog Cards */
-		display: flex;
-		flex-flow: column;									// force vertical orientation
-		gap: 4%;											// spacing between li
-		padding-left: 0;									// remove default list padding
-		list-style: none;									// override default, remove bulleted list
-		margin-bottom: 0;									// remove default margin from ul
-		transition: all 0.2s ease;
-		li {								/* Project Card */
-			flex-basis: 100%;								// set full width
-			margin-bottom: calc($base*2);					// (1.3125em *2) *16px = 2.625em, 42px, vertical space between li
-			position: relative;								// set parent positioning for li::before
-			z-index: 2;										// set above for z-index positioning of li::before
-			border-radius: 1.25em;							// 1.25em * 16px = 20px, matches border-radius li figure
-			transition: all 0.2s ease;						// project card transition
-			&::before {						/* card background */
-				content:'';
-				position: absolute;							// child positioning to li
-				top: 0;										// position at the top
-				left: 0;									// position on the left
-				background: rgba(255,255,255,0.2);			// transparent white
-				width: 100%;								// set full width
-				height: 100%;								// set full height
-				z-index: -1;								// set behind li
-				border-radius: 1.25em;						// 1.25em *16px = 20px, match border-radius to figure
-				transition: all 0.2s ease;
-				box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
+	
+/* -------------------------- */
+/* Portfolio Page */
+/* -------------------------- */
+
+h3.large {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: $base;									// 1.3125em *16px = 21px
+	border-top: $line;										// 4px solid $tan
+	border-bottom: $line;									// 4px solid $tan
+}
+	
+.project, .blogroll {					/* Project & Blog Cards */
+	display: flex;
+	flex-flow: column;										// force vertical orientation
+	gap: 4%;												// spacing between li
+	padding-left: 0;										// remove default list padding
+	list-style: none;										// override default, remove bulleted list
+	margin-bottom: 0;										// remove default margin from ul
+	transition: all 0.2s ease;
+	li {								/* Project Card */
+		flex-basis: 100%;									// set full width
+		margin-bottom: calc($base*2);						// (1.3125em *2) *16px = 2.625em, 42px, vertical space between li
+		position: relative;									// set parent positioning for li::before
+		z-index: 2;											// set above for z-index positioning of li::before
+		border-radius: 1.25em;								// 1.25em * 16px = 20px, matches border-radius li figure
+		transition: all 0.2s ease;							// project card transition
+		&::before {						/* card background */
+			content:'';
+			position: absolute;								// child positioning to li
+			top: 0;											// position at the top
+			left: 0;										// position on the left
+			background: rgba(255,255,255,0.2);			// transparent white
+			width: 100%;									// set full width
+			height: 100%;									// set full height
+			z-index: -1;									// set behind li
+			border-radius: 1.25em;							// 1.25em *16px = 20px, match border-radius to figure
+			transition: all 0.2s ease;
+			box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
+		}
+		&:hover {											// expand on :hover
+			transform: scale(101.5%);
+			&::before {
+				width: calc(100% + 1em);					// expand width by 1em on hover
+				height: calc(100% + 1em);					// expand height by 1em on hover
+				top: -0.5em;								// offset 1em height by half on :hover
+				left: -0.5em;								// offset 1em width by half on :hover
+				border-radius: 1.75em;						// 1.75em *16px = 28px, increase radius to match figure radius arch
+				background: rgba(255,255,255,0.4);			// transparent white
+				box-shadow: inset 1px 1px 2px white, 1px 2px 2px rgba(0,0,0,0.1);	// inset white shadow, black shadow, glass reflection effect
 			}
-			&:hover {										// expand on :hover
-				transform: scale(101.5%);
-				&::before {
-					width: calc(100% + 1em);				// expand width by 1em on hover
-					height: calc(100% + 1em);				// expand height by 1em on hover
-					top: -0.5em;							// offset 1em height by half on :hover
-					left: -0.5em;							// offset 1em width by half on :hover
-					border-radius: 1.75em;					// 1.75em *16px = 28px, increase radius to match figure radius arch
-					background: rgba(255,255,255,0.4);		// transparent white
-					box-shadow: inset 1px 1px 2px white, 1px 2px 2px rgba(0,0,0,0.1);	// inset white shadow, black shadow, glass reflection effect
-				}
-			}
+		}
 		img {								/* card image */
 			width: 100%;									// set figure img to full width
 			height: 100%;									// set figure img to full height
@@ -358,7 +325,6 @@ h2.project-title {
 	}
 	h3 {
 		margin-bottom: 0;									// override 0.25em from Portfolio Page styles for .project, .blogroll
-		//padding-bottom: 0;									// 
 	}
 	.h3-blogroll-bg-bottom {
 		height: 100%;										// force h3 tan background full height
