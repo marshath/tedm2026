@@ -32,16 +32,6 @@ h1.logo {
 	}
 }
 
-/* .hdr-contact {
-	background-color: black; 										// #000 black
-	font-size: $font10; 											// 0.625em *16px =  10px
-	color: #999;													// gray
-	display: block;
-	position: absolute;
-	top: -12px;
-	right: 16%;
-} */
-
 
 // HEADER NAVIGATION //
 .site-header nav {
@@ -134,11 +124,11 @@ h1.logo {
 		padding: calc($base*0.7) 1% $base;						// reduce top padding on mobile
 		display: block;											// force full width & height
 		@include transition(background, 1s, ease-out);
-		border-top: 1px solid rgba(255,255,255,0.1);
-		border-bottom: 1px solid black;
+		border-top: 1px solid rgba(255,255,255,0.1);			// border reflection creates 3D look
+		border-bottom: 1px solid black;						// border shadow creates 3D look
 		box-shadow: 0px 2px 1px rgba(0,0,0,0.15);
 		&:hover {
-			background: linear-gradient( to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 50%,rgba(255,255,255,0) 100%);
+			background: linear-gradient( to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 35%, rgba(255,255,255,0.15) 65%,rgba(255,255,255,0) 100%);
 			color: white;
 			@include transition(background, 0s, linear);
 			svg {

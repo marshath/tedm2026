@@ -190,15 +190,15 @@ main {
 }
 
 .footer-wrap {
-	background: #530f62;							 // Old browsers //
+	//background: #530f62;							 // Old browsers //
 	//background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
 	//background: linear-gradient( to top,  #530f62 0%, #0f0049 85%, #09002c 100%);	// gradient behind hero graphic
-	background: linear-gradient( to bottom, #530f62 0%, #0f0049 20%, #09002c 85%);	// gradient behind hero graphic
+	//background: linear-gradient( to bottom, #530f62 0%, #0f0049 20%, #09002c 85%);	// gradient behind hero graphic
 	//background: linear-gradient( to top, #7f7a70 0%, #615b4f 20%, #343027 85%);	// gradient behind hero graphic
 	padding-top: $base;									// 1.3125em *16px = 21px
-	//background-color: #E3DDD0;						// off-white
-	//background-image: url(library/images/pattern-paper.jpg); // paper texture
-	//background-repeat: repeat;							// tile across background
+	background-color: #E3DDD0;						// off-white
+	background-image: url(library/images/pattern-paper.jpg); // paper texture
+	background-repeat: repeat;							// tile across background
 }
 
 
@@ -220,7 +220,7 @@ main {
 	content: '';
 	width: 100%;										// set width
 	height: 17px;										// set height
-	background: url(library/images/pattern-fray.png) repeat-x;	// paper fray pattern
+	//background: url(library/images/pattern-fray.png) repeat-x;	// paper fray pattern
 	display: block;										// set full width
 	position: absolute;									// set child position for parent
 	top:0;												// position at the top 

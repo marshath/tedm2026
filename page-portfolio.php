@@ -17,10 +17,10 @@ get_header(); ?>
 					<span class="hero-text-row1">
 						<span class="text-white">UX</span>
 						<span class="text-orange">&nbsp;rooted in</span>
-					</span <?php // end .hero-text-row1 ?>
+					</span> <?php // end .hero-text-row1 ?>
 					<span class="hero-text-row2">
 						<span class="text-white">research</span><span class="text-white text-white-small">,</span>
-					</span> <?php // end .hero-text-row2 ?>
+					</span <?php // end .hero-text-row2 ?>
 				</span> <?php // end .hero-text-group1 ?>
 				<span class="hero-text-group2">
 					<span class="hero-text-row3">

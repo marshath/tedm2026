@@ -4,7 +4,7 @@
 /* Homepage Elements */
 /* -------------------------- */
 
-// FLEXSLIDER BACKGROUND //
+// SPLASH HERO //
 .hero-splash { 
 	width: 100%;
 	min-height: 380px; 										// minimum height for mobile
@@ -50,7 +50,7 @@
 	&-group1 {
 		text-align: left;
 		padding-left: clamp(5%, 6vw, 10%); 					// variable left padding
-		padding-top: clamp(3em, 6vw, 6em);					// variable top padding
+		padding-top: clamp(3em, 6vw, 8em);					// variable top padding
 	}
 	&-group2 {
 		text-align: right;
@@ -62,6 +62,7 @@
 		height: clamp(3.5em, 7vw, 7.5em); 					// 3.5em *16px = 56px, 7.5em * 16px= 120px, variable height
 	}
 	&-row2 {
+		padding-left: clamp(5%, 6vw, 10%); 				// variable right padding
 	}
 	&-row3 {
 		height: clamp(2.8em, 5.1vw, 5.5em); 				// 2.7em *16px = 43.2px, 5em * 16px= 80px, variable height

@@ -6,8 +6,6 @@
 /* -------------------------- */
 
 footer {
-	
-	background: rgba(0,0,0,0.05);
 }
 // CONTACT INFO FOOTER //
 section.footer-company-info {
@@ -32,22 +30,22 @@ section.footer-company-info {
 		list-style: none;								// remove default list-style
 	}
 	h4, a {
-		color: $nav-text;								// #bdc0c3, dark gray
+		color: darken($tan, 10);						// #b1aa9a, dark tan
 		margin-bottom: calc($base/4);					// override default margin-bottom, (1.3125em /4) *16px = 0.328125em, 5.25px
 	}
 	.name {
 		font-size: $font14;								// 0.875em *16px = 14px
 		text-transform: uppercase;						// transform all text to uppercase
 		padding-bottom: 1%;								// space border-bottom from name
-		border-bottom: 1px dotted rgba(255,255,255,0.4);	// align with section.footer-social-links h4 styling
+		border-bottom: 2px dotted darken($tan, 10);		// #b1aa9a, dark tanlign with section.footer-social-links h4 styling
 	}
 }
 .ftr-contact a {
 	text-decoration: none;								// remove default list style
 	&:hover {
-		color: white;									// #fff white
+		color: darken($tan,50);							// #b1aa9a, dark tan
 		.email-icon {
-			color: $yellow;								// #fc0 yellow
+			color: $orange-light;						// #f29029 orange-light
 		}
 	}
 }
@@ -74,10 +72,35 @@ section.footer-navigation {
 		&:first-child {
 			margin-top: calc($base*0.25); 				// override 2% from header .menu, 1.3125em * 0.25 = 0.328125em
 		}
+		&.current_page_item a {					// active page highlight
+			color: darken($tan,10);						// override gray, #c7c2b7
+			svg {
+				fill: darken($tan,10);					// override gray, , #c7c2b7, icon color on .current_page_item
+			}
+			&:hover {
+				color: darken($tan,50);					// override white, #c7c2b7
+				svg {
+					fill: $orange-light;				// override yellow, , #c7c2b7, icon color on .current_page_item
+				}
+			}
+		}
 	}
 	a {
 		line-height: 1em;								// 16px, reduce vertical height between icon and text
 		margin: 0 0 $base 0;							// 0 0 1.3125em 0, move social links down
+		color: darken($tan, 10);						// override gray, #c7c2b7
+		text-shadow: none;								// override text shadow from header.scss, remove text shadow
+		border: none;									// override border from header.scss, remove border
+		box-shadow: none;								// override box-shadow from header.scss, remove shadow
+		svg {
+			fill: darken($tan,10);						// override gray, #c7c2b7
+		}
+		&:hover{
+			color: darken($tan, 50);					// override gray, #c7c2b7
+			& svg {
+				fill: $orange-light;					// override gray, #f29029
+			}
+		}
 	}
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
 		li, li:first-child {
@@ -100,7 +123,7 @@ section.footer-social-links {
 	margin-top: $base;									// 1.3125em *16px = 21px, move down to vertically from .footer-navigation on mobile
 	margin-left: 10%;									// align center (30%/2=15)
 	text-align: center;									// center text
-	color: $nav-text;									// #bdc0c3, override $tan
+	color: darken($tan, 10);							// #b1aa9a, override $tan
 	h4 {
 		font-size: $font14;								// 0.875em *16px = 14px
 		text-transform: uppercase;						// transform all text to uppercase
@@ -119,7 +142,7 @@ section.footer-social-links {
 		text-align: center;								// override left, center text
 		clear: none;									// override left, position at end of footer on the right
 		h4 {
-			border-bottom: 1px dotted rgba(255,255,255,0.4);	// override none, align with .footer-company-info .name styling
+			border-bottom: 2px dotted darken($tan, 10);	// #b1aa9a, override none, align with .footer-company-info .name styling
 		}
 	}
 }
@@ -139,14 +162,21 @@ section.footer-social-links {
 		display: none;									// hide link text
 	}
 	a {
-		opacity: 0.5;									// half opacity icons
-		color: $tan;									// #c7c2b7 tan
+		color: darken($tan, 10);						// #b1aa9a tan
 		font-size: 2rem;
 		margin-bottom: calc($base/2);					// (1.3125em /2) *16px = .65625em, 10.5px, move copyright down
 		display: block;									// force full width for clicking link
-		&:hover {
-			opacity: 1;									// override 0.5, full opacity
-			color: $yellow;								// #fc0 yellow
+		&:hover .github-icon {
+			color: $github-black;						// #24292e black
+		}
+		&:hover .codepen-icon {
+			color: $codepen-green;						// #4ecd77 green
+		}
+		&:hover .pinterest-icon {
+			color: $pinterest-red;						// #cb2027 red
+		}
+		&:hover .linkedin-icon {
+			color: $linkedin-blue;						// #007bb6 blue
 		}
 	}
 }
@@ -162,4 +192,5 @@ section.footer-social-links {
 	text-align: center;									// center text
 	padding-top: ($base*2);								// (1.3125em *2) *16px = 2.625em, 42px // top spacing from .footer-social-links
 	clear: both;										// force below contact info, nav, social links
+	color: darken($tan,10);								// #b1aa9a
 }
