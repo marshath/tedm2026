@@ -10,7 +10,7 @@
 <main id="site-content" role="main" class="article-wrap">
 	
 	<div class="body-content clearfix">
-		<div class="contact-page">
+		<div class="contact-content">
 
 			<div class="featured-bar">Movie Archive</div>
 

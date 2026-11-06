@@ -33,45 +33,104 @@
 	}
 }
 
+// SPLASH TEXT SLIDE-IN ANIMATIONS
+@keyframes slide-text1 {
+	from { scale: 0.5; opacity: 0; }
+	to { scale: 1; opacity: 1; }
+}
+@keyframes slide-text2 {
+	from { scale: 0.5; opacity: 0; }
+	25% {scale: 0.5; opacity: 0; }
+	to { scale: 1; opacity: 1; }
+}
+@keyframes slide-text3 {
+	from { scale: 0.5; opacity: 0; }
+	45% { scale: 0.5; opacity: 0; }
+	to { scale: 1; opacity: 1; }
+}
+@keyframes slide-text4 {
+	from { scale: 0.5; opacity: 0; }
+	55% { scale: 0.5; opacity: 0; }
+	to { scale: 1; opacity: 1; }
+}
+
 .hero-text-group1, .hero-text-group2, .hero-text-row1, .hero-text-row2, .hero-text-row3, .hero-text-row4 {
-	display: block;
+	display: block;											// force text line breaks
+	position: relative;										// position child inside parent .hero-text-container
+	transform-style: perserve-3d;							// enables 3D text
 }
 .hero-text {
 	&-container {
 		font-weight: bold;
 		width: 100%;
 		position: absolute; 								// position within .hero-splash
-		top: clamp(0em, 2vw, 3em);
-		left: 0;
-		//z-index: 2;
-		//border: 1px solid red;
+		top: clamp(0em, 2vw, 3em);							// 3em * 16px = 48px, variable top position
+		left: 0;											// left position
 		background: rgba(0,0,0,0.5);						// transparent black background for text contrast
 	}
 	&-group1 {
 		text-align: left;
 		padding-left: clamp(5%, 6vw, 10%); 					// variable left padding
 		padding-top: clamp(3em, 6vw, 8em);					// variable top padding
+		perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row1, .hero-text-row2
 	}
 	&-group2 {
-		text-align: right;
+		text-align: right;									// text align right for right padding
 		padding-top: ($base*1.5);							// 1.3125em *16px = 21px *1.5=  31.5px
-		padding-right: clamp(5%, 6vw, 10%); 				// variable right padding
-		padding-bottom: clamp(3em, 6vw, 6em);
+		padding-right: clamp(5%, 6vw, 8%); 					// variable right padding
+		padding-bottom: clamp(1em, 6vw, 6em);				 // 1em * 16px = 16px, 6em * 16px = 96px,variable bottom padding
+		perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row3, .hero-text-row4
 	}
 	&-row1 {
 		height: clamp(3.5em, 7vw, 7.5em); 					// 3.5em *16px = 56px, 7.5em * 16px= 120px, variable height
+		animation: slide-text1 1s ease-in-out;				// splash slide-in animation
+		transform: rotateX(10deg) rotateY(-30deg);			// 3d transform text
+		transform-origin: left bottom;						// animation start position
 	}
 	&-row2 {
-		padding-left: clamp(5%, 6vw, 10%); 				// variable right padding
+		padding-left: clamp(5%, 6vw, 5%); 					// variable right padding
+		animation: slide-text2 1.2s ease-in-out;			// splash slide-in animation
+		transform: rotateX(10deg) rotateY(-30deg);			// 3d transform text
+		transform-origin: left bottom;						// animation start position
 	}
 	&-row3 {
 		height: clamp(2.8em, 5.1vw, 5.5em); 				// 2.7em *16px = 43.2px, 5em * 16px= 80px, variable height
 		padding-right: clamp(3.3em, 9vw, 10em); 			// 3.3em *16px = 52.8px, 10em * 16px= 100px, variable height
+		animation: slide-text3 1.7s ease-in-out;			//splash slide-in animation
+		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// 3d transform text
+		transform-origin: left bottom;						// animation start position
 	}
 	&-row4 {
+		animation: slide-text4 1.9s ease-in-out;			// splash slide-in animation
+		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// 3d transform text
+		transform-origin: left bottom;						// animation start position
 	}
-	@media screen and (min-width: $tablet-h) { 	/** 590px mobile horizontal screen size max **/
-		&-group1 {
+	@media screen and (min-width: $laptop) { 	/** 901px laptop screen size and larger **/
+		&-row3 {
+			transform: rotateX(7deg) rotateY(-30deg) translateX(-2vw);	// 3d transform and position text
+		}
+		&-row4 {
+			transform: rotateX(7deg) rotateY(-30deg) translateX(-2vw);	// 3d transform and position text
+		}
+	}
+	@media screen and (min-width: $monitor) { 	/** 901px laptop screen size and larger **/
+		&-row3 {
+			transform: rotateX(5deg) rotateY(-30deg) translateX(-6vw);	// 3d transform and position text
+		}
+		&-row4 {
+			transform: rotateX(5deg) rotateY(-30deg) translateX(-6vw);	// 3d transform and position text
+		}
+	}
+	@media screen and (min-width: $television) { 	/** 1600px television screen size and larger **/
+		&-group2 {
+			padding-bottom: clamp(3em, 6vw, 6em);				 // 3em * 16px = 48px, 6em * 16px = 96px,variable bottom padding
+			perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row3, .hero-text-row4
+		}
+		&-row3 {
+			transform: rotateX(2deg) rotateY(-30deg) translateX(-9em);	// 3d transform and position text
+		}
+		&-row4 {
+			transform: rotateX(2deg) rotateY(-30deg) translateX(-9em);	// 3d transform and position text
 		}
 	}
 }
@@ -419,6 +478,7 @@ h2.project-title {
 /* Jams and Movies */
 /* -------------------------- */
 
+
 // JAMS PAGE //
 .featured-bar { 
 	color: darken($tan,10); 
@@ -469,7 +529,7 @@ tr {
 	width:12%;
 }
 
-	@media screen and (max-width: $mobile-h) { 	/** 590px mobile horizontal screen size max **/
+@media screen and (max-width: $mobile-h) { 	/** 590px mobile horizontal screen size max **/
 	.hdr-date, td:last-child {
 		display: none;
 	}
@@ -539,7 +599,7 @@ tr {
 }
 
 .jamsidebar { 
-	width: 28%; 
+	width: 100%; 
 	margin-bottom: calc($base*2);
 	float: right; 
 	img {
@@ -567,14 +627,14 @@ tr {
 			color:#fff;
 		}
 	}
-	@media screen and (max-width: $tablet-h) {		/** 900px tablet horizontal screen size max **/
-		width: 100%;
+	@media screen and (min-width: $laptop) {		/** 901px laptop screen size and larger **/
+		width: 28%;
 	}
 }
 
 // MOVIES PAGE //
 .movie {
-	width:48%; 
+	width:100%; 
 	line-height:1; 
 	float:left; 
 	display:block; 
@@ -592,8 +652,8 @@ tr {
 		width:100%; 
 		margin-bottom:calc($base*0.25);
 	}
-	@media screen and (max-width: $mobile-h) {	/** 590px mobile horizontal screen size max **/
-		width: 100%;
+	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
+		width: 48%;
 	}
 }
 

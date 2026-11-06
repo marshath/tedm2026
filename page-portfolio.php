@@ -9,9 +9,6 @@ get_header(); ?>
 <?php // -------- Hero Image -------- ?>
     <section class="hero-splash clearfix">
 		<figure>
-			<?php // <figcaption> ?>
-				<?php// the_content(); ?>
-			<?php // </figcaption> ?>
 			<div class="hero-text-container">
 				<span class="hero-text-group1">
 					<span class="hero-text-row1">
@@ -33,6 +30,9 @@ get_header(); ?>
 			</div> <?php // end .hero-text-container ?>
 		</figure>
 		<?php /*	
+		<?php // <figcaption> ?>
+			<?php// the_content(); ?>
+		<?php // </figcaption> ?>
 		<figure>
 			<div class="hero-computers">
 				<img 
