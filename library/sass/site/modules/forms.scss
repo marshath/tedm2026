@@ -133,19 +133,20 @@ textarea.wpcf7-form-control {									// large text area for inputing message
 		width: 100%;
 		background-color: $gray-light-alpha;
 		border: none;
-		border-bottom: 2px solid $text;
+		border-bottom: 2px solid #0f0049;
 		padding: calc($base*0.5) 1em;
 		transition: all 0.3s ease;
+		outline:none;												// remove default browser outline
 		&:hover {
 			background-color: #efefef;
 		}
 		&:focus {
 			background-color: white;
-			border-bottom: 2px solid $orange;
+			border-bottom: 2px solid lighten(#530f62,20%);
 		}
 	}
 	input[type="submit"] {
-		background: $green;
+		background: #0f0049;
 		color: white;
 		text-shadow: 0 2px 0 black;
 		display: block;
@@ -158,12 +159,12 @@ textarea.wpcf7-form-control {									// large text area for inputing message
 		@include box-shadow(inset 0px 0px 0px black);
 		@include transition(all, 1s, ease-out);
 		&:hover {
-			background: lighten($green, 20%);
-			@include box-shadow(inset 0px 0px 40px darken($green,10%));
+			background: lighten(#530f62, 40%);
+			@include box-shadow(inset 0px 0px 40px darken(#0f0049,10%));
 			@include transition(all, 0s, linear);
 		}
 		&:active {
-			background: lighten($green, 20%);
+			background: lighten(#0f0049, 20%);
 			@include box-shadow(inset 0px 0px 0px black);
 		}
 	}

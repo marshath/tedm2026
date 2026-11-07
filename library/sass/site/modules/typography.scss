@@ -25,7 +25,6 @@
 }
 
 
-
 /* -------------------------- */
 /* Body Text */
 /* -------------------------- */
@@ -39,21 +38,14 @@ h2 {
 	font-size: 2em;										// 2em *16px = 32px
 	text-shadow: 0 1px white; 
 }
-//.h2-small { font-size: $font12; }						// 0.75em *16px = 12px
-//h2.indent { padding-left: 1em; }						// 1em = 16px
 h3 { font-size: 1.4em; }								// 1.25em *16px = 20px
 h4 { margin-top: 0; }									// remove default top margin for footer headers
+h5 { margin-bottom: calc($base*0.6); }					// 1.125em *0.6= 0.63 *16px = 10.08px, sidebar header text size
 p { font-size: $font16; line-height: 1.6; }				// 1em = 16px, increase line height
-//p.space { margin-bottom: calc($base * 2); }				// 1.3125em *2 = 2.625em, increase bottom spacing
-//p.space-columns { margin-bottom: calc($base * 2); }		// 1.3125em *2 = 2.625em, increase bottom spacing
 .archive-title {
 	margin-bottom: $base;								// 1.3125em, bottom spacing
 }
 
-/* hr {
-	border: none;
-	border-bottom: $line;
-} */
 .uppercase { text-transform: uppercase; }
 
 .large {

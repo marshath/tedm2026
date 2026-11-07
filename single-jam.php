@@ -22,9 +22,9 @@
 <main id="site-content" role="main" class="article-wrap">
 	
 	<div class="body-content clearfix">
-		<div class="contact-page">
+		<div class="contact-content">
 
-			<div class="featured-bar"><a href="<?php echo esc_url( home_url( '/jam/' ) ); ?>">&laquo; Jam Archive</a></div>
+			<div class="featured-bar"><a href="<?php echo esc_url( home_url( '/jam/' ) ); ?>">← Jam Archive</a></div>
 				<table class="jams">
 
 					<thead>

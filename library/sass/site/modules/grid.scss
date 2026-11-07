@@ -216,20 +216,20 @@ main {
 } */
 
 // FOOTER PAPER FRAY - FOOTER PSUEDO ELEMENT //
-.footer-wrap:before {
-	content: '';
-	width: 100%;										// set width
-	height: 17px;										// set height
-	//background: url(library/images/pattern-fray.png) repeat-x;	// paper fray pattern
-	display: block;										// set full width
-	position: absolute;									// set child position for parent
-	top:0;												// position at the top 
-	left: 0;											// position on the left
-	@media screen and (min-resolution: 192dpi) { /** display on high resolution screens **/
-		background: url(library/images/pattern-fray@2x.png); // high resolution paper fray pattern
-		background-size: 133px 17px; 					// set paper fray graphic width height to @1x image
-	}
-}
+//.footer-wrap:before {
+//	content: '';
+//	width: 100%;										// set width
+//	height: 17px;										// set height
+//	background: url(library/images/pattern-fray.png) repeat-x;	// paper fray pattern
+//	display: block;										// set full width
+//	position: absolute;									// set child position for parent
+//	top:0;												// position at the top 
+//	left: 0;											// position on the left
+//	@media screen and (min-resolution: 192dpi) { /** display on high resolution screens **/
+	//	background: url(library/images/pattern-fray@2x.png); // high resolution paper fray pattern
+	//	background-size: 133px 17px; 					// set paper fray graphic width height to @1x image
+	//}
+//}
 
 
 // HEADER //

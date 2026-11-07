@@ -453,49 +453,48 @@ h2.project-title {
 /* -------------------------- */
 
 .pagination {
-	list-style: none;
-	margin-top:0;
-	padding-left:0;
+	list-style: none;										// remove list bullets
+	margin-top:0;											// remove default top margin
+	padding-left:0;											// remove default left padding
 	ul {
-		width: 100%;
-		height: calc($base*6);
-		display: block;
-		padding: 0;
-		list-style: none;
+		width: 100%;										// set full width
+		height: calc($base*6);								// 1.3125em *6= 7.875em *16px = 286px, list height
+		display: block;										// force full width and height
+		padding: 0;											// remove default padding-left
+		list-style: none;									// remove list bullets
 	}
 	li {
-		float: left;
-		margin: $base 0;
-		border-right: 1px solid #ccc;
+		float: left;										// float items left
+		margin: $base 0.125em;								// 1.3125em *16px = 21px, 0.125em * 16px = 2px
 		&:last-child {
-			border-right: none;
+			border-right: none;								// remove the last item bottom border
 		}
 		a, .dots {
-			width: 100%;
-			height: 100%;
-			color: $orange;
-			text-decoration: none;
-			padding: calc($base*0.5) 1em;
-			display: inline-block;
+			width: 100%;									// set full width
+			height: 100%;									// set full height
+			color: $orange;									// #ed3c24
+			text-decoration: none;							// remove link underline
+			padding: calc($base*0.5) 1em;					// 1em *16px= 16px
+			display: inline-block;							// inline pagination links
+			border-radius: 0.5em;							// 0.5em * 16px = 8px
 		}
 		a {
-			transition: background-color 0.2s linear; 
 			&:hover {
-				background: #f40;
-				color:white;
+				background: lighten($orange-light, 20%);	// lighten #f29029 by 20%
 			}
 		}
 		.dots {
-			color: #666;
+			color: #666;									// gray
 		}
 	}
-	.current {
-		height: 100%;
-		background: $orange;
-		color: white;
-		font-weight: bold;
-		padding: calc($base*0.5) 1em;
-		display: inline-block;
+	.current {						/* Current page highlight */
+		height: 100%;										// set full height
+		background: $orange;								// #ed3c24 orange
+		color: white;										// white
+		font-weight: bold;									// font bold
+		padding: calc($base*0.5) 1em;						// 1.125em *0.5= 0.5625 *16px= 9px
+		display: inline-block;								// list item inline with pagination
+		border-radius: 0.5em;								// 0.5em *16px = 8px border radius
 	}
 }
 	
@@ -507,213 +506,206 @@ h2.project-title {
 
 
 // JAMS PAGE //
-.featured-bar { 
-	color: darken($tan,10); 
-	font-size:2.5em; 
-	font-weight:bold; 
-	margin:0 0 1em 0; 
-	text-align:center;
+.featured-bar {						/* Page Header Text, Back To Archive Link */
+	color: darken($tan,10); 									 // #c7c2b7, dark tan
+	font-size: 2.5em; 											// 2.5em *16px = 40px
+	font-weight: bold; 
+	margin: 0 0 1em 0; 											// 1em *16px = 16px
+	text-align: center;											 // center text
 	h5 {
-		@include regular;
+		@include regular;										// Verdana, Geneva, sans-serif
 	}
 }
 
-table { 
-	border-collapse: collapse; 
-	width: 100%;
-	margin-bottom: calc($base*1);
+table { 							/* Song Title and Link Table */
+	border-collapse: collapse; 									// remove table border
+	width: 100%;												// set full width
+	margin-bottom: $base;										// 1.3125em * 16px = 21px, force copyright further down the page
 }
 thead { 
-	width: 100%; 
-	font-size:1em; 
-	border-bottom:2px dotted #999; 
-	text-align:left; 
+	width: 100%; 												 // set full width
+	font-size: 1em; 											// 1em * 16px = 16px
+	border-top: 2px solid lighten($orange-light, 4); 			// border bottom #f29029 light orange line
+	border-bottom: 2px solid darken($orange, 4); 				// border bottom #ed3c24 orange line
+	text-align: left; 											// align text left
+	background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 orange to #f29029 light orange
 }
 tr {
-	border-bottom:1px dotted $tan; 
+	border-bottom:1px dotted $tan; 								 // border bottom dotted tan line, #c7c2b7
 }
 .hdr-audio, .hdr-video, .hdr-title, .hdr-musicians, .hdr-date { 
-	background-color: $orange; 
-	color:#fff;
-	padding:0.5em;
-	font-size:0.7em; 
+	color:#fff;												 // white
+	padding:0.5em;												 // 0.5em *16px = 8px, header text padding
+	font-size:0.7em; 											 // 0.7em *16px = 11.2px, override font size
+	text-shadow: 0px 2px 0px rgba(0,0,0,0.3);					// header text shadow 
 }
 .hdr-audio {
-	width:7%;
-	text-align: center;
+	width:7%;													 // set width 7% +7+54+20+12= 100%
+	text-align: center;											 // text align center
 }
 .hdr-video {
-	width:7%;
-	text-align: center;
+	width:7%;													// set width 7% +7+54+20+12= 100%
+	text-align: center;											 // text align center
 }
 .hdr-title {
-	width:54%;
+	width:54%;													// set width 54% +7+7+20+12= 100%
 }
 .hdr-musicians {
-	width:20%;
+	width:20%;													// set width 20% +7+7+54+12= 100%	
 }
 .hdr-date {
-	width:12%;
+	width:12%;													// set width 12% +7+7+54+20= 100%	
 }
 
 @media screen and (max-width: $mobile-h) { 	/** 590px mobile horizontal screen size max **/
 	.hdr-date, td:last-child {
-		display: none;
+		display: none;											// hide date column header
 	}
 	.hdr-audio {
-		width:10%;
+		width:10%;												// set width 10% +10+57+23= 100%
 	}
 	.hdr-video {
-		width:10%;
+		width:10%;												// set width 10% +10+57+23= 100%
 	}
 	.hdr-title {
-		width:57%;
+		width:57%;												// set width 57% +10+10+23= 100%
 	}
 	.hdr-musicians {
-		width:23%;
+		width:23%;												// set width 23% +10+10+57= 100%
 	}
 }
 
+
 .jam-audio, .jam-video, .jam-title, .jam-musicians, .jam-date {
-	text-align: left;
-	padding:0.5em;
+	text-align: left;											// text align left
+	padding:0.5em;												// 0.5em *16px = 8px
 }
 .jam-audio, .jam-video, .jam-musicians, .jam-date {
-	font-size:0.75em;
+	font-size:0.75em;											// 0.75em *16px = 12px
 }
 .jam-audio, .jam-video {
 	a {
-		transition: all ease 0.1s;
-		width:100%;
-		height:100%;
-		display: block;
-		text-align: center;
-		@include scale(1.2);
+		transition: all ease 0.1s;								// transition for :hover state
+		width:100%;												// set full column width
+		height:100%;											// set full column height
+		display: block;											// force to fill space
+		text-align: center;										// icon align center
+		@include scale(1.2);									// enlarge icon
 		&:hover {
-			@include scale(1.5);
+			@include scale(1.5);								// enlarge icon on hover
 		}
 	}
-}
-.jam-audio {
-}
-.jam-video {
 }
 .jam-title {
-	padding-left: 1em;
+	padding-left: 1em;											// 1em *16px = 16px
 	a {
-		color:$text;
-		margin-left:0;
-		transition: padding-left ease 0.1s;
+		color:$text;											// #222, dark gray text
+		margin-left:0;											// remove left padding
+		transition: padding-left ease 0.1s;						// transition for :hover state
 		&:hover {
-			color: $orange;
-			padding-left:0.25em;
-			text-decoration: underline;
+			color: $orange;										// #ed3c24 orange
+			padding-left:0.25em;								// 0.25em *16px = 4px, left text slide
+			text-decoration: underline;							// show link underline on hover
 		}
 	}
 }
-.jam-musicians {
-	
-}
 .jam-date {
-	color:#999;
+	color:#999;												// gray text
 }
 
 .musician-tag-cloud, .actor-tag-cloud {
-	border-top:1px solid #666;
-	padding-top: 10px;
-	display: block;
+	border-top:1px solid #666;								// top gray solid line
+	padding-top: 10px;											// spacing from header
+	display: block;												// force full width
 	
 }
 
 .jamsidebar { 
-	width: 100%; 
-	margin-bottom: calc($base*2);
-	float: right; 
+	width: 100%; 												// set full sidebar width
+	margin-bottom: calc($base*2);								// 1.3125em *2 = 2.625em *16px = 42px
+	float: right; 												// position sidebar to the right
 	img {
-		width: 100%;
+		width: 100%;											// set image full sidebar width
 	}
 	ul { 
-		width:100%; 
-		list-style:none; 
-		margin:8px 0; 
-		padding: 0;
-		border-top:#666 1px solid; 
+		width:100%; 											// set full sidebar width
+		list-style:none; 										// remove list bullets
+		margin:8px 0; 											// top & bottom spacing
+		padding: 0;												// remove default left padding
+		border-top:#666 1px solid; 							// border top gray solid line
 	}
 	li { 
-		font-size:11px; 
-		width:100%; 
-		margin:0; 
-		border-bottom:#ccc 1px solid;
+		transition: all 1s ease;
+		font-size:0.75em; 										// override 1em default, 0.8em *16px = 
+		width:100%; 											// set full sidebar width
+		margin:0; 												// remove list item spacing
+		border-bottom:#ccc 1px solid;							// border bottom light gray line
 		a:link, a:visited { 
-			padding:4px; 
-			display:block;
-			transition:background-color 0.2s linear; 
+			padding:4px; 										// padding around text link
+			display:block;										// force full width
 		}
 		a:hover { 
-			background-color:#f40; 
-			color:#fff;
+			background: lighten($orange-light, 20%);			// lighten #f29029 by 20%
+			color:$orange;										// override #222 dark gray , #ed3c24
 		}
 	}
 	@media screen and (min-width: $laptop) {		/** 901px laptop screen size and larger **/
-		width: 28%;
+		width: 28%;												// reduce width to float right
 	}
 }
 
 // MOVIES PAGE //
 .movie {
-	width:100%; 
-	line-height:1; 
-	float:left; 
-	display:block; 
-	padding:10px 0; 
-	margin:0 1%;
-	text-align: center;
+	width:100%; 												// set full width
+	line-height:1; 												// reset line height
+	float:left; 												// position left
+	display:block; 												// set full width, force items down
+	padding:10px 0; 											// top and bottom padding
+	margin:0 1%;												// spacing between items
+	text-align: center;											// align text center
 	img {
-		width: 100%;
-		height:auto;
-		margin-bottom: calc($base*0.5);
-		border: 3px solid white;
-		@include box-shadow(0 1px 2px rgba(0,0,0,0.5));
+		width: 100%;											// set image to full width
+		height:auto;											// auto set the height
+		margin-bottom: calc($base*0.5);							// 1.125em *0.5= 0.5625 *16px = 9px
+		border-radius: $corner;									// 0.25em * 16px = 4px corner radius
+		@include box-shadow(0 4px 8px rgba(0,0,0,0.25));		// transparent black shadow on image
 	}
 	h2 { 
-		width:100%; 
-		margin-bottom:calc($base*0.25);
+		width:100%; 											// set full width
+		margin-bottom:calc($base*0.25);							// 1.125em *0.25= 0.28125 *16px = 4.5px bottom spacing
 	}
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
-		width: 48%;
+		width: 48%;												// reduce width to fit two movies per row on larger screens
 	}
 }
 
 .movie-right { 
-	width:100%;
-	min-height: calc($base*12);
-	font-size:0.5em; 
+	width:100%;													// set full width
+	min-height: calc($base*12);									// 1.125em *12= 13.5 *16px= 216px minimum height
+	font-size:0.5em; 											// override 1em, 0.5em * 16px = 8px, reduce font size
 }
 
 .video-details {
-	font-size: 0.7em;
-	margin-bottom: calc($base*0.5);
+	font-size: 0.7em;											// override 1em, 0.7em * 16px = 11.2px, reduce font size
+	margin-bottom: calc($base*0.5);								// 1.125em *0.5= 0.5625 *16px = 9px
 }
 
 .video-info {
-	font-size:0.9em;
-	margin-bottom: $base;
+	font-size:0.9em;											// override 1em, 0.9em * 16px = 14.4px, reduce font size 
+	margin-bottom: $base;										// 1.125em * 16px = 21px
 }
 
 .actor-tags {
-	font-size:0.7em;
-	margin-bottom: $base;
+	font-size:0.7em;											// override 1em, 0.7em * 16px = 11.2px, reduce font size
+	margin-bottom: $base;										// 1.125em * 16px = 21px 
 }
 
 .video-btn .dashicons {
-	margin-bottom: $base;
-	transition: all ease 0.1s;
-	@include scale(2);
+	margin-bottom: $base;										// 1.125em * 16px = 21px
+	transition: all ease 0.1s;									// 
+	@include scale(2);											// 200% icon size, enlarge icon
 	&:hover {
-		@include scale(2.5);
+		@include scale(2.5);									// 250% icon size, enlarge icon
 	}
 }
 
-.video-details {
-	
-}

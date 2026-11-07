@@ -1,13 +1,8 @@
 <?php
-
 /**
-
  * @package WordPress
-
  * @subpackage Default_Theme
-
  */
-
 ?>
 
 
@@ -27,13 +22,11 @@
 
 					<thead>
 						<tr>
-
 							<th class="hdr-audio">Audio</th>
 							<th class="hdr-video">Video</th>
 							<th class="hdr-title">Title</th>
 							<th class="hdr-musicians">Musicians</th>
 							<th class="hdr-date">Date</th>
-
 						</tr>
 					</thead>
 

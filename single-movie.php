@@ -13,7 +13,7 @@
 	<div class="body-content clearfix">
 		<div class="contact-page">
 
-			<div class="featured-bar"><a href="<?php echo esc_url( home_url( '/movie/' ) ); ?>">&laquo; Movie Archive</a></div>
+			<div class="featured-bar"><a href="<?php echo esc_url( home_url( '/movie/' ) ); ?>">← Movie Archive</a></div>
 
 			<div class="featured-bar">
 				<div class="movie">
