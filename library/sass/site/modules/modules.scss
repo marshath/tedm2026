@@ -280,7 +280,7 @@ h3.large {
 			transition: all 0.2s ease;						// card header transition on :hover
 			z-index: 2;										// place above .h3-project-bg-top & .h3-project-bg-bottom
 			@include square-font;							// Bree Serif, serif
-			text-shadow: 0 1px white;
+			text-shadow: 0 1px white;						// white text shadow
 		}
 	}
 	.h3-project-bg-top, .h3-project-bg-bottom, .h3-blogroll-bg-top, .h3-blogroll-bg-bottom {

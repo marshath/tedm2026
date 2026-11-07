@@ -202,35 +202,32 @@ main {
 }
 
 
-// ORANGE DIVIDER - HEADER PSUEDO ELEMENT //
-/* .article-wrap:before {				
+// HEADER STRIPED DIVIDER - HEADER PSUEDO ELEMENT //
+.article-wrap:before {				
 	content: '';
-	width: 100%;										// set width
-	height: 10px;										// set height
-	background: $orange; 								// #ed3c24, orange
-	background: linear-gradient(to right,  $orange 20%,$orange-light 80%); 	// #ed3c24, #f29029, dark to light orange
-	display: block;										// set full width
+	width: 100%;										// set full width
+	height: calc($base*1.25);							// 1.125em *1.25= 1.40625 *16px = 22.5px, set height
+	background: repeating-linear-gradient(145deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 6px, rgba(0,0,0,1) 6px, rgba(0,0,0,1) 10px); // angled tan stripe gradient
 	position: absolute;									// set child position for parent
-	top: 0;												// position at the top 
+	transform: rotate(-0.3deg);							// add slight rotation to stripes
+	top: -1em;											// position above splash graphic 
 	left: 0;											// position on the left
-} */
+}
 
-// FOOTER PAPER FRAY - FOOTER PSUEDO ELEMENT //
-//.footer-wrap:before {
-//	content: '';
-//	width: 100%;										// set width
-//	height: 17px;										// set height
-//	background: url(library/images/pattern-fray.png) repeat-x;	// paper fray pattern
-//	display: block;										// set full width
-//	position: absolute;									// set child position for parent
-//	top:0;												// position at the top 
-//	left: 0;											// position on the left
-//	@media screen and (min-resolution: 192dpi) { /** display on high resolution screens **/
-	//	background: url(library/images/pattern-fray@2x.png); // high resolution paper fray pattern
-	//	background-size: 133px 17px; 					// set paper fray graphic width height to @1x image
-	//}
-//}
 
+// FOOTER STRIPED DIVIDER - FOOTER PSUEDO ELEMENT //
+.footer-wrap:before {
+	content: '';
+	width: 85%;											// side spacing for small screens
+	max-width: 1800px;									// max width for wide screens
+	height: calc($base*1.25);							// 1.125em *1.25= 1.40625 *16px = 22.5px, set height
+	background: repeating-linear-gradient(145deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 6px, rgba(177,170,154,0.2) 6px, rgba(177,170,154,0.2) 10px); // angled tan stripe gradient
+	display: block;										// force full width
+	margin: calc($base* -1.25) auto 0 auto;				// 1.125em * 16px = 21px, remove height from top margin to retain footer positioning
+	@media screen and (min-width: $tablet-v) { /** 901px laptop screen size and larger **/
+		width: 94%;										// side spacing for small screens
+	}
+}
 
 // HEADER //
 header.main { 
