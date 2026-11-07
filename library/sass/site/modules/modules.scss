@@ -378,25 +378,46 @@ h2.project-title {
 /* About Page */
 /* -------------------------- */
 
+
+// SPLASH TEXT SLIDE-IN ANIMATION
+@keyframes photo-slide {
+	from { scale: 0.5; opacity: 0; transform: rotate(45deg) translateX(500px) translateY(-500px); }
+	to { scale: 1; opacity: 1; transform: rotate(12deg) translateX(0px) translateY(0px); }
+}
+
 .image-wrap {
-	width: 55%;
-	margin: 0 0 $base 2em;
-	border: 4px solid white;								// same as .project figure from modules.scss
-	display: block;
-	float: right;
-	border-radius: 0.25em;									// same as .project figure from modules.scss
-	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));		// same as .project figure:hover from modules.scss
-	@media screen and (max-width: $mobile-h) { 	/** 590px mobile horizontal screen size max **/
-		width: 100%;
-		float: left;
-		margin: 0 0 $base 0;
+	width: 100%;											// set full width for mobile
+	margin: 0 0 calc($base) 8em;							// 1.125em *16px = 21px, 8em *16px = 128px
+	border: 6px solid white;								// white border like Polaroid picture
+	border-bottom: 50px solid white;						// thick bottom border like Polaroid picture
+	display: block;											// force items below
+	float: right;											// position to the right
+	border-radius: $corner;									// 0.25em *16px = 4px
+	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));		// shadow for Polaroid picture
+	transform: rotateZ(2deg);								// rotate image slightly for mobile
+	margin: 0 0 $base 0;									// 1.125em *16px = 21px
+	img {
+		width: 100%;										// set image to fill .image-wrap container
+	}
+	@media screen and (min-width: $tablet-v) { 	/** 591px tablet vertical screen size and larger **/
+		width: 40vw;										// override 100%, set 40 viewport width
+		transform: rotate(12deg);							// rotate image to match animation ending
+		animation: photo-slide 1.5s ease-in-out;			// animation for rotated picture
+		margin: 0 0 calc($base*3) 4em;						// 1.125em *3= 3.375 *16px= 54px, 4em *16px= 64px, force text wrap around Polaroid picture
+	}
+	@media screen and (min-width: $laptop) { 	/** 901px tablet vertical screen size and larger **/
+		width: 35vw;										// override 40vw, set 35 viewport width
+		margin-left: 6em;									// 6em *16px= 96px, force text wrap around Polaroid picture
 	}
 	@media screen and (min-width: $television) { /** 1600px television screen size and larger **/
-		width: 31.25em;
+		width: 30vw;										// override 35vw, set 30 viewport width
+		max-width: 600px;									// set a maximum width of 600 pixels
+		margin-left: 8em;									// 8em *16px= 128px, force text wrap around Polaroid picture
 	}
-	img {
-		width: 100%;
-	}
+}
+.about-link {									/** Spacing above and below link **/
+	margin-top: calc($base*2);								// 1.125em *2= 2.25 *16px = 40px
+	margin-bottom: calc($base*4);							// 1.125em *4= 4.5 *16px = 72px
 }
 
 
