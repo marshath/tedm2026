@@ -8,28 +8,26 @@
 .hero-splash { 
 	width: 100%;
 	min-height: 380px; 										// minimum height for mobile
-	height: clamp(380px, 45vw, 60vh); 						// flexible height for the splash content
+	height: clamp(380px, 40vw, 700px); 						// flexible height for the splash content
 	margin: 0 auto 0 auto; 									// center container
 	display: block; 										// force full width and minimum height
 	position: relative; 									// set parent positioning
 	@media screen and (min-width: $tablet-v) { /** 591px tablet vertical screen size and larger **/
 		width: 90vw; 										// override 95%, reduce width of transparent black background
-		//border: 1px solid red;
 	}
 	@media screen and (min-width: $tablet-h) { /** 900px tablet horizontal computer screen and larger **/
 		width: 90%; 										// override 90%, reduce width of transparent black background
-		//border: 1px solid blue;
 	}
 	@media screen and (min-width: $monitor) { 	/** 1200px monitor screen size and larger **/
 		width: 80%; 										// override 85%, reduce width of transparent black background
-		//border: 1px solid green;
+		//min-height: 580px; 									// orverride 380px, minimum height for tablet
 	}
 	@media screen and (min-width: $laptop) { 	/** 1200px monitor screen size and larger **/
 		width: 80%; 										// override 85%, reduce width of transparent black background
 	}
 	@media screen and (min-width: $television) { 	/** 1600px monitor screen size and larger **/
 		width: 80%; 										// override 85%, reduce width of transparent black background
-		max-width: 1500px;
+		max-width: 1500px;									 // set max-height for large displays
 	}
 }
 
@@ -64,14 +62,13 @@
 		font-weight: bold;
 		width: 100%;
 		position: absolute; 								// position within .hero-splash
-		top: clamp(0em, 2vw, 3em);							// 3em * 16px = 48px, variable top position
+		top: clamp(0em, 3vw, 6em);							// 3em * 16px = 48px, variable top position
 		left: 0;											// left position
-		background: rgba(0,0,0,0.5);						// transparent black background for text contrast
 	}
 	&-group1 {
 		text-align: left;
 		padding-left: clamp(5%, 6vw, 10%); 					// variable left padding
-		padding-top: clamp(3em, 6vw, 8em);					// variable top padding
+		padding-top: clamp(3em, 6vw, 6em);					// variable top padding
 		perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row1, .hero-text-row2
 	}
 	&-group2 {
@@ -86,12 +83,16 @@
 		animation: slide-text1 1s ease-in-out;				// splash slide-in animation
 		transform: rotateX(10deg) rotateY(-30deg);			// 3d transform text
 		transform-origin: left bottom;						// animation start position
+		width: 250px;										// set width for transparent black background
+		background: rgba(0,0,0,0.5);					// transparent black background
 	}
 	&-row2 {
 		padding-left: clamp(5%, 6vw, 5%); 					// variable right padding
 		animation: slide-text2 1.2s ease-in-out;			// splash slide-in animation
 		transform: rotateX(10deg) rotateY(-30deg);			// 3d transform text
 		transform-origin: left bottom;						// animation start position
+		width: 360px;										// set width for transparent black background
+		background: rgba(0,0,0,0.5);					// transparent black background
 	}
 	&-row3 {
 		height: clamp(2.8em, 5.1vw, 5.5em); 				// 2.7em *16px = 43.2px, 5em * 16px= 80px, variable height
@@ -99,38 +100,64 @@
 		animation: slide-text3 1.7s ease-in-out;			//splash slide-in animation
 		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// 3d transform text
 		transform-origin: left bottom;						// animation start position
+		//width: 900px;
+		background: linear-gradient(to right, rgba(0,0,0,0) 22%, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.5) 92%, rgba(0,0,0,0) 92%); // text background transparent and black
 	}
 	&-row4 {
 		animation: slide-text4 1.9s ease-in-out;			// splash slide-in animation
-		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// 3d transform text
+		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// override 3d transform text
 		transform-origin: left bottom;						// animation start position
+		//width: 900px;
+		background: linear-gradient(to right, rgba(0,0,0,0) 28%, rgba(0,0,0,0.5) 28%, rgba(0,0,0,0.5) 100%); // text background transparent and black
 	}
-	@media screen and (min-width: $laptop) { 	/** 901px laptop screen size and larger **/
+	@media screen and (min-width: $tablet-v) { 	/** 901px laptop screen size and larger **/
+		&-row1 {
+			width: 40vw;									// override 250px, width for transparent black background
+		}
+		&-row2 {
+			width: 55vw;									// override 360px, width for transparent black background
+		}
 		&-row3 {
-			transform: rotateX(7deg) rotateY(-30deg) translateX(-2vw);	// 3d transform and position text
+			background: linear-gradient(to right, rgba(0,0,0,0) 42%, rgba(0,0,0,0.5) 42%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0) 90%);  // text background transparent and black
 		}
 		&-row4 {
-			transform: rotateX(7deg) rotateY(-30deg) translateX(-2vw);	// 3d transform and position text
+			background: linear-gradient(to right, rgba(0,0,0,0) 44%, rgba(0,0,0,0.5) 44%, rgba(0,0,0,0.5) 100%); // text background transparent and black
+		}
+	}
+	@media screen and (min-width: $laptop) { 	/** 901px laptop screen size and larger **/
+		&-row1 {
+			width: 35vw;									// override 40vw, width for transparent black background
+		}
+		&-row3 {
+			transform: rotateX(7deg) rotateY(-30deg) translateX(-2vw);	// override 3d transform and position text
+		}
+		&-row4 {
+			transform: rotateX(7deg) rotateY(-30deg) translateX(-2vw);	// override 3d transform and position text
 		}
 	}
 	@media screen and (min-width: $monitor) { 	/** 901px laptop screen size and larger **/
 		&-row3 {
-			transform: rotateX(5deg) rotateY(-30deg) translateX(-6vw);	// 3d transform and position text
+			transform: rotateX(5deg) rotateY(-30deg) translateX(-6vw);	// override 3d transform and position text
 		}
 		&-row4 {
-			transform: rotateX(5deg) rotateY(-30deg) translateX(-6vw);	// 3d transform and position text
+			transform: rotateX(5deg) rotateY(-30deg) translateX(-6vw);	// override 3d transform and position text
 		}
 	}
 	@media screen and (min-width: $television) { 	/** 1600px television screen size and larger **/
 		&-group2 {
 			padding-bottom: clamp(3em, 6vw, 6em);				 // 3em * 16px = 48px, 6em * 16px = 96px,variable bottom padding
-			perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row3, .hero-text-row4
+		}
+		&-row1 {
+			width: 600px;									// override 35vw, width for transparent black background
+		}
+		&-row2 {
+			width: 900px;									// override 55vw, width for transparent black background
 		}
 		&-row3 {
-			transform: rotateX(2deg) rotateY(-30deg) translateX(-9em);	// 3d transform and position text
+			transform: rotateX(2deg) rotateY(-30deg) translateX(-9em);	// override 3d transform and position text
 		}
 		&-row4 {
-			transform: rotateX(2deg) rotateY(-30deg) translateX(-9em);	// 3d transform and position text
+			transform: rotateX(2deg) rotateY(-30deg) translateX(-9em);	// override 3d transform and position text
 		}
 	}
 }

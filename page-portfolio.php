@@ -8,43 +8,25 @@ get_header(); ?>
 	
 <?php // -------- Hero Image -------- ?>
     <section class="hero-splash clearfix">
-		<figure>
-			<div class="hero-text-container">
-				<span class="hero-text-group1">
-					<span class="hero-text-row1">
-						<span class="text-white">UX</span>
-						<span class="text-orange">&nbsp;rooted in</span>
-					</span> <?php // end .hero-text-row1 ?>
-					<span class="hero-text-row2">
-						<span class="text-white">research</span><span class="text-white text-white-small">,</span>
-					</span <?php // end .hero-text-row2 ?>
-				</span> <?php // end .hero-text-group1 ?>
-				<span class="hero-text-group2">
-					<span class="hero-text-row3">
-						<span class="text-orange">refined through</span>
-					</span> <?php // end .hero-text-row3 ?>
-					<span class="hero-text-row4">
-						<span class="text-white">design</span>
-					</span> <?php // end .hero-text-row4 ?>
-				</span> <?php // end .hero-text-group2 ?>
-			</div> <?php // end .hero-text-container ?>
-		</figure>
-		<?php /*	
-		<?php // <figcaption> ?>
-			<?php// the_content(); ?>
-		<?php // </figcaption> ?>
-		<figure>
-			<div class="hero-computers">
-				<img 
-				src="<?php echo get_template_directory_uri(); ?>/library/images/img-homepage-650.png"
-				alt="Laptop, tablet and smartphone design with a personal touch" 
-				srcset="<?php echo get_template_directory_uri(); ?>/library/images/img-homepage-325.png 325w, 
-				<?php echo get_template_directory_uri(); ?>/library/images/img-homepage-650.png 650w, 
-				<?php echo get_template_directory_uri(); ?>/library/images/img-homepage-975.png 975w, 
-				<?php echo get_template_directory_uri(); ?>/library/images/img-homepage-1300.png 1300w" 
-				sizes="(min-width: 325px) 50vw, (min-width: 650px) 100vw, (min-width: 975px) 100vw, 100vw">
-			</div>
-		</figure> */ ?>
+		<div class="hero-text-container">
+			<span class="hero-text-group1">
+				<span class="hero-text-row1">
+					<span class="text-white">UX</span>
+					<span class="text-orange">&nbsp;rooted in</span>
+				</span> <?php // end .hero-text-row1 ?>
+				<span class="hero-text-row2">
+					<span class="text-white">research</span><span class="text-white text-white-small">,</span>
+				</span <?php // end .hero-text-row2 ?>
+			</span> <?php // end .hero-text-group1 ?>
+			<span class="hero-text-group2">
+				<span class="hero-text-row3">
+					<span class="text-orange">refined through</span>
+				</span> <?php // end .hero-text-row3 ?>
+				<span class="hero-text-row4">
+					<span class="text-white">design</span>
+				</span> <?php // end .hero-text-row4 ?>
+			</span> <?php // end .hero-text-group2 ?>
+		</div> <?php // end .hero-text-container ?>
     </section>
 
 </div> <?php // ------- .header-wrap ------- ?>
