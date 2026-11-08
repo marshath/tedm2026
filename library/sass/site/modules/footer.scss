@@ -9,12 +9,12 @@ footer {
 }
 // CONTACT INFO FOOTER //
 section.footer-company-info {
-	width: 100%;										// full width
-	margin-right: 2%;									// spacing nav right
 	margin-bottom: ($base*2);							// 1.3125em * 2 = 2.625em, spacing for nav
+	margin-right: 2%;									// spacing nav right
+	width: 100%;										// full width
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
-		width: 36%;										// override 100%, 36% company social 2%, 62% nav = 100%
 		margin-bottom: $base;							// 1.3125em, spacing for copyright
+		width: 36%;										// override 100%, 36% company social 2%, 62% nav = 100%
 	}
 	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
 		width: 20%;										// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
@@ -22,22 +22,22 @@ section.footer-company-info {
 }
 .footer-company-info {
 	li {
-		width: 100%;									// full width
-		font-size: $font14;								// 0.875em *16px = 14px
-		line-height: 1.5em;
 		display: block;									// column, force line break
 		float: left;									// position left
+		font-size: $font14;								// 0.875em *16px = 14px
+		line-height: 1.5em;
 		list-style: none;								// remove default list-style
+		width: 100%;									// full width
 	}
 	h4, a {
 		color: darken($tan, 10);						// #b1aa9a, dark tan
 		margin-bottom: calc($base/4);					// override default margin-bottom, (1.3125em /4) *16px = 0.328125em, 5.25px
 	}
 	.name {
-		font-size: $font14;								// 0.875em *16px = 14px
-		text-transform: uppercase;						// transform all text to uppercase
-		padding-bottom: 1%;								// space border-bottom from name
 		border-bottom: 2px dotted darken($tan, 10);		// #b1aa9a, dark tanlign with section.footer-social-links h4 styling
+		font-size: $font14;								// 0.875em *16px = 14px
+		padding-bottom: 1%;								// space border-bottom from name
+		text-transform: uppercase;						// transform all text to uppercase
 	}
 }
 .ftr-contact a {
@@ -53,16 +53,16 @@ section.footer-company-info {
 
 // FOOTER NAVIGATION //
 section.footer-navigation { 
-	width: 100%;										// set full width
 	margin-bottom: $base;								// 1.3125em *16px = 21px, spacing, move nav down
+	width: 100%;										// set full width
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
-		width: 62%;										// override 100%, 36% company social 2%, 62% nav = 100%
 		float: right;									// position right
+		width: 62%;										// override 100%, 36% company social 2%, 62% nav = 100%
 	}
 	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
-		width: 53%;										// override 58%, 20% company 2%, 53% nav 2%, 23% social = 100%
-		margin-right: 2%;								// spacing for social links
 		float: left;									// override right, position center
+		margin-right: 2%;								// spacing for social links
+		width: 53%;										// override 58%, 20% company 2%, 53% nav 2%, 23% social = 100%
 	}
 }
 
@@ -86,12 +86,12 @@ section.footer-navigation {
 		}
 	}
 	a {
-		line-height: 1em;								// 16px, reduce vertical height between icon and text
-		margin: 0 0 $base 0;							// 0 0 1.3125em 0, move social links down
 		color: darken($tan, 10);						// override gray, #c7c2b7
-		text-shadow: none;								// override text shadow from header.scss, remove text shadow
 		border: none;									// override border from header.scss, remove border
 		box-shadow: none;								// override box-shadow from header.scss, remove shadow
+		line-height: 1em;								// 16px, reduce vertical height between icon and text
+		margin: 0 0 $base 0;							// 0 0 1.3125em 0, move social links down
+		text-shadow: none;								// override text shadow from header.scss, remove text shadow
 		svg {
 			fill: darken($tan,10);						// override gray, #c7c2b7
 		}
@@ -104,10 +104,9 @@ section.footer-navigation {
 	}
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
 		li, li:first-child {
-			margin: 0; 									// override header .menu padding
-			width: 23%;									// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
-			margin: 0 0.5%;								// equal side spacing between menu items
 			height: calc($base*3);						// (1.3125em * 3) *16px = 3.9375em, 63px
+			margin: 0 0.5%;								// override header .menu padding, equal side spacing between menu items
+			width: 23%;									// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100%
 		}
 	}
 	@media screen and (min-width: $television) { /** 1600px television screen size and larger **/
@@ -119,28 +118,28 @@ section.footer-navigation {
 
 // SOCIAL FOOTER //
 section.footer-social-links {
-	width: 80%;											// set max width 70% + 15% + 15% = 100%
-	margin-top: $base;									// 1.3125em *16px = 21px, move down to vertically from .footer-navigation on mobile
-	margin-left: 10%;									// align center (30%/2=15)
-	text-align: center;									// center text
 	color: darken($tan, 10);							// #b1aa9a, override $tan
+	margin-left: 10%;									// align center (30%/2=15)
+	margin-top: $base;									// 1.3125em *16px = 21px, move down to vertically from .footer-navigation on mobile
+	text-align: center;									// center text
+	width: 80%;											// set max width 70% + 15% + 15% = 100%
 	h4 {
 		font-size: $font14;								// 0.875em *16px = 14px
-		text-transform: uppercase;						// transform all text to uppercase
-		padding-bottom: 1%;								// spacing from border-bottom
 		margin-bottom: calc($base/2);					// (1.3125em /2) *16px = 0.65625e, 10.5px, bottom spacing
+		padding-bottom: 1%;								// spacing from border-bottom
+		text-transform: uppercase;						// transform all text to uppercase
 	}
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
+		clear: left;									// clear objects to position left
+		margin-left: 0;									// override 15%
+		margin-top: 0;									// override $base, 1.3125em, remove vertical spacing to align with .footer-navigation on larger screens
 		text-align: left;								// override center, align icons & h4 text left on tablet
 		width: 36%;										// override 70%, 36% company social 2%, 62% nav = 100% spacing
-		margin-top: 0;									// override $base, 1.3125em, remove vertical spacing to align with .footer-navigation on larger screens
-		margin-left: 0;									// override 15%
-		clear: left;									// clear objects to position left
 	}
 	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
-		width: 23%;										// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100
-		text-align: center;								// override left, center text
 		clear: none;									// override left, position at end of footer on the right
+		text-align: center;								// override left, center text
+		width: 23%;										// override 48%, 20% company 2%, 53% nav 2%, 23% social = 100
 		h4 {
 			border-bottom: 2px dotted darken($tan, 10);	// #b1aa9a, override none, align with .footer-company-info .name styling
 		}
@@ -163,9 +162,9 @@ section.footer-social-links {
 	}
 	a {
 		color: darken($tan, 10);						// #b1aa9a tan
+		display: block;									// force full width for clicking link
 		font-size: 2rem;
 		margin-bottom: calc($base/2);					// (1.3125em /2) *16px = .65625em, 10.5px, move copyright down
-		display: block;									// force full width for clicking link
 		&:hover .github-icon {
 			color: $github-black;						// #24292e black
 		}
@@ -187,10 +186,10 @@ section.footer-social-links {
 /* -------------------------- */
 
 .copyright {
-	width: 100%;										// set full width
 	font-size: $font12;									// 0.75em *16px = 12px
-	text-align: center;									// center text
-	padding-top: ($base*2);								// (1.3125em *2) *16px = 2.625em, 42px // top spacing from .footer-social-links
 	clear: both;										// force below contact info, nav, social links
 	color: darken($tan,10);								// #b1aa9a
+	padding-top: ($base*2);								// (1.3125em *2) *16px = 2.625em, 42px // top spacing from .footer-social-links
+	text-align: center;									// center text
+	width: 100%;										// set full width
 }

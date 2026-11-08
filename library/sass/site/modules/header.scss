@@ -8,17 +8,17 @@
 
 // COMPANY LOGO //
 h1.logo {
-	width: 151px; 													// set logo width
+	float: left; 													// position on left side of header
 	height: 81px; 													// set logo height
 	margin: calc($base*0.25) 0 calc($base*0.75) 0; 					// (1.3125em *0.25) *16px = 0.328125em, 5.25px, (1.3125em *0.75) *16px = 0.984375em, 15.75px, 
-	float: left; 													// position on left side of header
+	width: 151px; 													// set logo width
 	a {
-		width: 100%; 												// fill container width
-		height: 100%; 												// fill container height
 		background: url(library/images/logo.png) no-repeat;			// logo graphic
-		text-indent: -9999px; 										// hide text off screen
 		display: block; 											// force full width height
+		height: 100%; 												// fill container height
+		text-indent: -9999px; 										// hide text off screen
 		transition: all ease 0.2s; 									// logo hover transition
+		width: 100%; 												// fill container width
 		&:hover {
 			@include scale(0.95); 									// shrink logo on :hover
 		}
@@ -35,14 +35,14 @@ h1.logo {
 
 // HEADER NAVIGATION //
 .site-header nav {
-	width: 36.5em;													// 36.5em *16px = 584px, set default width for laptop screen & ahove
+	display: block;
+	float: right;													// align menu to right of page
 	line-height: 0.75;												// reduce line height for vertical center positioning of icon and text in mobile menu, reduce line height between icon and text in desktop menu
 	text-align: right;												// align li right
-	float: right;													// align menu to right of page
-	display: block;
+	width: 36.5em;													// 36.5em *16px = 584px, set default width for laptop screen & above
 	@media screen and (max-width: $mobile-h) {			/** 590px mobile horizontal max width **/
-		width: 100%;												// set downdown full width for mobile menu
 		margin-bottom: $base;										// 1.3125em *16px = 21px, push splash content down
+		width: 100%;												// set downdown full width for mobile menu
 	}
 	@media screen and (min-width: $tablet-v) and (max-width: $tablet-h) { /** 591px tablet vertical to 900px tablet horizontal **/
 		width: 65%;													// horizontal menu for tablet screen & above
@@ -82,15 +82,15 @@ h1.logo {
 
 // NAV FORMATTING //
 .menu {															// ul formatting
-	padding: 0;													// remove default ul padding
 	margin: 0;													// remove default ul margin
+	padding: 0;													// remove default ul padding
 	li {
 		height: calc($base*2.5);								// 1.3125em * 2.5 = 3.28125em, reduce menu item height on mobile, match a:link
-		width: 100%;											// set full width
-		margin: 0.5% 0 0 0;										// vertical spacing for top & bottom border
 		display: inline-block;									// display items horizontally on large screens
 		list-style: none;										// remove default list-style
+		margin: 0.5% 0 0 0;										// vertical spacing for top & bottom border
 		text-align: center;										// center text inside li
+		width: 100%;											// set full width
 		&:first-child {
 			margin: 2% 0 0 0;									// first child vertical spacing from ul border-top
 		}
@@ -102,35 +102,35 @@ h1.logo {
 		}
 		// nav icon formatting //
 		svg {
+			@include transition(background, 1s, ease-out);
+			display: inline; 									// svg inline with text
+			fill: $nav-text;									// #bdc0c3, light gray
 			font-size: 1.3em;									// 1.3em * 16px = 20.8px
 			height: 1.6rem;										// 1.6em *16px = 25.6px
-			display: inline; 									// svg inline with text
-			padding-right: 0.5em;								// horizontal spacing between icon and text
 			margin: 0 auto 0 auto; 								// center icon, push text down
-			fill: $nav-text;									// #bdc0c3, light gray
+			padding-right: 0.5em;								// horizontal spacing between icon and text
 			vertical-align: middle;								// center icon vertically with text on mobile
-			@include transition(background, 1s, ease-out);
 		}
 	}
 	a {
-		width: 100%;
-		height: calc($base*2.75);								// 1.3125em *2.5 = 3.28125em, reduce menu item height on mobile, match li
-		font-size: 0.875rem;									// 0.875 * 16px = 14px
-		text-shadow: 0 2px 0 black;
-		color: $nav-text;										// #bdc0c3, light gray
 		@include square-font;									// Bree Serif, serif
-		text-decoration: none;									// remove hyperlink underline
-		text-transform: uppercase;
-		padding: calc($base*0.7) 1% $base;						// reduce top padding on mobile
-		display: block;											// force full width & height
 		@include transition(background, 1s, ease-out);
-		border-top: 1px solid rgba(255,255,255,0.1);			// border reflection creates 3D look
 		border-bottom: 1px solid black;						// border shadow creates 3D look
+		border-top: 1px solid rgba(255,255,255,0.1);			// border reflection creates 3D look
 		box-shadow: 0px 2px 1px rgba(0,0,0,0.15);
+		color: $nav-text;										// #bdc0c3, light gray
+		display: block;											// force full width & height
+		font-size: 0.875rem;									// 0.875 * 16px = 14px
+		height: calc($base*2.75);								// 1.3125em *2.5 = 3.28125em, reduce menu item height on mobile, match li
+		padding: calc($base*0.7) 1% $base;						// reduce top padding on mobile
+		text-decoration: none;									// remove hyperlink underline
+		text-shadow: 0 2px 0 black;
+		text-transform: uppercase;
+		width: 100%;
 		&:hover {
+			@include transition(background, 0s, linear);
 			background: linear-gradient( to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.15) 35%, rgba(255,255,255,0.15) 65%,rgba(255,255,255,0) 100%);
 			color: white;
-			@include transition(background, 0s, linear);
 			svg {
 				fill: $yellow;									// icon color on :hover
 				#bottom {
@@ -157,24 +157,24 @@ h1.logo {
 	@media screen and (min-width: $tablet-v) {			/**  591px tablet vertical and larger screens **/
 		border: none; 											// override 1px border top & bottom
 		li {
-			width: 23%;											// override 100%
 			list-style: none;									// remove default li formatting
 			margin: calc($base/2) 1% 0 0;						// override 0.5% 0 0 0, spacing top and between list items
+			width: 23%;											// override 100%
 			&:last-child {
 				margin: 0;										// override 2% 0 0 0, remove right space on last child
 			}
 			svg {
-				padding-right: 0;								// override 0.5em
-				margin: 0 auto 0.25em auto; 					// center icon, push text down
 				display: block; 								// override inline, force text down
+				margin: 0 auto 0.25em auto; 					// center icon, push text down
+				padding-right: 0;								// override 0.5em
 			}
 		}
 		a {
-			height: calc($base*4);								// override calc($base*2.5), 1.3125em *4 = 5.25em, increase menu item height
-			padding: calc($base*0.4) 1% 0;						// override calc($base*0.7) 1% 0, 1.3125em *0.5 = 0.65625em, reduce top padding
-			margin-top: 1em;									// 16px, separate links from top of page
 			border: none;										// override 1px border top and bottom
 			box-shadow: none;									// override, remove box-shadow
+			height: calc($base*4);								// override calc($base*2.5), 1.3125em *4 = 5.25em, increase menu item height
+			margin-top: 1em;									// 16px, separate links from top of page
+			padding: calc($base*0.4) 1% 0;						// override calc($base*0.7) 1% 0, 1.3125em *0.5 = 0.65625em, reduce top padding
 			&:hover {
 				background: none;								// override gradient for mobile
 			}
@@ -198,17 +198,17 @@ h3#menu-toggle {
 	color: $nav-text; 											// #bdc0c3 white gray
 	display: none;												// hide menu toggle 
 	@media screen and (max-width: $mobile-h) { 			/**  590px mobile horizontal max screen **/
-		width: 2.3em;											// 2.3em *16px = 36.8px, set toggle width
 		display: inline-block;									// show menu toggle on mobile
-		text-align: center;										// center hamburger icon
 		position: absolute;										// set child position to .site-header
-		top: calc($base*0.75);									// (1.3125em *0.75) *16px = 0.984375em, 15.75px, top position
 		right: 4%;												// right position
+		text-align: center;										// center hamburger icon
 		text-shadow: none;										// remove white text shadow from menu item
+		top: calc($base*0.75);									// (1.3125em *0.75) *16px = 0.984375em, 15.75px, top position
+		width: 2.3em;											// 2.3em *16px = 36.8px, set toggle width
 	    .menu-icon {
+			display: inline-block;								// need for margin-bottom
 			font-size: 3em;										// 3em *16px = 48px
 			margin-bottom: 2px;									// move Menu text down from hamburger icon
-			display: inline-block;								// need for margin-bottom
 	    }
 	    .menu-text {
 	    	@include square-font;								// Bree Serif, serif
@@ -222,11 +222,11 @@ h3#menu-toggle {
 	    	}
 	    }
 		a {
-			width: 100%;										// set menu toggle to full width
-			height: 100%;										// set menu toggle to full height
 			color: $nav-text;									// #bdc0c3, light gray
-			font-size: $font12;									// 0.75em * 16px = 12px
 			display: block;										// reduces toggle height, reduces spacing for Menu text
+			font-size: $font12;									// 0.75em * 16px = 12px
+			height: 100%;										// set menu toggle to full height
+			width: 100%;										// set menu toggle to full width
 		}
 	}
 }

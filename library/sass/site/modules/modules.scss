@@ -60,55 +60,53 @@
 .hero-text {
 	&-container {
 		font-weight: bold;
-		width: 100%;
+		left: 0;											// left position
 		position: absolute; 								// position within .hero-splash
 		top: clamp(0em, 3vw, 6em);							// 3em * 16px = 48px, variable top position
-		left: 0;											// left position
+		width: 100%;
 	}
 	&-group1 {
-		text-align: left;
 		padding-left: clamp(5%, 6vw, 10%); 					// variable left padding
 		padding-top: clamp(3em, 6vw, 6em);					// variable top padding
 		perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row1, .hero-text-row2
+		text-align: left;
 	}
 	&-group2 {
-		text-align: right;									// text align right for right padding
 		padding-top: ($base*1.5);							// 1.3125em *16px = 21px *1.5=  31.5px
 		padding-right: clamp(5%, 6vw, 8%); 					// variable right padding
 		padding-bottom: clamp(1em, 6vw, 6em);				 // 1em * 16px = 16px, 6em * 16px = 96px,variable bottom padding
 		perspective: 1000px;								// perspective depth of field applied to 3D text, required for 3D animation .hero-text-row3, .hero-text-row4
+		text-align: right;									// text align right for right padding
 	}
 	&-row1 {
-		height: clamp(3.5em, 7vw, 7.5em); 					// 3.5em *16px = 56px, 7.5em * 16px= 120px, variable height
 		animation: slide-text1 1s ease-in-out;				// splash slide-in animation
+		background: rgba(0,0,0,0.5);					// transparent black background
+		height: clamp(3.5em, 7vw, 7.5em); 					// 3.5em *16px = 56px, 7.5em * 16px= 120px, variable height
 		transform: rotateX(10deg) rotateY(-30deg);			// 3d transform text
 		transform-origin: left bottom;						// animation start position
 		width: 250px;										// set width for transparent black background
-		background: rgba(0,0,0,0.5);					// transparent black background
 	}
 	&-row2 {
-		padding-left: clamp(5%, 6vw, 5%); 					// variable right padding
 		animation: slide-text2 1.2s ease-in-out;			// splash slide-in animation
+		background: rgba(0,0,0,0.5);					// transparent black background
+		padding-left: clamp(5%, 6vw, 5%); 					// variable right padding
 		transform: rotateX(10deg) rotateY(-30deg);			// 3d transform text
 		transform-origin: left bottom;						// animation start position
 		width: 360px;										// set width for transparent black background
-		background: rgba(0,0,0,0.5);					// transparent black background
 	}
 	&-row3 {
+		animation: slide-text3 1.7s ease-in-out;			//splash slide-in animation
+		background: linear-gradient(to right, rgba(0,0,0,0) 22%, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.5) 92%, rgba(0,0,0,0) 92%); // text background transparent and black
 		height: clamp(2.8em, 5.1vw, 5.5em); 				// 2.7em *16px = 43.2px, 5em * 16px= 80px, variable height
 		padding-right: clamp(3.3em, 9vw, 10em); 			// 3.3em *16px = 52.8px, 10em * 16px= 100px, variable height
-		animation: slide-text3 1.7s ease-in-out;			//splash slide-in animation
 		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// 3d transform text
 		transform-origin: left bottom;						// animation start position
-		//width: 900px;
-		background: linear-gradient(to right, rgba(0,0,0,0) 22%, rgba(0,0,0,0.5) 22%, rgba(0,0,0,0.5) 92%, rgba(0,0,0,0) 92%); // text background transparent and black
 	}
 	&-row4 {
 		animation: slide-text4 1.9s ease-in-out;			// splash slide-in animation
+		background: linear-gradient(to right, rgba(0,0,0,0) 28%, rgba(0,0,0,0.5) 28%, rgba(0,0,0,0.5) 100%); // text background transparent and black
 		transform: rotateX(10deg) rotateY(-30deg) translateX(0px);	// override 3d transform text
 		transform-origin: left bottom;						// animation start position
-		//width: 900px;
-		background: linear-gradient(to right, rgba(0,0,0,0) 28%, rgba(0,0,0,0.5) 28%, rgba(0,0,0,0.5) 100%); // text background transparent and black
 	}
 	@media screen and (min-width: $tablet-v) { 	/** 901px laptop screen size and larger **/
 		&-row1 {
@@ -165,26 +163,21 @@
 	filter: drop-shadow(2px 4px 6px black); 				// text shadow for gradient text
 }
 .text-white {
-	color: white; 											// fallback for gradient text
-	color: transparent; 									// transparent text for gradient
 	background: linear-gradient(to Bottom, #fff 30%, #aaa 85%); // gray gradient
 	background-clip: text; 									// clip gradient to the text
-	text-transform: uppercase;
-	font-size: 8vw; 										// fallback variable font size
+	color: transparent; 									// transparent text for gradient
 	font-size: clamp(3.3em, 8vw, 9em); 						// 4em *16px = 64px, 8em * 16px= 128px, variable font size
+	text-transform: uppercase;
 	&-small {
-		font-size: 4vw; 									// fallback variable font size
 		font-size: clamp(2.5em, 4vw, 4.5em); 				// 2.5em *16px = 40px, 4.5em * 16px= 72px, variable font size
 	}
 }
 .text-orange {
-	color: $orange; 										// fallback for gradient text
+	@include square-font;									// 'Bree Serif', serif;
 	color: transparent; 									// transparent text for gradient
 	background: linear-gradient(to Bottom, $orange-light 30%, $orange 85%); // gray gradient
 	background-clip: text; 									// clip gradient to the text
-	font-size: 4em; 										// fallback variable font size
 	font-size: clamp(2em, 4vw, 4.5em); 						// 2em *16px = 32px, 4em * 16px= 64px, variable font size
-	@include square-font;
 }
 	
 	
@@ -193,61 +186,61 @@
 /* -------------------------- */
 
 h3.large {
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin-bottom: $base;									// 1.3125em *16px = 21px
 	border-top: $line;										// 4px solid $tan
 	border-bottom: $line;									// 4px solid $tan
+	margin-bottom: $base;									// 1.3125em *16px = 21px
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 	
 .project, .blogroll {					/* Project & Blog Cards */
 	display: flex;
 	flex-flow: column;										// force vertical orientation
 	gap: 4%;												// spacing between li
-	padding-left: 0;										// remove default list padding
 	list-style: none;										// override default, remove bulleted list
 	margin-bottom: 0;										// remove default margin from ul
+	padding-left: 0;										// remove default list padding
 	transition: all 0.2s ease;
 	li {								/* Project Card */
+		border-radius: 1.25em;								// 1.25em * 16px = 20px, matches border-radius li figure
 		flex-basis: 100%;									// set full width
 		margin-bottom: calc($base*2);						// (1.3125em *2) *16px = 2.625em, 42px, vertical space between li
 		position: relative;									// set parent positioning for li::before
-		z-index: 2;											// set above for z-index positioning of li::before
-		border-radius: 1.25em;								// 1.25em * 16px = 20px, matches border-radius li figure
 		transition: all 0.2s ease;							// project card transition
+		z-index: 2;											// set above for z-index positioning of li::before
 		&::before {						/* card background */
+			background: rgba(255,255,255,0.2);			// transparent white
+			border-radius: 1.25em;							// 1.25em *16px = 20px, match border-radius to figure
+			box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
 			content:'';
+			height: 100%;									// set full height
+			left: 0;										// position on the left
 			position: absolute;								// child positioning to li
 			top: 0;											// position at the top
-			left: 0;										// position on the left
-			background: rgba(255,255,255,0.2);			// transparent white
 			width: 100%;									// set full width
-			height: 100%;									// set full height
 			z-index: -1;									// set behind li
-			border-radius: 1.25em;							// 1.25em *16px = 20px, match border-radius to figure
 			transition: all 0.2s ease;
-			box-shadow: inset 1px 1px 2px rgba(255,255,255,0.7), 0px 0px 3px rgba(0,0,0,0.2);	// inset white shadow, black shadow, glass reflection effect
 		}
 		&:hover {											// expand on :hover
 			transform: scale(101.5%);
 			&::before {
-				width: calc(100% + 1em);					// expand width by 1em on hover
-				height: calc(100% + 1em);					// expand height by 1em on hover
-				top: -0.5em;								// offset 1em height by half on :hover
-				left: -0.5em;								// offset 1em width by half on :hover
-				border-radius: 1.75em;						// 1.75em *16px = 28px, increase radius to match figure radius arch
 				background: rgba(255,255,255,0.4);			// transparent white
+				border-radius: 1.75em;						// 1.75em *16px = 28px, increase radius to match figure radius arch
 				box-shadow: inset 1px 1px 2px white, 1px 2px 2px rgba(0,0,0,0.1);	// inset white shadow, black shadow, glass reflection effect
+				height: calc(100% + 1em);					// expand height by 1em on hover
+				left: -0.5em;								// offset 1em width by half on :hover
+				top: -0.5em;								// offset 1em height by half on :hover
+				width: calc(100% + 1em);					// expand width by 1em on hover
 			}
 		}
 		img {								/* card image */
-			width: 100%;									// set figure img to full width
 			height: 100%;									// set figure img to full height
 			object-fit: cover;								// scale full size image
+			width: 100%;									// set figure img to full width
 		}
 		p {
-			margin: 0 1em 1em 1em;							// 0 16px 16px 16px, side & bottom spacing
 			color: $text;									// #222 dark gray, override $orange on :hover
+			margin: 0 1em 1em 1em;							// 0 16px 16px 16px, side & bottom spacing
 		}
 		a {
 			color: $text;									// #222 dark gray
@@ -264,37 +257,37 @@ h3.large {
 		}
 	}
 	.project-img, .blogroll-img {				/* card image wrapper */
-		height: calc($base*10);								// set mobile image height
+		@include transition(all, 0.15s, ease-out);
 		border-top-right-radius: 1.25em;					// round top right corner matching li::before
 		border-top-left-radius: 1.25em;						// round top right corner matching li::before
+		height: calc($base*10);								// set mobile image height
 		overflow: hidden;									// image crop
-		@include transition(all, 0.15s, ease-out);
 	}
 	.h3-project, .h3-blogroll {
-		position: relative; 								//set parent positioning for .h3-project-bg-top & .h3-project-bg-bottom
 		overflow: hidden;									// hide .h3-project-bg
+		position: relative; 								//set parent positioning for .h3-project-bg-top & .h3-project-bg-bottom
 		h3 {
+			@include square-font;							// Bree Serif, serif
 			border-top: 2px solid rgba(255,255,255,0.35);	// transparent white top embossing
 			border-bottom: 2px solid rgba(0,0,0,0.05);	// transparent black bottom embossing
 			padding: 0.5em 1em 0.75em 0.75em;				// 0.5em *16px = 8px, 1em *16px = 16px, 0.75em *16px = 12px, 0.75em *16px = 12px
+			text-shadow: 0 1px white;						// white text shadow
 			transition: all 0.2s ease;						// card header transition on :hover
 			z-index: 2;										// place above .h3-project-bg-top & .h3-project-bg-bottom
-			@include square-font;							// Bree Serif, serif
-			text-shadow: 0 1px white;						// white text shadow
 		}
 	}
 	.h3-project-bg-top, .h3-project-bg-bottom, .h3-blogroll-bg-top, .h3-blogroll-bg-bottom {
+		height: 80%;										// set box height
+		left: 0%;											// position on the left
 		position: absolute;									// set child positioning to .h3-project
 		top: 0%;											// position at the top
-		left: 0%;											// position on the left
 		width: 100%;										// set box width
-		height: 80%;										// set box height
 		transition: all 0.4s ease;
 	}
 	.h3-project-bg-top, .h3-blogroll-bg-top {
-		background: linear-gradient( -140deg, $orange-light 0%, $orange 100%);	//E0DBCE
-		z-index: -1;										// place behind h3
+		background: linear-gradient( -140deg, $orange-light 0%, $orange 100%);	// #ed3c24 orange to #f29029 light orange
 		opacity: 0;											// hide box until hover
+		z-index: -1;										// place behind h3
 	}
 	.h3-project-bg-bottom, .h3-blogroll-bg-bottom {
 		background: linear-gradient( -140deg, #d8d1be 0%, #c8c1ae 100%);	//E0DBCE
@@ -325,14 +318,14 @@ h3.large {
 	padding: 0;												// override p padding.
 	a {
 		background: $gray-light-alpha;						// #ede8dd off white
+		border-radius: 1em;									// rounded boxes
+		font-size: $font14;									// 0.875em *16px = 14px
 		color: lighten($text,45) !important;				// #959595 gray
 		padding: 0.125em 0.5em 0.25em 0.5em;				// extra padding around the tag link
-		font-size: $font14;									// 0.875em *16px = 14px
-		border-radius: 1em;									// rounded boxes
 		&:hover, &:active {
-			color: white !important;
 			background: $orange-light;						// #f29029 light orange, fallback for gradient
 			background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 orange to #f29029 light orange
+			color: white !important;
 		}
 	}
 }
@@ -342,10 +335,10 @@ h3.large {
 /* Project Page */
 /* -------------------------- */
 h2.project-title {
-	text-align: center;										// override left
-	margin-top: $base; 										// 1.3125em *16px = 21px
 	font-size: 3.2em;										// override 2em from typography.scss, 3.2em *16px = 51.2px
+	margin-top: $base; 										// 1.3125em *16px = 21px
 	padding:0 0.25em;										// 0.25em *16px = 4px, side padding so text doesn't appear against browser border
+	text-align: center;										// override left
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
 		padding:0 0.5em;									// override 0.25em, 0.5em *16px = 8px, side padding so text doesn't appear against browser border
 	}
@@ -356,19 +349,19 @@ h2.project-title {
 		margin-top: 1em;									// 1em *16px = 16px, top spacing from Flexslider
 	}
 	ul {
-		padding-left: 1.6em;								// override default, 1.6em *16px = 25.6px, bullet indent
 		margin-bottom: 0;
+		padding-left: 1.6em;								// override default, 1.6em *16px = 25.6px, bullet indent
 	}
 	li {
-		margin-bottom: calc($base/1.5);						// 1.3125em *2 = 2.625em, list item vertical spacing
 		line-height: 1.6;									// override default, align with p from typography.scss
+		margin-bottom: calc($base/1.5);						// 1.3125em *2 = 2.625em, list item vertical spacing
 	}
 	@media screen and (min-width: $laptop) {	/** 901px laptop screen size and larger **/
 		margin-bottom: calc($base * 2);						// 1.3125em *2 = 2.625em
 		h3, p, ul {
-			max-width: 60rem;								// 60em *16px = 960px, use root for consistency across h3 & p
 			margin-left: auto;								// center on the page
 			margin-right: auto;								// center on the page
+			max-width: 60rem;								// 60em *16px = 960px, use root for consistency across h3 & p
 		}
 	}
 }
@@ -386,38 +379,37 @@ h2.project-title {
 }
 
 .image-wrap {
-	width: 100%;											// set full width for mobile
-	margin: 0 0 calc($base) 8em;							// 1.125em *16px = 21px, 8em *16px = 128px
+	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));		// shadow for Polaroid picture
 	border: 6px solid white;								// white border like Polaroid picture
 	border-bottom: 50px solid white;						// thick bottom border like Polaroid picture
+	border-radius: $corner;									// 0.25em *16px = 4px
 	display: block;											// force items below
 	float: right;											// position to the right
-	border-radius: $corner;									// 0.25em *16px = 4px
-	@include box-shadow(0 2px 4px rgba(0,0,0,0.4));		// shadow for Polaroid picture
-	transform: rotateZ(2deg);								// rotate image slightly for mobile
 	margin: 0 0 $base 0;									// 1.125em *16px = 21px
+	transform: rotateZ(2deg);								// rotate image slightly for mobile
+	width: 100%;											// set full width for mobile
 	img {
 		width: 100%;										// set image to fill .image-wrap container
 	}
 	@media screen and (min-width: $tablet-v) { 	/** 591px tablet vertical screen size and larger **/
-		width: 40vw;										// override 100%, set 40 viewport width
-		transform: rotate(12deg);							// rotate image to match animation ending
 		animation: photo-slide 1.5s ease-in-out;			// animation for rotated picture
 		margin: 0 0 calc($base*3) 4em;						// 1.125em *3= 3.375 *16px= 54px, 4em *16px= 64px, force text wrap around Polaroid picture
+		transform: rotate(12deg);							// rotate image to match animation ending
+		width: 40vw;										// override 100%, set 40 viewport width
 	}
 	@media screen and (min-width: $laptop) { 	/** 901px tablet vertical screen size and larger **/
-		width: 35vw;										// override 40vw, set 35 viewport width
 		margin-left: 6em;									// 6em *16px= 96px, force text wrap around Polaroid picture
+		width: 35vw;										// override 40vw, set 35 viewport width
 	}
 	@media screen and (min-width: $television) { /** 1600px television screen size and larger **/
-		width: 30vw;										// override 35vw, set 30 viewport width
-		max-width: 600px;									// set a maximum width of 600 pixels
 		margin-left: 8em;									// 8em *16px= 128px, force text wrap around Polaroid picture
+		max-width: 600px;									// set a maximum width of 600 pixels
+		width: 30vw;										// override 35vw, set 30 viewport width
 	}
 }
 .about-link {									/** Spacing above and below link **/
-	margin-top: calc($base*2);								// 1.125em *2= 2.25 *16px = 40px
 	margin-bottom: calc($base*4);							// 1.125em *4= 4.5 *16px = 72px
+	margin-top: calc($base*2);								// 1.125em *2= 2.25 *16px = 40px
 }
 
 
@@ -435,9 +427,9 @@ h2.project-title {
 		margin-bottom: 0;									// override 0.25em from Portfolio Page styles for .project, .blogroll
 	}
 	.h3-blogroll-bg-bottom {
-		height: 100%;										// force h3 tan background full height
 		border-bottom-left-radius: 1em;						// 1em = 16px
 		border-bottom-right-radius: 1em;					// 1em = 16px
+		height: 100%;										// force h3 tan background full height
 	}
 	.h3-blogroll-bg-top {
 		height: 100%;									// force orange gradient full height
@@ -478,11 +470,11 @@ h2.project-title {
 	margin-top:0;											// remove default top margin
 	padding-left:0;											// remove default left padding
 	ul {
-		width: 100%;										// set full width
-		height: calc($base*6);								// 1.3125em *6= 7.875em *16px = 286px, list height
 		display: block;										// force full width and height
-		padding: 0;											// remove default padding-left
 		list-style: none;									// remove list bullets
+		height: calc($base*6);								// 1.3125em *6= 7.875em *16px = 286px, list height
+		padding: 0;											// remove default padding-left
+		width: 100%;										// set full width
 	}
 	li {
 		float: left;										// float items left
@@ -491,13 +483,13 @@ h2.project-title {
 			border-right: none;								// remove the last item bottom border
 		}
 		a, .dots {
-			width: 100%;									// set full width
-			height: 100%;									// set full height
-			color: $orange;									// #ed3c24
-			text-decoration: none;							// remove link underline
-			padding: calc($base*0.5) 1em;					// 1em *16px= 16px
-			display: inline-block;							// inline pagination links
 			border-radius: 0.5em;							// 0.5em * 16px = 8px
+			color: $orange;									// #ed3c24
+			display: inline-block;							// inline pagination links
+			height: 100%;									// set full height
+			padding: calc($base*0.5) 1em;					// 1em *16px= 16px
+			text-decoration: none;							// remove link underline
+			width: 100%;									// set full width
 		}
 		a {
 			&:hover {
@@ -509,13 +501,13 @@ h2.project-title {
 		}
 	}
 	.current {						/* Current page highlight */
-		height: 100%;										// set full height
 		background: $orange;								// #ed3c24 orange
-		color: white;										// white
-		font-weight: bold;									// font bold
-		padding: calc($base*0.5) 1em;						// 1.125em *0.5= 0.5625 *16px= 9px
-		display: inline-block;								// list item inline with pagination
 		border-radius: 0.5em;								// 0.5em *16px = 8px border radius
+		color: white;										// white
+		display: inline-block;								// list item inline with pagination
+		font-weight: bold;									// font bold
+		height: 100%;										// set full height
+		padding: calc($base*0.5) 1em;						// 1.125em *0.5= 0.5625 *16px= 9px
 	}
 }
 	
@@ -540,33 +532,38 @@ h2.project-title {
 
 table { 							/* Song Title and Link Table */
 	border-collapse: collapse; 									// remove table border
-	width: 100%;												// set full width
 	margin-bottom: $base;										// 1.3125em * 16px = 21px, force copyright further down the page
+	width: 100%;												// set full width
 }
 thead { 
-	width: 100%; 												 // set full width
-	font-size: 1em; 											// 1em * 16px = 16px
-	border-top: 2px solid lighten($orange-light, 4); 			// border bottom #f29029 light orange line
-	border-bottom: 2px solid darken($orange, 4); 				// border bottom #ed3c24 orange line
-	text-align: left; 											// align text left
 	background: linear-gradient(to right, $orange 0, $orange-light 100%); // #ed3c24 orange to #f29029 light orange
+	border-bottom: 2px solid darken($orange, 4); 				// border bottom #ed3c24 orange line
+	border-top: 2px solid lighten($orange-light, 4); 			// border bottom #f29029 light orange line
+	font-size: 1em; 											// 1em * 16px = 16px
+	text-align: left; 											// align text left
+	width: 100%; 												 // set full width
 }
-tr {
+tr.jam-row {
+	background: rgba(255,2355,255, 0);							// transparent white background for hover effect
 	border-bottom:1px dotted $tan; 								 // border bottom dotted tan line, #c7c2b7
+	transition: all 0.1s ease;									// transition background on hover
+	&:hover {
+		//background: rgba(255,2355,255, 0.15);					// transparent white background
+	}
 }
 .hdr-audio, .hdr-video, .hdr-title, .hdr-musicians, .hdr-date { 
 	color:#fff;												 // white
-	padding:0.5em;												 // 0.5em *16px = 8px, header text padding
 	font-size:0.7em; 											 // 0.7em *16px = 11.2px, override font size
+	padding:0.5em;												 // 0.5em *16px = 8px, header text padding
 	text-shadow: 0px 2px 0px rgba(0,0,0,0.3);					// header text shadow 
 }
 .hdr-audio {
-	width:7%;													 // set width 7% +7+54+20+12= 100%
 	text-align: center;											 // text align center
+	width:7%;													 // set width 7% +7+54+20+12= 100%
 }
 .hdr-video {
-	width:7%;													// set width 7% +7+54+20+12= 100%
 	text-align: center;											 // text align center
+	width:7%;													// set width 7% +7+54+20+12= 100%
 }
 .hdr-title {
 	width:54%;													// set width 54% +7+7+20+12= 100%
@@ -598,22 +595,26 @@ tr {
 
 
 .jam-audio, .jam-video, .jam-title, .jam-musicians, .jam-date {
-	text-align: left;											// text align left
 	padding:0.5em;												// 0.5em *16px = 8px
+	text-align: left;											// text align left
 }
 .jam-audio, .jam-video, .jam-musicians, .jam-date {
 	font-size:0.75em;											// 0.75em *16px = 12px
 }
 .jam-audio, .jam-video {
 	a {
-		transition: all ease 0.1s;								// transition for :hover state
-		width:100%;												// set full column width
-		height:100%;											// set full column height
-		display: block;											// force to fill space
-		text-align: center;										// icon align center
 		@include scale(1.2);									// enlarge icon
+		background: rgba(255,255,255,0.3);					// transparent white background
+		border-radius: ($corner*2);								// 0.25em *2= 0.5 *16px= 8px border radius
+		display: block;											// force to fill space
+		height:100%;											// set full column height
+		margin: 0 auto;											// center button in column
+		text-align: center;										// icon align center
+		transition: all ease 0.1s;								// transition for :hover state
+		width:80%;												// set full column width
 		&:hover {
 			@include scale(1.5);								// enlarge icon on hover
+			background: rgba(255,255,255,0.7);				// transparent white background
 		}
 	}
 }
@@ -636,34 +637,34 @@ tr {
 
 .musician-tag-cloud, .actor-tag-cloud {
 	border-top:1px solid #666;								// top gray solid line
-	padding-top: 10px;											// spacing from header
 	display: block;												// force full width
+	padding-top: 10px;											// spacing from header
 	
 }
 
 .jamsidebar { 
-	width: 100%; 												// set full sidebar width
-	margin-bottom: calc($base*2);								// 1.3125em *2 = 2.625em *16px = 42px
 	float: right; 												// position sidebar to the right
+	margin-bottom: calc($base*2);								// 1.3125em *2 = 2.625em *16px = 42px
+	width: 100%; 												// set full sidebar width
 	img {
 		width: 100%;											// set image full sidebar width
 	}
 	ul { 
-		width:100%; 											// set full sidebar width
+		border-top:#666 1px solid; 							// border top gray solid line
 		list-style:none; 										// remove list bullets
 		margin:8px 0; 											// top & bottom spacing
 		padding: 0;												// remove default left padding
-		border-top:#666 1px solid; 							// border top gray solid line
+		width:100%; 											// set full sidebar width
 	}
 	li { 
-		transition: all 1s ease;
-		font-size:0.75em; 										// override 1em default, 0.8em *16px = 
-		width:100%; 											// set full sidebar width
-		margin:0; 												// remove list item spacing
 		border-bottom:#ccc 1px solid;							// border bottom light gray line
+		font-size:0.75em; 										// override 1em default, 0.75em *16px = 12px
+		margin:0; 												// remove list item spacing
+		transition: all 1s ease;
+		width:100%; 											// set full sidebar width
 		a:link, a:visited { 
-			padding:4px; 										// padding around text link
 			display:block;										// force full width
+			padding:4px; 										// padding around text link
 		}
 		a:hover { 
 			background: lighten($orange-light, 20%);			// lighten #f29029 by 20%
@@ -677,23 +678,23 @@ tr {
 
 // MOVIES PAGE //
 .movie {
-	width:100%; 												// set full width
-	line-height:1; 												// reset line height
-	float:left; 												// position left
 	display:block; 												// set full width, force items down
-	padding:10px 0; 											// top and bottom padding
+	float:left; 												// position left
+	line-height:1; 												// reset line height
 	margin:0 1%;												// spacing between items
+	padding:10px 0; 											// top and bottom padding
 	text-align: center;											// align text center
+	width:100%; 												// set full width
 	img {
-		width: 100%;											// set image to full width
+		@include box-shadow(0 4px 8px rgba(0,0,0,0.25));		// transparent black shadow on image
+		border-radius: $corner;									// 0.25em * 16px = 4px corner radius
 		height:auto;											// auto set the height
 		margin-bottom: calc($base*0.5);							// 1.125em *0.5= 0.5625 *16px = 9px
-		border-radius: $corner;									// 0.25em * 16px = 4px corner radius
-		@include box-shadow(0 4px 8px rgba(0,0,0,0.25));		// transparent black shadow on image
+		width: 100%;											// set image to full width
 	}
 	h2 { 
-		width:100%; 											// set full width
 		margin-bottom:calc($base*0.25);							// 1.125em *0.25= 0.28125 *16px = 4.5px bottom spacing
+		width:100%; 											// set full width
 	}
 	@media screen and (min-width: $tablet-v) {	/** 591px tablet vertical screen size and larger **/
 		width: 48%;												// reduce width to fit two movies per row on larger screens
@@ -701,9 +702,9 @@ tr {
 }
 
 .movie-right { 
-	width:100%;													// set full width
-	min-height: calc($base*12);									// 1.125em *12= 13.5 *16px= 216px minimum height
 	font-size:0.5em; 											// override 1em, 0.5em * 16px = 8px, reduce font size
+	min-height: calc($base*12);									// 1.125em *12= 13.5 *16px= 216px minimum height
+	width:100%;													// set full width
 }
 
 .video-details {
@@ -722,9 +723,9 @@ tr {
 }
 
 .video-btn .dashicons {
+	@include scale(2);											// 200% icon size, enlarge icon
 	margin-bottom: $base;										// 1.125em * 16px = 21px
 	transition: all ease 0.1s;									// 
-	@include scale(2);											// 200% icon size, enlarge icon
 	&:hover {
 		@include scale(2.5);									// 250% icon size, enlarge icon
 	}

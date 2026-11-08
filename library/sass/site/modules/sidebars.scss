@@ -12,20 +12,20 @@ div.quotes {
 }
 .testimonial {
 	margin: 0 auto;												// center testimonials
+	max-width: 800px;											// set max-width for text
 	position: relative;											// position for Z-index
 	z-index: 1;													// set z-index position
-	max-width: 800px;											// set max-width for text
 }
 
 .client-quotes, .related-sites {
 	h2 {
-		width: 100%;											// set full width
-		font-size: 1.6em;										// override 2em from typography.scss, 1.6em *16px = 25.6px
-		text-shadow: 0 1px white;								// white text shadow
 		display: block;											// display full width force items down
-		vertical-align: middle;									// align text in the middle vertically
+		font-size: 1.6em;										// override 2em from typography.scss, 1.6em *16px = 25.6px
 		margin-bottom: $base;									// 1.125em *16px = 21px
 		margin-top: .2em; 										// 0.2em *16px = 3.2px
+		text-shadow: 0 1px white;								// white text shadow
+		vertical-align: middle;									// align text in the middle vertically
+		width: 100%;											// set full width
 		.us-icon, .testimonial-icon {
 			font-size: 1.4em;									// 1.4em *16px = 22.4px
 		}
@@ -38,25 +38,25 @@ div.quotes {
 	text-align: center;											// center customer quote header text
 }
 blockquote:before {								/** Quote icon **/
-	font-family: 'ted-icons';									// font for quote icon
-	speak: none;												// ignore screen readers
-	font-style: normal;											// force normal font weight
-	font-size: 1.8em;											// 1.8em *16px = 28.8px
 	@include font-smoothing(antialiased);						// antialiase the font icon for smooth rendering
 	content: '\e90b';											// quote icon in the font
 	color: darken($tan,1%);										// #c7c2b7 tan
-	position: absolute;											// position within .testimonial
-	z-index: -1;												// z-index behind text
-	top: -0.25em;												// 0.25em *16px = -4px
+	font-family: 'ted-icons';									// font for quote icon
+	font-size: 1.8em;											// 1.8em *16px = 28.8px
+	font-style: normal;											// force normal font weight
 	left: 0;													// position left side
+	position: absolute;											// position within .testimonial
+	top: -0.25em;												// 0.25em *16px = -4px
+	speak: none;												// ignore screen readers
+	z-index: -1;												// z-index behind text
 }
 
 .client-quotes {
 	padding-bottom: calc($base *2);								// 1.125em *2= 2.25 *16px = 36px, bottom padding for container spacing
 	p {
-		text-indent: 1.5em;										// 1.5em *16px = 24px, intent text for quote icon
 		font-style: italic;										// override normal
 		font-size: clamp(1em, 2vw, 1.1em);						// variable font size, 16px to 17.6px
+		text-indent: 1.5em;										// 1.5em *16px = 24px, intent text for quote icon
 		z-index: 2;												// z-index text above quote icon
 	}
 	cite {
@@ -84,13 +84,13 @@ blockquote:before {								/** Quote icon **/
 	to   { font-size: 1em; }
 }
 .client-heart {
-	width: 24px;												// set width for heartbeat icon
-	height: 16px;												// set height for heartbeat icon
 	display: inline-block;										// display icon inline with text
+	height: 16px;												// set height for heartbeat icon
 	text-align: center;											// postion icon center in inline-block
+	width: 24px;												// set width for heartbeat icon
 	&-icon {
-		color: $orange;											// #ed3c24 orange 
 		animation: heartbeat 4s ease infinite;					// heartbeat animation
+		color: $orange;											// #ed3c24 orange 
 		transform-origin: center center;						// position icon in the center
 	}
 }
@@ -115,9 +115,9 @@ blockquote:before {								/** Quote icon **/
 
 // SOCIAL LINKS //
 .sidebar-social-links {
-	width: 100%;												// set width 100% of container
-	padding: $base 0;											// 1.3125em *16px = 21px, top & bottom spacing
 	margin-bottom: calc($base*2);								// (1.3125em *2) *16px = 2.625em, 42px, space from footer on mobile
+	padding: $base 0;											// 1.3125em *16px = 21px, top & bottom spacing
+	width: 100%;												// set width 100% of container
 	h3 {
 		text-align: center;										// center header
 	}
@@ -130,26 +130,26 @@ blockquote:before {								/** Quote icon **/
 	ul {
 		display: flex;
 		flex-flow: row nowrap;								// force row no wrap
-		padding-left:0;										// remove default left padding
 		list-style: none;									// remove default list bullet style
-		width: 96%;											// set list width
 		max-width: 400px;									// set max list width
 		margin: auto;										// center list row
+		padding-left:0;										// remove default left padding
+		width: 96%;											// set list width
 	}
 	li {
 		flex-basis: 25%;									// 25% * 4 = 100%, social icon link width
 	}
 	.twitter-icon, .codepen-icon, .github-icon, .rss-icon, .pinterest-icon, .linkedin-icon {
-		font-size: 2.5em;									// 2.5em *16px = 40px social icon size
 		display: block;										// fill width
+		font-size: 2.5em;									// 2.5em *16px = 40px social icon size
 	}
 	.social-text {
-		font-size: $font10;									// 0.625em *16px = 10px
 		display: block;										// fill width
+		font-size: $font10;									// 0.625em *16px = 10px
 	}
 	a {
-		text-align: center;									// center text
 		color: darken($tan, 10);							// #b1aa9a tan
+		text-align: center;									// center text
 		&:hover {
 			color: $text;									// #222 dark gray
 		}
@@ -168,8 +168,8 @@ blockquote:before {								/** Quote icon **/
 	}
 }
 .center {
-	text-align: center;										// center text
 	margin-bottom: calc($base*2);							// (1.3125em *2) *16px = 2.625em, 42px, force next content down
+	text-align: center;										// center text
 	.icon {
 		font-size: 1.4rem;									// 1.4em *16px = 22.4px
 	}
@@ -177,11 +177,11 @@ blockquote:before {								/** Quote icon **/
 		margin-bottom: $base;
 	} */
 	ul.social {
-		width: 100%;										// make list full width
-		padding-left: 0;									// override default list padding
-		padding-bottom: calc($base*3);						// (1.3125em *3) *16px = 3.9375em, 63px, override default list padding
 		margin-left: auto;									// center list
 		margin-right: auto;									// center list
+		padding-bottom: calc($base*3);						// (1.3125em *3) *16px = 3.9375em, 63px, override default list padding
+		padding-left: 0;									// override default list padding
+		width: 100%;										// make list full width
 	}
 }
 

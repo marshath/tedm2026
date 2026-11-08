@@ -32,18 +32,18 @@
 
 					<tbody>
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-						<tr>
+						<tr class="jam-row">
 
 							<td class="jam-audio"><?php // if audio file is available, display audio link
 								$audio_file = get_field('mp3');
 								if ($audio_file) { ?>
-									<a href="/library/jam/<?php echo $audio_file; ?>.mp3" title="Play <?php the_title(); ?> audio" rel="bookmark"><span class="dashicons dashicons-controls-volumeon"></span></a>
+									<a href="<?php echo esc_url( home_url( '' ) ); ?>/library/jam/<?php echo $audio_file; ?>.mp3" title="Play <?php the_title(); ?> audio" rel="bookmark"><span class="dashicons dashicons-controls-volumeon"></span></a>
 								<?php } ?></td>
 
 							<td class="jam-video"><?php // if video file is available, display audio link
 								$video_file = get_field('video');
 								if ($video_file) { ?>
-									<a href="/library/jam/<?php echo $video_file; ?>.mp4" title="Play <?php the_title(); ?> video" rel="bookmark"><span class="dashicons dashicons-video-alt3"></span></a>
+									<a href="<?php echo esc_url( home_url( '' ) ); ?>/library/jam/<?php echo $video_file; ?>.mp4" title="Play <?php the_title(); ?> video" rel="bookmark"><span class="dashicons dashicons-video-alt3"></span></a>
 								<?php } ?></td>
 
 							<td class="jam-title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a> <?php edit_post_link( __( '- Edit' ), '<span class="edit-link">', '</span>' ); ?></td>
@@ -76,7 +76,7 @@
 
 			<aside class="jamsidebar clearfix" role="secondary">
 
-				<img src="/library/jam/musicians.gif" style="margin-bottom:15px;" />
+				<img src="<?php echo esc_url( home_url( '' ) ); ?>/library/jam/musicians.gif" style="margin-bottom:15px;" />
 
 				<h5>In-Studio Musicians</h5>
 				<nav class="musician-tag-cloud" style="text-align:left;margin-bottom:30px">

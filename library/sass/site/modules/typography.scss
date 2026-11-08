@@ -11,17 +11,17 @@
 		url('library/fonts/ted-icons.woff') format('woff'),
 		url('library/fonts/ted-icons.ttf') format('truetype'),
 		url('library/fonts/ted-icons.svg#ted-icons') format('svg');
-	font-weight: normal;
 	font-style: normal;
+	font-weight: normal;
 }
 
 [data-icon]:before {
-	font-family: 'ted-icons';
 	content: attr(data-icon);
-	speak: none;
+	font-family: 'ted-icons';
 	font-weight: normal;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
+	speak: none;
 }
 
 

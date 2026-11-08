@@ -68,7 +68,7 @@
 
 			<aside class="jamsidebar clearfix" role="secondary">
 
-				<img src="/library/jam/musicians.gif" style="margin-bottom:15px;" />
+				<img src="<?php echo esc_url( home_url( '' ) ); ?>/library/jam/musicians.gif" style="margin-bottom:15px;" />
 
 				<h5>In-Studio Musicians</h5>
 				<nav class="musician-tag-cloud" style="text-align:left;margin-bottom:30px">

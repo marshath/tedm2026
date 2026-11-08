@@ -121,10 +121,10 @@ $line : 4px solid $tan; /* horizonital ruler */
 /* Page Containers */
 /* -------------------------- */
 body {
-	color: $text;										// #222 dark gray
 	@include regular;									// Verdana, Geneva, sans-serif
-	line-height: $base;									// 1.3125em *16px = 21px
 	background: #100202;								// off-black
+	color: $text;										// #222 dark gray
+	line-height: $base;									// 1.3125em *16px = 21px
 }
 
 main {
@@ -140,16 +140,16 @@ main {
 
 // Background wraps //
 .site-header, .article-wrap, .subcontent-wrap, .quotes-wrap, .services-wrap, .related-wrap, .footer-wrap {
-	width: 100%;										// set headers full width
-	padding: 0;											// remove section padding
 	display: block;										// force items down
+	padding: 0;											// remove section padding
 	position: relative;									// set parent positioning for children
+	width: 100%;										// set headers full width
 }
 .services-wrap {
 	background: rgba(199,194,193,0.6);					// transparent off-white
+	margin-bottom: $base;								// 1.3125em *16px = 21px
 	padding-left: 8.33%;								// side padding
 	padding-right: 8.33%;								// side padding
-	margin-bottom: $base;								// 1.3125em *16px = 21px
 }
 
 /* -------------------------- */
@@ -164,9 +164,6 @@ main {
 	background: radial-gradient( circle at 46% 90%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
 	background-image: url(library/images/home-video.png); // VIDEO PLACEHOLDER
 	background-size: cover;
-	/* @media screen and (min-width: $tablet-v) {
-		background: radial-gradient( ellipse at 41% 100%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
-	} */
 	@media screen and (min-width: $tablet-v) {
 		background: radial-gradient( ellipse at 50% 55%, #ff953f 5%, #530f62 40%, #0f0049 60%, #09002c 75%, #000000 90%);		// override background gradient behind hero graphic
 		background-image: url(library/images/home-video.png);
@@ -175,11 +172,8 @@ main {
 }
 
 .article-wrap {
-	padding-top: calc($base*2.8);						// (1.3125em *2.8) *16px = 3.675em, 58.8px, push content down from ::before orange line
 	padding-bottom: $base;								// 1.3125em *16px = 21px, force main content to the footer
-	//@media screen and (min-width: $television) {
-		//padding-top: calc($base*3);					// (1.3125em *3) *16px = 3.9375em, 63px, spacing from header
-	//}
+	padding-top: calc($base*2.8);						// (1.3125em *2.8) *16px = 3.675em, 58.8px, push content down from ::before orange line
 }
 
 .services-wrap, .quotes-wrap, .related-wrap {
@@ -190,40 +184,35 @@ main {
 }
 
 .footer-wrap {
-	//background: #530f62;							 // Old browsers //
-	//background: linear-gradient(to bottom,  #4f0909 0%,#100202 80%); /* W3C */
-	//background: linear-gradient( to top,  #530f62 0%, #0f0049 85%, #09002c 100%);	// gradient behind hero graphic
-	//background: linear-gradient( to bottom, #530f62 0%, #0f0049 20%, #09002c 85%);	// gradient behind hero graphic
-	//background: linear-gradient( to top, #7f7a70 0%, #615b4f 20%, #343027 85%);	// gradient behind hero graphic
-	padding-top: $base;									// 1.3125em *16px = 21px
 	background-color: #E3DDD0;						// off-white
 	background-image: url(library/images/pattern-paper.jpg); // paper texture
 	background-repeat: repeat;							// tile across background
+	padding-top: $base;									// 1.3125em *16px = 21px
 }
 
 
 // HEADER STRIPED DIVIDER - HEADER PSUEDO ELEMENT //
 .article-wrap:before {				
 	content: '';
-	width: 100%;										// set full width
-	height: calc($base*1.25);							// 1.125em *1.25= 1.40625 *16px = 22.5px, set height
 	background: repeating-linear-gradient(145deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 6px, rgba(0,0,0,1) 6px, rgba(0,0,0,1) 10px); // angled tan stripe gradient
-	position: absolute;									// set child position for parent
-	transform: rotate(-0.3deg);							// add slight rotation to stripes
-	top: -1em;											// position above splash graphic 
+	height: calc($base*1.25);							// 1.125em *1.25= 1.40625 *16px = 22.5px, set height
 	left: 0;											// position on the left
+	position: absolute;									// set child position for parent
+	top: -1em;											// position above splash graphic 
+	transform: rotate(-0.3deg);							// add slight rotation to stripes
+	width: 100%;										// set full width
 }
 
 
 // FOOTER STRIPED DIVIDER - FOOTER PSUEDO ELEMENT //
 .footer-wrap:before {
-	content: '';
-	width: 85%;											// side spacing for small screens
-	max-width: 1800px;									// max width for wide screens
-	height: calc($base*1.25);							// 1.125em *1.25= 1.40625 *16px = 22.5px, set height
 	background: repeating-linear-gradient(145deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 6px, rgba(177,170,154,0.2) 6px, rgba(177,170,154,0.2) 10px); // angled tan stripe gradient
+	content: '';
 	display: block;										// force full width
+	height: calc($base*1.25);							// 1.125em *1.25= 1.40625 *16px = 22.5px, set height
 	margin: calc($base* -1.25) auto 0 auto;				// 1.125em * 16px = 21px, remove height from top margin to retain footer positioning
+	max-width: 1800px;									// max width for wide screens
+	width: 85%;											// side spacing for small screens
 	@media screen and (min-width: $tablet-v) { /** 901px laptop screen size and larger **/
 		width: 94%;										// side spacing for small screens
 	}
@@ -231,14 +220,14 @@ main {
 
 // HEADER //
 header.main { 
-	width: 100%;										// full width
 	margin-bottom: $base;								// 1.3125em *16px = 21px
+	width: 100%;										// full width
 }
 
 // BODY ARTICLES //
 .content, .subcontent, .blog-content, .contact-content {
-	margin-bottom: calc($base*2);						// 1.3125em *2 = 2.625em, push related projects down 
 	display: block;										// set full width
+	margin-bottom: calc($base*2);						// 1.3125em *2 = 2.625em, push related projects down 
 	position: relative;									// set child position
 	section { 
 		margin-bottom: $base;							// 1.3125em *16px = 21px
@@ -246,8 +235,8 @@ header.main {
 }
 
 .blog-content, .contact-content {
-	width: 100%;										// set full width
 	float: left;										// push left
+	width: 100%;										// set full width
 	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
 		max-width: 70%;									// override 100%, 60% .blog-content + 5% gap + 35% .sidebar = 100%
 	}
@@ -272,21 +261,21 @@ header.main {
 		width: 31%;										// override 100%
 	}
 	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
-		width: 23%;										// override 31%, 23% + 2% = 25%
 		margin-left: 2%;								// 23% + 2% = 25%
+		width: 23%;										// override 31%, 23% + 2% = 25%
 	}
 }
 
 // SIDEBAR SERVICES //
 aside.services {
-	width: 100%;										// set full width
-	padding: $base 0 0 0;								// 1.3125em *16px = 21px, space on top
 	display: block;										// force items down
+	padding: $base 0 0 0;								// 1.3125em *16px = 21px, space on top
+	width: 100%;										// set full width
 	section { 
-		width: 100%;									// set full width
 		display: inline-block;
 		float: left;									// align left
 		position: relative;								// set child position for float
+		width: 100%;									// set full width
 	}
 	@media screen and (min-width: $tablet-v) { /** 591px tablet vertical screen size and larger **/
 		padding: 0;										// override $base, remove top padding
@@ -300,22 +289,22 @@ aside.services {
 }
 
 .sidebar {
-	width: 100%;										// set full width
-	float: right;										// align right
 	display: inline-block;								// inline with content for tablet and larger displays
+	float: right;										// align right
+	width: 100%;										// set full width
 	@media screen and (min-width: $laptop) { /** 901px laptop screen size and larger **/
-		width: 25%;										// override 100%, 25% .sidebar + 5% gap + 70% .blog-content = 100%
 		max-width: 26em;								// override 100%, 35% .sidebar + 5% gap + 60% .blog-content = 100%
+		width: 25%;										// override 100%, 25% .sidebar + 5% gap + 70% .blog-content = 100%
 	}
 }
 
 // FOOTER //
 .site-footer {
-	width: 100%;										// set full width
 	@include square-font;								// 'Bree Serif', serif
 	color: $tan;										// #c7c2b7
-	padding: calc($base*2) 0 $base 0;					// 1.3125em * 2 = 2.625em top, 1.3125em bottom
 	display: block;										// push items down
+	padding: calc($base*2) 0 $base 0;					// 1.3125em * 2 = 2.625em top, 1.3125em bottom
+	width: 100%;										// set full width
 	section {
 		display: block;									// push items down
 		float: left;									// align left
@@ -333,10 +322,10 @@ aside.services {
 	padding-right: 0;									// remove any inherited padding
 }	
 .site-header, article, aside.services, aside.client-quotes, aside.related-sites, .site-footer, .body-content, .project-desc {
-	width: 84%;											// side spacing for small screens
-	max-width: 1800px;									// max width for wide screens
 	margin-left: auto;									// center content
 	margin-right: auto;									// center content
+	max-width: 1800px;									// max width for wide screens
+	width: 84%;											// side spacing for small screens
 }
 .body-content {
 	max-width: 103em;									// max width on Contact, Blog pages 
@@ -354,33 +343,33 @@ aside.services {
 		width: 90%;
 	}
 	.site-header {
-		width: 95%;										// override 100%, main menu replaces hamburger and needs less side margin to visually center h1.logo and nav
 		margin-left: 5%;								// override none, push logo away from browser left side
+		width: 95%;										// override 100%, main menu replaces hamburger and needs less side margin to visually center h1.logo and nav
 	}
 	article {
 		width: 94%;										// override 84%
 	}
 	.site-footer {
-		width: 97%;										// override 84%, provide more space on right for nav
 		margin-left: 3%;								// override auto, push nav away from company info, social links
+		width: 97%;										// override 84%, provide more space on right for nav
 	}
 }
 @media screen and (min-width: $laptop) {		/** 901px laptop screen size and larger **/
 	.site-footer {
-		width: 94%;										// override 97%, center footer content
 		margin-left: auto;								// override 3%, center footer content
+		width: 94%;										// override 97%, center footer content
 	}
 }
 @media screen and (min-width: $monitor) {		/** 1200px monitor screen size and larger **/
 	.site-header {
-		width: 93%;										// override 95%, reduce width to visually center h1.logo and nav
 		margin-right: 2%;								// override none, push nav away from browser right side
+		width: 93%;										// override 95%, reduce width to visually center h1.logo and nav
 	}
 }
 @media screen and (min-width: $television) {	/** 1600px television screen size and larger **/
 	.site-header {
-		width: 95%;										// override 93%, expand width for large screen
 		margin-left: auto;								// override 5%, center h1.logo and nav
 		margin-right: auto;								// override 2%, center h1.logo and nav
+		width: 95%;										// override 93%, expand width for large screen
 	}
 }
