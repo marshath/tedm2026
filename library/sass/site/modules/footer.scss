@@ -72,7 +72,7 @@ section.footer-navigation {
 		&:first-child {
 			margin-top: calc($base*0.25); 				// override 2% from header .menu, 1.3125em * 0.25 = 0.328125em
 		}
-		&.current_page_item a {					// active page highlight
+		&.current_page_item a,  {					// active page highlight
 			color: darken($tan,10);						// override gray, #c7c2b7
 			svg {
 				fill: darken($tan,10);					// override gray, , #c7c2b7, icon color on .current_page_item
@@ -115,6 +115,7 @@ section.footer-navigation {
 		}
 	}
 }
+
 
 // SOCIAL FOOTER //
 section.footer-social-links {

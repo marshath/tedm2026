@@ -17,7 +17,6 @@ get_header(); ?>
 			<?php the_content(); ?>
 			<?php //<h3>Latest blog posts</h3> ?>
 			<ul class="blogroll">
-				
 
 			<?php // blog post list
 			if( have_rows('blog_post')):
@@ -44,7 +43,7 @@ get_header(); ?>
 			
 			</ul> <?php // end .blogroll ?>
 			
-			<a href="http://33degreesds.com/blog/" rel="bookmark" class="secondary-btn">View all blog posts <span class="arrow_btn" aria-hidden="true" data-icon="&#xe901;"></span></a>
+			<a href="http://33degreesds.com/blog/" rel="bookmark" class="primary-btn">View all blog posts <span class="arrow_btn" aria-hidden="true" data-icon="&#xe901;"></span></a>
 			<p>&nbsp;</p>
 			
 		</div> <?php // end .contact-page ?>

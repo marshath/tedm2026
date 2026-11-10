@@ -185,7 +185,7 @@ h1.logo {
 // ACTIVE NAV HIGHLIGHT SUBPAGES //
 // Portfolio, Jam, Movie //
 // Located here to override media queries in all circumstances //
-body.single-project .page-item-21 a, .current_page_ancestor.page-item-21 a, body.single-post .page-item-1029 a {
+body.single-project .header-wrap .page-item-21 a, .current_page_ancestor.page-item-21 a, body.single-post .page-item-1029 a {
 	color: white;												// override gray
 	svg {
 		fill: $yellow;											// icon color on .current_page_item

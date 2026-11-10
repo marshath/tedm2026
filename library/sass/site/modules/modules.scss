@@ -419,6 +419,7 @@ h2.project-title {
 
 /* Overrides .project, .blogroll from Portfolio Page styles in _modules.scss */
 .blogroll {
+	margin: $base 0;										// 1.125em *16px= 21px, top and bottom spacing from prev next item
 	.h3-blogroll {
 		border-bottom-left-radius: 1em;						// 1em = 16px
 		border-bottom-right-radius: 1em;					// 1em = 16px

@@ -65,7 +65,7 @@ $television: 1600px;
 // Baseline Height, Border Radius, Horizontal Rule //
 $base: 1.3125em; /* 21px baseline grid */
 $corner: 0.25em; /* Rounded Box Radius */
-$line : 4px solid $tan; /* horizonital ruler */
+$line : 4px solid $tan; /* horizonital ruler #c7c2b7 */
 
 
 /* -------------------------- */
@@ -161,13 +161,12 @@ main {
 	padding-top: $base;									// 1.3125em *16px = 21px
 }
 .home .header-wrap {
-	background: radial-gradient( circle at 46% 90%, #ff953f 5%, #530f62 30%, #0f0049 50%, #09002c 70%, #000000 90%);		// override background gradient behind hero graphic
-	background-image: url(library/images/home-video.png); // VIDEO PLACEHOLDER
-	background-size: cover;
-	@media screen and (min-width: $tablet-v) {
-		background: radial-gradient( ellipse at 50% 55%, #ff953f 5%, #530f62 40%, #0f0049 60%, #09002c 75%, #000000 90%);		// override background gradient behind hero graphic
-		background-image: url(library/images/home-video.png);
-		background-size: cover;
+	background: radial-gradient( ellipse at 50% 55%, #ff953f 5%, #530f62 40%, #0f0049 60%, #09002c 75%, #000000 90%);		// override background gradient behind hero graphic
+	background-image: url(library/images/home-500.jpg); // image for homepage splash content on mobile
+	background-size: cover;								// set image to fill the space
+	background-position: center center;					// set image centered
+	@media screen and (min-width: $tablet-v) {	/** 591 tablet screen size and larger **/
+		background-image: url(library/images/home-2000.jpg);	// override mobile image for homepage splash content
 	}
 }
 

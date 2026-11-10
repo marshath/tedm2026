@@ -6,17 +6,17 @@
 
 .flex-project-container { // Project images
 	width: 100%;
-	//border-top: 4px solid white;							// same as .project figure from modules.scss
-	border-bottom: 2px solid rgba(255,255,255,0.2);		// same as .project figure from modules.scss
+	border-bottom: 3px solid rgba(255,255,255,0.2);		// tan bottom border
+	border-top: 3px solid rgba(255,255,255,0.2);			// tan top border
 	margin-bottom: calc($base*2);							// (1.3125em * 2) *16px = 2.625em, 42px, same as .project figure from modules.scss
 	@include box-shadow(0px 2px 1.25em rgba(0,0,0,0.35)); // 1.25em *16px = 20px, black transparent
-	border-radius: 0.25em;									// same as .project figure from modules.scss
+	border-radius: $corner;									// same as .project figure from modules.scss
+	margin-top: calc($base*2);
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: $television) { /** 1600px television screen size and larger **/
 	.flex-project-container {
 		max-width:103em;									// 103em *16px = 1648px
-		border: 3px solid rgba(255,255,255,0.2);			// same as .project figure from modules.scss
-		border-top: none;									// remove the top border, flexslider flush against orange line
+		border: 3px solid rgba(255,255,255,0.2);			// override border-bottom, border-top
 		margin-left: auto;									// center flexslider
 		margin-right: auto									// center flexslider
 	}
